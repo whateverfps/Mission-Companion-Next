@@ -1,0 +1,1394 @@
+[
+  {
+    "sectionNumber": "00 01 10",
+    "normalizedSectionNumber": "000110",
+    "sectionTitle": "SECTIONS      DIVISION AND SECTION TITLES                                          DATE",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 3,
+    "endPdfPage": 8
+  },
+  {
+    "sectionNumber": "00 41 13",
+    "normalizedSectionNumber": "004113",
+    "sectionTitle": "BID FORM",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 9,
+    "endPdfPage": 28
+  },
+  {
+    "sectionNumber": "01 00 00",
+    "normalizedSectionNumber": "010000",
+    "sectionTitle": "GENERAL REQUIREMENTS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 29,
+    "endPdfPage": 363
+  },
+  {
+    "sectionNumber": "27 05 53",
+    "normalizedSectionNumber": "270553",
+    "sectionTitle": "- Identification for",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 364,
+    "endPdfPage": 675
+  },
+  {
+    "sectionNumber": "01 32 16.15",
+    "normalizedSectionNumber": "013216.15",
+    "sectionTitle": "PROJECT SCHEDULES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 676,
+    "endPdfPage": 687
+  },
+  {
+    "sectionNumber": "01 33 23",
+    "normalizedSectionNumber": "013323",
+    "sectionTitle": "SHOP DRAWINGS, PRODUCT DATA, AND SAMPLES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 688,
+    "endPdfPage": 697
+  },
+  {
+    "sectionNumber": "01 33 24",
+    "normalizedSectionNumber": "013324",
+    "sectionTitle": "ELECTRONIC SUBMITTAL PROCEDURES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 698,
+    "endPdfPage": 699
+  },
+  {
+    "sectionNumber": "01 35 26",
+    "normalizedSectionNumber": "013526",
+    "sectionTitle": "SAFETY REQUIREMENTS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 700,
+    "endPdfPage": 721
+  },
+  {
+    "sectionNumber": "01 42 19",
+    "normalizedSectionNumber": "014219",
+    "sectionTitle": "REFERENCE STANDARDS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 722,
+    "endPdfPage": 727
+  },
+  {
+    "sectionNumber": "01 45 00",
+    "normalizedSectionNumber": "014500",
+    "sectionTitle": "QUALITY CONTROL",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 728,
+    "endPdfPage": 739
+  },
+  {
+    "sectionNumber": "01 45 29",
+    "normalizedSectionNumber": "014529",
+    "sectionTitle": "TESTING LABORATORY SERVICES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 740,
+    "endPdfPage": 751
+  },
+  {
+    "sectionNumber": "01 45 35",
+    "normalizedSectionNumber": "014535",
+    "sectionTitle": "SPECIAL INSPECTIONS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 752,
+    "endPdfPage": 791
+  },
+  {
+    "sectionNumber": "01 57 19",
+    "normalizedSectionNumber": "015719",
+    "sectionTitle": "TEMPORARY ENVIRONMENTAL CONTROLS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 792,
+    "endPdfPage": 795
+  },
+  {
+    "sectionNumber": "01 58 16",
+    "normalizedSectionNumber": "015816",
+    "sectionTitle": "TEMPORARY INTERIOR SIGNAGE",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 796,
+    "endPdfPage": 797
+  },
+  {
+    "sectionNumber": "01 74 19",
+    "normalizedSectionNumber": "017419",
+    "sectionTitle": "CONSTRUCTION WASTE MANAGEMENT",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 798,
+    "endPdfPage": 803
+  },
+  {
+    "sectionNumber": "01 81 13",
+    "normalizedSectionNumber": "018113",
+    "sectionTitle": "SUSTAINABLE CONSTRUCTION REQUIREMENTS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 804,
+    "endPdfPage": 813
+  },
+  {
+    "sectionNumber": "01 91 00",
+    "normalizedSectionNumber": "019100",
+    "sectionTitle": "GENERAL COMMISSIONING REQUIREMENTS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 814,
+    "endPdfPage": 931
+  },
+  {
+    "sectionNumber": "02 21 13",
+    "normalizedSectionNumber": "022113",
+    "sectionTitle": "SITE SURVEYS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 932,
+    "endPdfPage": 937
+  },
+  {
+    "sectionNumber": "02 41 00",
+    "normalizedSectionNumber": "024100",
+    "sectionTitle": "DEMOLITION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 938,
+    "endPdfPage": 941
+  },
+  {
+    "sectionNumber": "02 82 11",
+    "normalizedSectionNumber": "028211",
+    "sectionTitle": "CLASS I NEGATIVE PRESSURE ENCLOSURE ASBESTOS ABATEMENT",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 942,
+    "endPdfPage": 989
+  },
+  {
+    "sectionNumber": "02 82 13.13",
+    "normalizedSectionNumber": "028213.13",
+    "sectionTitle": "GLOVEBAG ASBESTOS ABATEMENT",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 990,
+    "endPdfPage": 1033
+  },
+  {
+    "sectionNumber": "02 83 33.13",
+    "normalizedSectionNumber": "028333.13",
+    "sectionTitle": "LEAD-BASED PAINT REMOVAL AND DISPOSAL",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1034,
+    "endPdfPage": 1041
+  },
+  {
+    "sectionNumber": "03 30 00",
+    "normalizedSectionNumber": "033000",
+    "sectionTitle": "CAST-IN-PLACE CONCRETE",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1042,
+    "endPdfPage": 1061
+  },
+  {
+    "sectionNumber": "04 01 00",
+    "normalizedSectionNumber": "040100",
+    "sectionTitle": "MAINTENANCE OF MASONRY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1062,
+    "endPdfPage": 1065
+  },
+  {
+    "sectionNumber": "04 05 13",
+    "normalizedSectionNumber": "040513",
+    "sectionTitle": "MASONRY MORTARING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1066,
+    "endPdfPage": 1069
+  },
+  {
+    "sectionNumber": "04 05 16",
+    "normalizedSectionNumber": "040516",
+    "sectionTitle": "MASONRY GROUTING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1070,
+    "endPdfPage": 1073
+  },
+  {
+    "sectionNumber": "04 20 00",
+    "normalizedSectionNumber": "042000",
+    "sectionTitle": "UNIT MASONRY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1074,
+    "endPdfPage": 1093
+  },
+  {
+    "sectionNumber": "04 72 00",
+    "normalizedSectionNumber": "047200",
+    "sectionTitle": "CAST STONE MASONRY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1094,
+    "endPdfPage": 1099
+  },
+  {
+    "sectionNumber": "05 12 00",
+    "normalizedSectionNumber": "051200",
+    "sectionTitle": "STRUCTURAL STEEL FRAMING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1100,
+    "endPdfPage": 1107
+  },
+  {
+    "sectionNumber": "05 31 00",
+    "normalizedSectionNumber": "053100",
+    "sectionTitle": "STEEL DECKING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1108,
+    "endPdfPage": 1113
+  },
+  {
+    "sectionNumber": "05 36 00",
+    "normalizedSectionNumber": "053600",
+    "sectionTitle": "COMPOSITE METAL DECKING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1114,
+    "endPdfPage": 1121
+  },
+  {
+    "sectionNumber": "05 40 00",
+    "normalizedSectionNumber": "054000",
+    "sectionTitle": "COLD-FORMED METAL FRAMING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1122,
+    "endPdfPage": 1131
+  },
+  {
+    "sectionNumber": "05 50 00",
+    "normalizedSectionNumber": "055000",
+    "sectionTitle": "METAL FABRICATIONS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1132,
+    "endPdfPage": 1153
+  },
+  {
+    "sectionNumber": "06 10 00",
+    "normalizedSectionNumber": "061000",
+    "sectionTitle": "ROUGH CARPENTRY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1154,
+    "endPdfPage": 1159
+  },
+  {
+    "sectionNumber": "06 20 00",
+    "normalizedSectionNumber": "062000",
+    "sectionTitle": "FINISH CARPENTRY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1160,
+    "endPdfPage": 1167
+  },
+  {
+    "sectionNumber": "07 01 50.19",
+    "normalizedSectionNumber": "070150.19",
+    "sectionTitle": "PREPARATION FOR RE-ROOFING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1168,
+    "endPdfPage": 1173
+  },
+  {
+    "sectionNumber": "07 08 00",
+    "normalizedSectionNumber": "070800",
+    "sectionTitle": "FACILITY EXTERIOR CLOSURE COMMISSIONING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1174,
+    "endPdfPage": 1177
+  },
+  {
+    "sectionNumber": "07 21 13",
+    "normalizedSectionNumber": "072113",
+    "sectionTitle": "THERMAL INSULATION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1178,
+    "endPdfPage": 1183
+  },
+  {
+    "sectionNumber": "07 22 00",
+    "normalizedSectionNumber": "072200",
+    "sectionTitle": "ROOF AND DECK INSULATION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1184,
+    "endPdfPage": 1189
+  },
+  {
+    "sectionNumber": "07 27 26",
+    "normalizedSectionNumber": "072726",
+    "sectionTitle": "FLUID-APPLIED MEMBRANE AIR BARRIERS, VAPOR PERMEABLE",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1190,
+    "endPdfPage": 1195
+  },
+  {
+    "sectionNumber": "07 31 26",
+    "normalizedSectionNumber": "073126",
+    "sectionTitle": "SLATE SHINGLES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1196,
+    "endPdfPage": 1201
+  },
+  {
+    "sectionNumber": "07 32 13",
+    "normalizedSectionNumber": "073213",
+    "sectionTitle": "CLAY ROOF TILES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1202,
+    "endPdfPage": 1209
+  },
+  {
+    "sectionNumber": "07 54 23",
+    "normalizedSectionNumber": "075423",
+    "sectionTitle": "THERMOPLASTIC POLYOLEFIN (TPO) ROOFING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1210,
+    "endPdfPage": 1219
+  },
+  {
+    "sectionNumber": "07 60 00",
+    "normalizedSectionNumber": "076000",
+    "sectionTitle": "FLASHING AND SHEET METAL",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1220,
+    "endPdfPage": 1233
+  },
+  {
+    "sectionNumber": "07 71 00",
+    "normalizedSectionNumber": "077100",
+    "sectionTitle": "ROOF SPECIALTIES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1234,
+    "endPdfPage": 1237
+  },
+  {
+    "sectionNumber": "07 72 00",
+    "normalizedSectionNumber": "077200",
+    "sectionTitle": "ROOF ACCESSORIES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1238,
+    "endPdfPage": 1243
+  },
+  {
+    "sectionNumber": "07 81 00",
+    "normalizedSectionNumber": "078100",
+    "sectionTitle": "APPLIED FIREPROOFING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1244,
+    "endPdfPage": 1251
+  },
+  {
+    "sectionNumber": "07 84 00",
+    "normalizedSectionNumber": "078400",
+    "sectionTitle": "FIRESTOPPING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1252,
+    "endPdfPage": 1255
+  },
+  {
+    "sectionNumber": "07 92 00",
+    "normalizedSectionNumber": "079200",
+    "sectionTitle": "JOINT SEALANTS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1256,
+    "endPdfPage": 1263
+  },
+  {
+    "sectionNumber": "08 11 13",
+    "normalizedSectionNumber": "081113",
+    "sectionTitle": "HOLLOW METAL DOORS AND FRAMES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1264,
+    "endPdfPage": 1271
+  },
+  {
+    "sectionNumber": "08 14 00",
+    "normalizedSectionNumber": "081400",
+    "sectionTitle": "INTERIOR WOOD DOORS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1272,
+    "endPdfPage": 1277
+  },
+  {
+    "sectionNumber": "08 31 13",
+    "normalizedSectionNumber": "083113",
+    "sectionTitle": "ACCESS DOORS AND FRAMES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1278,
+    "endPdfPage": 1281
+  },
+  {
+    "sectionNumber": "08 39 54",
+    "normalizedSectionNumber": "083954",
+    "sectionTitle": "BLAST RESISTANT DOOR ASSEMBLIES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1282,
+    "endPdfPage": 1289
+  },
+  {
+    "sectionNumber": "08 71 00",
+    "normalizedSectionNumber": "087100",
+    "sectionTitle": "DOOR HARDWARE",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1290,
+    "endPdfPage": 1307
+  },
+  {
+    "sectionNumber": "08 80 00",
+    "normalizedSectionNumber": "088000",
+    "sectionTitle": "GLAZING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1308,
+    "endPdfPage": 1317
+  },
+  {
+    "sectionNumber": "08 87 33",
+    "normalizedSectionNumber": "088733",
+    "sectionTitle": "DECORATIVE FILM",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1318,
+    "endPdfPage": 1319
+  },
+  {
+    "sectionNumber": "09 05 16",
+    "normalizedSectionNumber": "090516",
+    "sectionTitle": "SUBSURFACE PREPARATION FOR FLOOR FINISHES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1320,
+    "endPdfPage": 1325
+  },
+  {
+    "sectionNumber": "09 22 16",
+    "normalizedSectionNumber": "092216",
+    "sectionTitle": "NON-STRUCTURAL METAL FRAMING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1326,
+    "endPdfPage": 1331
+  },
+  {
+    "sectionNumber": "09 29 00",
+    "normalizedSectionNumber": "092900",
+    "sectionTitle": "GYPSUM BOARD",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1332,
+    "endPdfPage": 1337
+  },
+  {
+    "sectionNumber": "09 30 13",
+    "normalizedSectionNumber": "093013",
+    "sectionTitle": "CERAMIC/PORCELAIN TILING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1338,
+    "endPdfPage": 1353
+  },
+  {
+    "sectionNumber": "09 51 00",
+    "normalizedSectionNumber": "095100",
+    "sectionTitle": "ACOUSTICAL CEILINGS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1354,
+    "endPdfPage": 1361
+  },
+  {
+    "sectionNumber": "09 65 13",
+    "normalizedSectionNumber": "096513",
+    "sectionTitle": "RESILIENT BASE AND ACCESSORIES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1362,
+    "endPdfPage": 1365
+  },
+  {
+    "sectionNumber": "09 65 19",
+    "normalizedSectionNumber": "096519",
+    "sectionTitle": "RESILIENT TILE FLOORING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1366,
+    "endPdfPage": 1371
+  },
+  {
+    "sectionNumber": "09 91 00",
+    "normalizedSectionNumber": "099100",
+    "sectionTitle": "PAINTING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1372,
+    "endPdfPage": 1391
+  },
+  {
+    "sectionNumber": "10 14 00",
+    "normalizedSectionNumber": "101400",
+    "sectionTitle": "SIGNAGE",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1392,
+    "endPdfPage": 1399
+  },
+  {
+    "sectionNumber": "10 26 00",
+    "normalizedSectionNumber": "102600",
+    "sectionTitle": "WALL AND DOOR PROTECTION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1400,
+    "endPdfPage": 1405
+  },
+  {
+    "sectionNumber": "10 44 13",
+    "normalizedSectionNumber": "104413",
+    "sectionTitle": "FIRE EXTINGUISHER CABINETS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1406,
+    "endPdfPage": 1409
+  },
+  {
+    "sectionNumber": "12 32 00",
+    "normalizedSectionNumber": "123200",
+    "sectionTitle": "MANUFACTURED WOOD CASEWORK",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1410,
+    "endPdfPage": 1417
+  },
+  {
+    "sectionNumber": "12 36 00",
+    "normalizedSectionNumber": "123600",
+    "sectionTitle": "COUNTERTOPS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1418,
+    "endPdfPage": 1427
+  },
+  {
+    "sectionNumber": "13 05 41",
+    "normalizedSectionNumber": "130541",
+    "sectionTitle": "SEISMIC RESTRAINT REQUIREMENTS FOR NON-STRUCTURAL COMPONENTS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1428,
+    "endPdfPage": 1433
+  },
+  {
+    "sectionNumber": "21 08 00",
+    "normalizedSectionNumber": "210800",
+    "sectionTitle": "COMMISSIONING OF FIRE SUPPRESSION SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1434,
+    "endPdfPage": 1437
+  },
+  {
+    "sectionNumber": "21 13 13",
+    "normalizedSectionNumber": "211313",
+    "sectionTitle": "WET-PIPE SPRINKLER SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1438,
+    "endPdfPage": 1445
+  },
+  {
+    "sectionNumber": "21 22 00",
+    "normalizedSectionNumber": "212200",
+    "sectionTitle": "CLEAN AGENT FIRE SUPPRESSION SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1446,
+    "endPdfPage": 1457
+  },
+  {
+    "sectionNumber": "22 05 11",
+    "normalizedSectionNumber": "220511",
+    "sectionTitle": "COMMON WORK RESULTS FOR PLUMBING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1458,
+    "endPdfPage": 1485
+  },
+  {
+    "sectionNumber": "22 05 12",
+    "normalizedSectionNumber": "220512",
+    "sectionTitle": "GENERAL MOTOR REQUIREMENTS FOR PLUMBING EQUIPMENT",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1486,
+    "endPdfPage": 1493
+  },
+  {
+    "sectionNumber": "22 05 19",
+    "normalizedSectionNumber": "220519",
+    "sectionTitle": "METERS AND GAUGES FOR PLUMBING PIPING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1494,
+    "endPdfPage": 1499
+  },
+  {
+    "sectionNumber": "22 05 23",
+    "normalizedSectionNumber": "220523",
+    "sectionTitle": "GENERAL-DUTY VALVES FOR PLUMBING PIPING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1500,
+    "endPdfPage": 1509
+  },
+  {
+    "sectionNumber": "22 07 11",
+    "normalizedSectionNumber": "220711",
+    "sectionTitle": "PLUMBING INSULATION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1510,
+    "endPdfPage": 1523
+  },
+  {
+    "sectionNumber": "22 08 00",
+    "normalizedSectionNumber": "220800",
+    "sectionTitle": "COMMISSIONING OF PLUMBING SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1524,
+    "endPdfPage": 1527
+  },
+  {
+    "sectionNumber": "22 11 00",
+    "normalizedSectionNumber": "221100",
+    "sectionTitle": "FACILITY WATER DISTRIBUTION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1528,
+    "endPdfPage": 1537
+  },
+  {
+    "sectionNumber": "22 11 23",
+    "normalizedSectionNumber": "221123",
+    "sectionTitle": "DOMESTIC WATER PUMPS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1538,
+    "endPdfPage": 1543
+  },
+  {
+    "sectionNumber": "22 13 00",
+    "normalizedSectionNumber": "221300",
+    "sectionTitle": "FACILITY SANITARY AND VENT PIPING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1544,
+    "endPdfPage": 1553
+  },
+  {
+    "sectionNumber": "22 14 00",
+    "normalizedSectionNumber": "221400",
+    "sectionTitle": "FACILITY STORM DRAINAGE",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1554,
+    "endPdfPage": 1563
+  },
+  {
+    "sectionNumber": "22 35 00",
+    "normalizedSectionNumber": "223500",
+    "sectionTitle": "DOMESTIC WATER HEAT EXCHANGERS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1564,
+    "endPdfPage": 1569
+  },
+  {
+    "sectionNumber": "22 40 00",
+    "normalizedSectionNumber": "224000",
+    "sectionTitle": "PLUMBING FIXTURES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1570,
+    "endPdfPage": 1575
+  },
+  {
+    "sectionNumber": "23 05 11",
+    "normalizedSectionNumber": "230511",
+    "sectionTitle": "COMMON WORK RESULTS FOR HVAC",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1576,
+    "endPdfPage": 1599
+  },
+  {
+    "sectionNumber": "23 05 12",
+    "normalizedSectionNumber": "230512",
+    "sectionTitle": "GENERAL MOTOR REQUIREMENTS FOR HVAC AND STEAM GENERATION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1600,
+    "endPdfPage": 1607
+  },
+  {
+    "sectionNumber": "23 05 41",
+    "normalizedSectionNumber": "230541",
+    "sectionTitle": "NOISE AND VIBRATION CONTROL FOR HVAC PIPING AND EQUIPMENT",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1608,
+    "endPdfPage": 1613
+  },
+  {
+    "sectionNumber": "23 05 93",
+    "normalizedSectionNumber": "230593",
+    "sectionTitle": "TESTING, ADJUSTING, AND BALANCING FOR HVAC",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1614,
+    "endPdfPage": 1621
+  },
+  {
+    "sectionNumber": "23 07 11",
+    "normalizedSectionNumber": "230711",
+    "sectionTitle": "HVAC AND BOILER PLANT INSULATION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1622,
+    "endPdfPage": 1635
+  },
+  {
+    "sectionNumber": "23 08 00",
+    "normalizedSectionNumber": "230800",
+    "sectionTitle": "COMMISSIONING OF HVAC SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1636,
+    "endPdfPage": 1639
+  },
+  {
+    "sectionNumber": "23 09 23",
+    "normalizedSectionNumber": "230923",
+    "sectionTitle": "DIRECT-DIGITAL CONTROL SYSTEM FOR HVAC",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1640,
+    "endPdfPage": 1669
+  },
+  {
+    "sectionNumber": "23 22 13",
+    "normalizedSectionNumber": "232213",
+    "sectionTitle": "STEAM AND CONDENSATE HEATING PIPING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1670,
+    "endPdfPage": 1687
+  },
+  {
+    "sectionNumber": "23 23 00",
+    "normalizedSectionNumber": "232300",
+    "sectionTitle": "REFRIGERANT PIPING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1688,
+    "endPdfPage": 1695
+  },
+  {
+    "sectionNumber": "23 31 00",
+    "normalizedSectionNumber": "233100",
+    "sectionTitle": "HVAC DUCTS AND CASINGS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1696,
+    "endPdfPage": 1705
+  },
+  {
+    "sectionNumber": "23 34 00",
+    "normalizedSectionNumber": "233400",
+    "sectionTitle": "HVAC FANS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1706,
+    "endPdfPage": 1711
+  },
+  {
+    "sectionNumber": "23 36 00",
+    "normalizedSectionNumber": "233600",
+    "sectionTitle": "AIR TERMINAL UNITS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1712,
+    "endPdfPage": 1715
+  },
+  {
+    "sectionNumber": "23 37 00",
+    "normalizedSectionNumber": "233700",
+    "sectionTitle": "AIR OUTLETS AND INLETS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1716,
+    "endPdfPage": 1719
+  },
+  {
+    "sectionNumber": "23 40 00",
+    "normalizedSectionNumber": "234000",
+    "sectionTitle": "HVAC AIR CLEANING DEVICES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1720,
+    "endPdfPage": 1729
+  },
+  {
+    "sectionNumber": "23 81 00",
+    "normalizedSectionNumber": "238100",
+    "sectionTitle": "DECENTRALIZED UNITARY HVAC EQUIPMENT",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1730,
+    "endPdfPage": 1739
+  },
+  {
+    "sectionNumber": "23 81 23",
+    "normalizedSectionNumber": "238123",
+    "sectionTitle": "COMPUTER-ROOM AIR-CONDITIONERS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1740,
+    "endPdfPage": 1749
+  },
+  {
+    "sectionNumber": "23 82 00",
+    "normalizedSectionNumber": "238200",
+    "sectionTitle": "CONVECTION HEATING AND COOLING UNITS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1750,
+    "endPdfPage": 1753
+  },
+  {
+    "sectionNumber": "23 82 16",
+    "normalizedSectionNumber": "238216",
+    "sectionTitle": "AIR COILS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1754,
+    "endPdfPage": 1757
+  },
+  {
+    "sectionNumber": "25 10 10",
+    "normalizedSectionNumber": "251010",
+    "sectionTitle": "ADVANCED UTILITY METERING SYSTEM",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1758,
+    "endPdfPage": 1787
+  },
+  {
+    "sectionNumber": "26 05 11",
+    "normalizedSectionNumber": "260511",
+    "sectionTitle": "REQUIREMENTS FOR ELECTRICAL INSTALLATIONS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1788,
+    "endPdfPage": 1795
+  },
+  {
+    "sectionNumber": "26 05 13",
+    "normalizedSectionNumber": "260513",
+    "sectionTitle": "MEDIUM-VOLTAGE CABLES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1796,
+    "endPdfPage": 1803
+  },
+  {
+    "sectionNumber": "26 05 19",
+    "normalizedSectionNumber": "260519",
+    "sectionTitle": "LOW-VOLTAGE ELECTRICAL POWER CONDUCTORS AND CABLES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1804,
+    "endPdfPage": 1809
+  },
+  {
+    "sectionNumber": "26 05 26",
+    "normalizedSectionNumber": "260526",
+    "sectionTitle": "GROUNDING AND BONDING FOR ELECTRICAL SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1810,
+    "endPdfPage": 1815
+  },
+  {
+    "sectionNumber": "26 05 33",
+    "normalizedSectionNumber": "260533",
+    "sectionTitle": "RACEWAY AND BOXES FOR ELECTRICAL SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1816,
+    "endPdfPage": 1823
+  },
+  {
+    "sectionNumber": "26 05 41",
+    "normalizedSectionNumber": "260541",
+    "sectionTitle": "UNDERGROUND ELECTRICAL CONSTRUCTION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1824,
+    "endPdfPage": 1829
+  },
+  {
+    "sectionNumber": "26 05 73",
+    "normalizedSectionNumber": "260573",
+    "sectionTitle": "OVERCURRENT PROTECTIVE DEVICE COORDINATION STUDY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1830,
+    "endPdfPage": 1833
+  },
+  {
+    "sectionNumber": "26 08 00",
+    "normalizedSectionNumber": "260800",
+    "sectionTitle": "COMMISSIONING OF ELECTRICAL SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1834,
+    "endPdfPage": 1837
+  },
+  {
+    "sectionNumber": "26 09 23",
+    "normalizedSectionNumber": "260923",
+    "sectionTitle": "LIGHTING CONTROLS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1838,
+    "endPdfPage": 1841
+  },
+  {
+    "sectionNumber": "26 11 16",
+    "normalizedSectionNumber": "261116",
+    "sectionTitle": "SECONDARY UNIT SUBSTATIONS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1842,
+    "endPdfPage": 1847
+  },
+  {
+    "sectionNumber": "26 12 19",
+    "normalizedSectionNumber": "261219",
+    "sectionTitle": "PAD-MOUNTED, LIQUID-FILLED, MEDIUM-VOLTAGE TRANSFORMERS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1848,
+    "endPdfPage": 1855
+  },
+  {
+    "sectionNumber": "26 13 13",
+    "normalizedSectionNumber": "261313",
+    "sectionTitle": "MEDIUM-VOLTAGE CIRCUIT BREAKER SWITCHGEAR",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1856,
+    "endPdfPage": 1865
+  },
+  {
+    "sectionNumber": "26 13 16",
+    "normalizedSectionNumber": "261316",
+    "sectionTitle": "MEDIUM-VOLTAGE FUSIBLE INTERRUPTER SWITCHES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1866,
+    "endPdfPage": 1871
+  },
+  {
+    "sectionNumber": "26 22 00",
+    "normalizedSectionNumber": "262200",
+    "sectionTitle": "LOW-VOLTAGE TRANSFORMERS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1872,
+    "endPdfPage": 1875
+  },
+  {
+    "sectionNumber": "26 23 00",
+    "normalizedSectionNumber": "262300",
+    "sectionTitle": "LOW-VOLTAGE SWITCHGEAR",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1876,
+    "endPdfPage": 1883
+  },
+  {
+    "sectionNumber": "26 24 13",
+    "normalizedSectionNumber": "262413",
+    "sectionTitle": "DISTRIBUTION SWITCHBOARDS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1884,
+    "endPdfPage": 1891
+  },
+  {
+    "sectionNumber": "26 24 16",
+    "normalizedSectionNumber": "262416",
+    "sectionTitle": "PANELBOARDS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1892,
+    "endPdfPage": 1897
+  },
+  {
+    "sectionNumber": "26 25 11",
+    "normalizedSectionNumber": "262511",
+    "sectionTitle": "BUSWAYS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1898,
+    "endPdfPage": 1901
+  },
+  {
+    "sectionNumber": "26 26 00",
+    "normalizedSectionNumber": "262600",
+    "sectionTitle": "POWER DISTRIBUTION UNITS FOR STATIC UNINTERRUPTIBLE POWER",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1902,
+    "endPdfPage": 1907
+  },
+  {
+    "sectionNumber": "26 27 26",
+    "normalizedSectionNumber": "262726",
+    "sectionTitle": "WIRING DEVICES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1908,
+    "endPdfPage": 1913
+  },
+  {
+    "sectionNumber": "26 29 11",
+    "normalizedSectionNumber": "262911",
+    "sectionTitle": "MOTOR CONTROLLERS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1914,
+    "endPdfPage": 1921
+  },
+  {
+    "sectionNumber": "26 29 21",
+    "normalizedSectionNumber": "262921",
+    "sectionTitle": "ENCLOSED SWITCHES AND CIRCUIT BREAKERS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1922,
+    "endPdfPage": 1925
+  },
+  {
+    "sectionNumber": "26 33 53",
+    "normalizedSectionNumber": "263353",
+    "sectionTitle": "STATIC UNINTERRUPTIBLE POWER SUPPLY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1926,
+    "endPdfPage": 1933
+  },
+  {
+    "sectionNumber": "26 33 53.10",
+    "normalizedSectionNumber": "263353.10",
+    "sectionTitle": "STATIC UPS FOR TELECOMMUNICATIONS SPACES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1934,
+    "endPdfPage": 1943
+  },
+  {
+    "sectionNumber": "26 35 26",
+    "normalizedSectionNumber": "263526",
+    "sectionTitle": "HARMONIC FILTERS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1944,
+    "endPdfPage": 1947
+  },
+  {
+    "sectionNumber": "26 36 23",
+    "normalizedSectionNumber": "263623",
+    "sectionTitle": "AUTOMATIC TRANSFER SWITCHES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1948,
+    "endPdfPage": 1957
+  },
+  {
+    "sectionNumber": "26 41 00",
+    "normalizedSectionNumber": "264100",
+    "sectionTitle": "FACILITY LIGHTNING PROTECTION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1958,
+    "endPdfPage": 1961
+  },
+  {
+    "sectionNumber": "26 42 00",
+    "normalizedSectionNumber": "264200",
+    "sectionTitle": "CATHODIC PROTECTION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1962,
+    "endPdfPage": 1969
+  },
+  {
+    "sectionNumber": "26 43 13",
+    "normalizedSectionNumber": "264313",
+    "sectionTitle": "SURGE PROTECTIVE DEVICES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1970,
+    "endPdfPage": 1973
+  },
+  {
+    "sectionNumber": "26 51 00",
+    "normalizedSectionNumber": "265100",
+    "sectionTitle": "INTERIOR LIGHTING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1974,
+    "endPdfPage": 1977
+  },
+  {
+    "sectionNumber": "26 56 00",
+    "normalizedSectionNumber": "265600",
+    "sectionTitle": "EXTERIOR LIGHTING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1978,
+    "endPdfPage": 1983
+  },
+  {
+    "sectionNumber": "27 05 00",
+    "normalizedSectionNumber": "270500",
+    "sectionTitle": "COMMON WORK RESULTS FOR COMMUNICATIONS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1984,
+    "endPdfPage": 1993
+  },
+  {
+    "sectionNumber": "27 05 11",
+    "normalizedSectionNumber": "270511",
+    "sectionTitle": "REQUIREMENTS FOR COMMUNICATIONS INSTALLATIONS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 1994,
+    "endPdfPage": 2023
+  },
+  {
+    "sectionNumber": "27 05 26",
+    "normalizedSectionNumber": "270526",
+    "sectionTitle": "GROUNDING AND BONDING FOR COMMUNICATIONS SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2024,
+    "endPdfPage": 2027
+  },
+  {
+    "sectionNumber": "27 05 33",
+    "normalizedSectionNumber": "270533",
+    "sectionTitle": "CONDUITS AND BACKBOXES FOR COMMUNICATIONS SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2028,
+    "endPdfPage": 2035
+  },
+  {
+    "sectionNumber": "27 05 36",
+    "normalizedSectionNumber": "270536",
+    "sectionTitle": "CABLE TRAYS FOR COMMUNICATIONS SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2036,
+    "endPdfPage": 2039
+  },
+  {
+    "sectionNumber": "27 08 00",
+    "normalizedSectionNumber": "270800",
+    "sectionTitle": "COMMISSIONING OF COMMUNICATIONS SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2040,
+    "endPdfPage": 2043
+  },
+  {
+    "sectionNumber": "27 10 00",
+    "normalizedSectionNumber": "271000",
+    "sectionTitle": "STRUCTURED CABLING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2044,
+    "endPdfPage": 2047
+  },
+  {
+    "sectionNumber": "27 11 16",
+    "normalizedSectionNumber": "271116",
+    "sectionTitle": "COMMUNICATIONS CABINETS, RACKS, FRAMES, AND ENCLOSURES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2048,
+    "endPdfPage": 2053
+  },
+  {
+    "sectionNumber": "27 11 19",
+    "normalizedSectionNumber": "271119",
+    "sectionTitle": "COMMUNICATIONS TERMINATION BLOCKS AND PATCH PANELS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2054,
+    "endPdfPage": 2057
+  },
+  {
+    "sectionNumber": "27 11 26",
+    "normalizedSectionNumber": "271126",
+    "sectionTitle": "COMMUNICATIONS RACK MOUNTED POWER PROTECTION AND POWER",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2058,
+    "endPdfPage": 2061
+  },
+  {
+    "sectionNumber": "27 13 13",
+    "normalizedSectionNumber": "271313",
+    "sectionTitle": "COMMUNICATIONS COPPER BACKBONE CABLING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2062,
+    "endPdfPage": 2065
+  },
+  {
+    "sectionNumber": "27 13 13.13",
+    "normalizedSectionNumber": "271313.13",
+    "sectionTitle": "COMMUNICATIONS COPPER CABLE SPLICING AND TERMINATIONS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2066,
+    "endPdfPage": 2067
+  },
+  {
+    "sectionNumber": "27 13 23",
+    "normalizedSectionNumber": "271323",
+    "sectionTitle": "COMMUNICATIONS OPTICAL FIBER BACKBONE CABLING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2068,
+    "endPdfPage": 2071
+  },
+  {
+    "sectionNumber": "27 15 00",
+    "normalizedSectionNumber": "271500",
+    "sectionTitle": "COMMUNICATIONS STRUCTURED CABLING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2072,
+    "endPdfPage": 2087
+  },
+  {
+    "sectionNumber": "27 15 13",
+    "normalizedSectionNumber": "271513",
+    "sectionTitle": "COMMUNICATIONS COPPER HORIZONTAL CABLING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2088,
+    "endPdfPage": 2089
+  },
+  {
+    "sectionNumber": "27 15 13.13",
+    "normalizedSectionNumber": "271513.13",
+    "sectionTitle": "COMMUNICATIONS OPTICAL FIBER SPLICING AND TERMINATIONS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2090,
+    "endPdfPage": 2091
+  },
+  {
+    "sectionNumber": "27 16 19",
+    "normalizedSectionNumber": "271619",
+    "sectionTitle": "COMMUNICATIONS PATCH CORDS, STATION CORDS, AND CROSS CONNECT",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2092,
+    "endPdfPage": 2093
+  },
+  {
+    "sectionNumber": "28 05 00",
+    "normalizedSectionNumber": "280500",
+    "sectionTitle": "COMMON WORK RESULTS FOR ELECTRONIC SAFETY AND SECURITY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2094,
+    "endPdfPage": 2121
+  },
+  {
+    "sectionNumber": "28 08 00",
+    "normalizedSectionNumber": "280800",
+    "sectionTitle": "\u2013 COMMISSIONING OF ELECTRONIC SAFETY AND SECURITY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2122,
+    "endPdfPage": 2125
+  },
+  {
+    "sectionNumber": "28 05 13",
+    "normalizedSectionNumber": "280513",
+    "sectionTitle": "CONDUCTORS AND CABLES FOR ELECTRONIC SAFETY AND SECURITY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2126,
+    "endPdfPage": 2137
+  },
+  {
+    "sectionNumber": "28 05 26",
+    "normalizedSectionNumber": "280526",
+    "sectionTitle": "GROUNDING AND BONDING FOR ELECTRONIC SAFETY AND SECURITY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2138,
+    "endPdfPage": 2141
+  },
+  {
+    "sectionNumber": "28 05 28.33",
+    "normalizedSectionNumber": "280528.33",
+    "sectionTitle": "CONDUITS AND BACKBOXES FOR ELECTRONIC SAFETY AND SECURITY",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2142,
+    "endPdfPage": 2155
+  },
+  {
+    "sectionNumber": "28 13 00",
+    "normalizedSectionNumber": "281300",
+    "sectionTitle": "PHYSICAL ACCESS CONTROL SYSTEM",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2156,
+    "endPdfPage": 2199
+  },
+  {
+    "sectionNumber": "28 23 00",
+    "normalizedSectionNumber": "282300",
+    "sectionTitle": "VIDEO SURVEILLANCE",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2200,
+    "endPdfPage": 2221
+  },
+  {
+    "sectionNumber": "28 31 00",
+    "normalizedSectionNumber": "283100",
+    "sectionTitle": "FIRE DETECTION AND ALARM",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2222,
+    "endPdfPage": 2231
+  },
+  {
+    "sectionNumber": "31 20 00",
+    "normalizedSectionNumber": "312000",
+    "sectionTitle": "EARTHWORK",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2232,
+    "endPdfPage": 2241
+  },
+  {
+    "sectionNumber": "31 23 19",
+    "normalizedSectionNumber": "312319",
+    "sectionTitle": "DEWATERING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2242,
+    "endPdfPage": 2245
+  },
+  {
+    "sectionNumber": "31 23 23.33",
+    "normalizedSectionNumber": "312323.33",
+    "sectionTitle": "FLOWABLE FILL",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2246,
+    "endPdfPage": 2251
+  },
+  {
+    "sectionNumber": "32 05 23",
+    "normalizedSectionNumber": "320523",
+    "sectionTitle": "CEMENT AND CONCRETE FOR EXTERIOR IMPROVEMENTS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2252,
+    "endPdfPage": 2263
+  },
+  {
+    "sectionNumber": "32 12 16",
+    "normalizedSectionNumber": "321216",
+    "sectionTitle": "ASPHALT PAVING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2264,
+    "endPdfPage": 2269
+  },
+  {
+    "sectionNumber": "32 17 23",
+    "normalizedSectionNumber": "321723",
+    "sectionTitle": "PAVEMENT MARKINGS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2270,
+    "endPdfPage": 2273
+  },
+  {
+    "sectionNumber": "32 84 00",
+    "normalizedSectionNumber": "328400",
+    "sectionTitle": "PLANTING IRRIGATION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2274,
+    "endPdfPage": 2281
+  },
+  {
+    "sectionNumber": "32 90 00",
+    "normalizedSectionNumber": "329000",
+    "sectionTitle": "PLANTING",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2282,
+    "endPdfPage": 2291
+  },
+  {
+    "sectionNumber": "33 08 00",
+    "normalizedSectionNumber": "330800",
+    "sectionTitle": "COMMISSIONING OF SITE UTILITY SYSTEMS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2292,
+    "endPdfPage": 2295
+  },
+  {
+    "sectionNumber": "33 10 00",
+    "normalizedSectionNumber": "331000",
+    "sectionTitle": "WATER UTILITIES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2296,
+    "endPdfPage": 2309
+  },
+  {
+    "sectionNumber": "33 30 00",
+    "normalizedSectionNumber": "333000",
+    "sectionTitle": "SANITARY SEWER UTILITIES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2310,
+    "endPdfPage": 2319
+  },
+  {
+    "sectionNumber": "33 40 00",
+    "normalizedSectionNumber": "334000",
+    "sectionTitle": "STORM SEWER UTILITIES",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2320,
+    "endPdfPage": 2329
+  },
+  {
+    "sectionNumber": "33 63 00",
+    "normalizedSectionNumber": "336300",
+    "sectionTitle": "STEAM ENERGY DISTRIBUTION",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2330,
+    "endPdfPage": 2361
+  },
+  {
+    "sectionNumber": "34 71 13",
+    "normalizedSectionNumber": "347113",
+    "sectionTitle": "PASSIVE VEHICLE BARRIERS",
+    "documentId": "bedford-specification-manual",
+    "startPdfPage": 2362,
+    "endPdfPage": 2363
+  }
+]

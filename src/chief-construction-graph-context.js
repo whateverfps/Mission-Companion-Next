@@ -1,0 +1,5 @@
+export function buildChiefConstructionGraphContext({ graph, projectId, activePageId = '', selectedObjectId = '', viewport = null, trade = null, readinessEngine = null, priorityEngine = null } = {}) {
+  if (!graph || !projectId) return null; const nodeId=selectedObjectId||activePageId, node=graph.getNode(nodeId); if(!node||node.projectId!==projectId||node.verificationState==='rejected')return null;
+  const summary=graph.getConstructionSummary(nodeId,{readinessEngine});
+  return structuredClone({projectId,entryNode:node,viewport,trade,constructionSummary:summary,verifiedRequirements:summary.requirements.confirmed,approvedSuggestedRequirements:summary.requirements.suggested.filter(item=>item.edge.metadata?.userApproved),readiness:summary.readiness,blockers:summary.dependencies.filter(item=>item.edge.metadata?.blockingState==='blocked'),priorities:priorityEngine?.calculate?.(graph,projectId)||[],operationalRecords:summary.operations,evidencePaths:[...summary.requirements.confirmed,...summary.operations].map(item=>graph.getPath(nodeId,item.node.nodeId,{projectId,maxDepth:4})).filter(Boolean),freshness:node.freshness,warnings:summary.warnings,readOnly:true});
+}

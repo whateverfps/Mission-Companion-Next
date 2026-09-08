@@ -1,0 +1,236 @@
+/* Mission PMIS 2.0 product shell */
+:root{--v2-navy:#0b1f36;--v2-blue:#1e5f99;--v2-cyan:#55b8d9;--v2-ink:#172033;--v2-muted:#66788a;--v2-line:#d5dee8;--v2-soft:#f4f7fa;--v2-white:#fff}
+body.no-workbook .shell,body.no-workbook .app-rail,body.no-workbook .mode-stack{filter:blur(3px);pointer-events:none;user-select:none}
+html.embedded-mode body.no-workbook .shell,html.embedded-mode body.no-workbook .app-rail,html.embedded-mode body.no-workbook .mode-stack{filter:none;pointer-events:auto;user-select:auto}
+html.embedded-mode body{overflow-x:hidden}
+html.embedded-mode .shell{width:100%;max-width:none;padding:10px 10px 12px;overflow-x:hidden}
+html.embedded-mode .layout{grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr)!important;gap:18px!important;align-items:start}
+html.embedded-mode .panel{min-width:0}
+html.embedded-mode .campus-panel,html.embedded-mode .detail-panel{min-width:0!important}
+html.embedded-mode .campus-map-wrap{
+  position:relative;
+  display:block;
+  width:100%;
+  height:auto;
+  min-height:0!important;
+  max-width:100%!important;
+  padding:0;
+  overflow:visible;
+}
+html.embedded-mode .campus-map{
+  display:block;
+  width:100%;
+  height:auto;
+  min-width:0!important;
+  max-width:100%!important;
+  min-height:0!important;
+  max-height:none!important;
+  object-fit:contain!important;
+}
+html.embedded-mode #campusHotspots{
+  position:absolute;
+  inset:0;
+  display:none!important;
+  pointer-events:none!important;
+}
+html.embedded-mode .source-status.bad{
+  display:none!important;
+}
+html.embedded-mode .detail-panel{width:100%}
+html.embedded-mode .launch-overlay,html.embedded-mode .product-gate,html.embedded-mode .file-loader,html.embedded-mode .drop-zone{display:none!important}
+.file-loader,.drop-zone{display:block}
+body:not(.no-workbook) .file-loader,body:not(.no-workbook) .drop-zone{display:none}
+.product-gate{position:fixed;inset:0;z-index:40000;display:none;place-items:center;padding:28px;background:radial-gradient(circle at 50% 15%,rgba(52,113,166,.32),transparent 42%),linear-gradient(145deg,#071522,#0b2036 55%,#0d2a46);color:white}
+body.no-workbook .product-gate{display:grid}
+.product-gate-card{width:min(760px,96vw);padding:46px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(7,21,34,.88);box-shadow:0 28px 90px rgba(0,0,0,.42);text-align:center;backdrop-filter:blur(18px)}
+.product-gate-logo{width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 10px 22px rgba(0,0,0,.35))}.product-gate h1{font-size:42px;margin:12px 0 3px}.product-gate .tagline{font-size:17px;color:#b9cce0;margin:0 0 28px}.product-gate .load-primary{display:inline-flex;align-items:center;justify-content:center;min-width:220px;padding:14px 20px;border:0;border-radius:10px;background:#fff;color:#0b1f36;font-weight:800;cursor:pointer}.product-gate .drop-message{margin:18px auto 0;padding:17px;border:1px dashed rgba(255,255,255,.35);border-radius:12px;color:#bdd0e2;max-width:520px}.product-gate .product-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:24px;font-size:12px;color:#8fa8bf}.product-gate .gate-error{margin-top:14px;color:#ffb7b7;min-height:18px}
+.global-command{display:flex;align-items:center;gap:8px;min-width:min(440px,38vw);margin-left:auto}.global-command input{width:100%;padding:11px 13px;border:1px solid #bfcbd7;border-radius:9px;background:#fff;color:#172033}.global-command button{padding:11px 13px;border:0;border-radius:9px;background:#17365d;color:#fff;font-weight:700;cursor:pointer}
+.search-results-popover{position:fixed;z-index:30000;top:84px;right:28px;width:min(620px,calc(100vw - 90px));max-height:70vh;overflow:auto;background:#fff;border:1px solid #cbd6e1;border-radius:14px;box-shadow:0 24px 70px rgba(10,31,53,.3);display:none}.search-results-popover.show{display:block}.search-results-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #e2e8ef}.search-result{display:block;width:100%;border:0;border-bottom:1px solid #edf1f5;background:white;text-align:left;padding:13px 16px;cursor:pointer}.search-result:hover{background:#f2f7fb}.search-result strong{display:block;color:#17365d}.search-result span{display:block;color:#65788e;font-size:12px;margin-top:3px}.search-empty{padding:24px;color:#65788e;text-align:center}
+.product-health{margin:18px 0}.health-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:10px}.health-head h2{margin:0}.health-grid{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:10px}.health-card{padding:14px;border:1px solid #d5dee8;border-radius:12px;background:#fff;cursor:pointer}.health-card:hover{box-shadow:0 8px 24px rgba(20,51,83,.12)}.health-card .health-name{font-size:12px;color:#65788e;text-transform:uppercase;letter-spacing:.05em}.health-card .health-status{font-size:18px;font-weight:800;margin-top:5px}.health-card .health-evidence{font-size:12px;color:#65788e;margin-top:5px}.health-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}.health-good{background:#2d9b62}.health-watch{background:#e9a62f}.health-critical{background:#cf3f45}.health-neutral{background:#8493a4}
+.workspace-overlay{position:fixed;inset:0;z-index:29000;background:rgba(4,15,27,.76);display:none;padding:24px}.workspace-overlay.show{display:block}.workspace-board{max-width:1480px;height:calc(100vh - 48px);margin:auto;background:#eef3f7;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 28px 90px rgba(0,0,0,.4)}.workspace-top{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;background:#0b1f36;color:#fff}.workspace-top h2{margin:0}.workspace-top p{margin:4px 0 0;color:#aebfd0}.workspace-close{border:0;border-radius:8px;padding:9px 13px;font-weight:800;cursor:pointer}.workspace-tabs{display:flex;gap:5px;padding:10px 14px;background:#dce6ef;overflow:auto}.workspace-tab{border:0;padding:10px 14px;border-radius:8px;background:transparent;font-weight:700;color:#38536c;cursor:pointer;white-space:nowrap}.workspace-tab.active{background:#fff;color:#17365d;box-shadow:0 2px 10px rgba(14,45,75,.12)}.workspace-body{overflow:auto;padding:18px 22px}.workspace-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}.workspace-stat{background:white;border:1px solid #d4dee7;border-radius:11px;padding:14px}.workspace-stat span{display:block;font-size:11px;color:#65788e;text-transform:uppercase}.workspace-stat b{display:block;font-size:24px;color:#17365d;margin-top:4px}.workspace-card{background:#fff;border:1px solid #d4dee7;border-radius:12px;padding:16px;margin-bottom:13px}.workspace-card h3{margin:0 0 8px;color:#17365d}.workspace-table{width:100%;border-collapse:collapse;font-size:12px}.workspace-table th,.workspace-table td{border:1px solid #d9e1e8;padding:7px;text-align:left;vertical-align:top}.workspace-table th{background:#e9f0f6;color:#17365d}.workspace-empty{padding:22px;text-align:center;color:#65788e;background:white;border:1px dashed #bdcad5;border-radius:10px}
+.report-launch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 16px}.report-launch-card{border:1px solid #d6e0e8;background:#fff;border-radius:10px;padding:14px;cursor:pointer}.report-launch-card:hover{box-shadow:0 8px 24px rgba(20,51,83,.13)}.report-launch-card strong{display:block;color:#17365d}.report-launch-card span{display:block;color:#687b8d;font-size:12px;margin:4px 0 10px}.report-launch-card button{border:0;border-radius:7px;background:#17365d;color:#fff;padding:8px 10px;font-weight:700;cursor:pointer}
+.product-badge{font-size:11px;font-weight:800;letter-spacing:.1em;color:#55b8d9;text-transform:uppercase}
+@media(max-width:900px){.health-grid,.workspace-summary,.report-launch-grid{grid-template-columns:1fr 1fr}.global-command{min-width:220px}.workspace-overlay{padding:8px}.workspace-board{height:calc(100vh - 16px)}}
+@media(max-width:560px){.health-grid,.workspace-summary,.report-launch-grid{grid-template-columns:1fr}.product-gate-card{padding:28px 18px}.product-gate h1{font-size:32px}.global-command{display:none}}
+
+/* 2.0.1 Building Workspace integration and contrast fix */
+.workspace-board,.workspace-body,.workspace-card,.workspace-empty,.workspace-table,.workspace-table td{
+  color:#172033 !important;
+  -webkit-text-fill-color:#172033 !important;
+  opacity:1 !important;
+}
+.workspace-body p,.workspace-copy,.workspace-intro{
+  color:#26384a !important;
+  -webkit-text-fill-color:#26384a !important;
+  opacity:1 !important;
+  line-height:1.55;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.workspace-card b,.workspace-card strong{
+  color:#17365d !important;
+  -webkit-text-fill-color:#17365d !important;
+}
+.workspace-status-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 11px;
+  border-radius:999px;
+  background:#e7f0fa;
+  border:1px solid #c2d4e5;
+  color:#17365d !important;
+  -webkit-text-fill-color:#17365d !important;
+  font-weight:800;
+}
+.workspace-detail-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(180px,1fr));
+  gap:10px;
+}
+.workspace-detail-grid>div{
+  padding:12px;
+  border:1px solid #d9e2ea;
+  border-radius:9px;
+  background:#f7f9fb;
+}
+.workspace-detail-grid span{
+  display:block;
+  color:#66788a !important;
+  -webkit-text-fill-color:#66788a !important;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.workspace-detail-grid b{display:block;margin-top:5px}
+.workspace-table-wrap{width:100%;overflow:auto}
+.workspace-table td{background:#fff !important}
+.workspace-table tbody tr:nth-child(even) td{background:#f7f9fb !important}
+.workspace-intro{margin-top:-2px;font-size:12px}
+@media(max-width:760px){.workspace-detail-grid{grid-template-columns:1fr}}
+
+/* 2.0.2 shared data model interaction pass */
+.health-card{
+  appearance:none;
+  width:100%;
+  text-align:left;
+  font:inherit;
+  color:#172033 !important;
+  -webkit-text-fill-color:#172033 !important;
+  opacity:1 !important;
+}
+.health-card .health-name{
+  display:block;
+  color:#65788e !important;
+  -webkit-text-fill-color:#65788e !important;
+}
+.health-card .health-status{
+  display:block;
+  color:#17365d !important;
+  -webkit-text-fill-color:#17365d !important;
+  opacity:1 !important;
+}
+.health-card .health-evidence{
+  display:block;
+  color:#51677b !important;
+  -webkit-text-fill-color:#51677b !important;
+  opacity:1 !important;
+}
+.health-card:focus-visible{outline:3px solid #55b8d9;outline-offset:2px}
+.health-card:active{transform:translateY(1px)}
+
+/* 2.0.3 purpose-built report previews */
+.report-current-title{display:flex;align-items:baseline;gap:10px;margin:8px 0 12px;color:#6d8195}.report-current-title span{text-transform:uppercase;font-size:10px;letter-spacing:.12em}.report-current-title strong{font-size:18px;color:#eef5fc}.report-context-list{list-style:none;margin:0;padding:0}.report-context-list li{padding:10px 0;border-bottom:1px solid rgba(160,185,210,.18)}.report-context-list li:last-child{border-bottom:0}.report-context-list b,.report-context-list span{display:block}.report-context-list b{color:#eef5fc}.report-context-list span{margin-top:3px;color:#b9c9d9;font-size:12px;line-height:1.4}
+
+/* Interaction polish for embedded PMIS */
+html.embedded-mode .workspace-tab,
+html.embedded-mode .report-launch-card,
+html.embedded-mode .health-card,
+html.embedded-mode .global-command button,
+html.embedded-mode .load-primary,
+html.embedded-mode .workspace-close,
+html.embedded-mode .workspace-card button,
+html.embedded-mode .workspace-empty button,
+html.embedded-mode .workspace-body button,
+html.embedded-mode .health-grid button,
+html.embedded-mode .report-launch-card button,
+html.embedded-mode .product-gate button,
+html.embedded-mode .search-result,
+html.embedded-mode .source-doc,
+html.embedded-mode .queue-actions button{
+  transition:background-color .14s ease,border-color .14s ease,color .14s ease,box-shadow .14s ease,transform .14s ease,opacity .14s ease;
+}
+html.embedded-mode .workspace-tab:hover,
+html.embedded-mode .report-launch-card:hover,
+html.embedded-mode .health-card:hover,
+html.embedded-mode .global-command button:hover,
+html.embedded-mode .load-primary:hover,
+html.embedded-mode .workspace-close:hover,
+html.embedded-mode .workspace-card button:hover,
+html.embedded-mode .workspace-empty button:hover,
+html.embedded-mode .workspace-body button:hover,
+html.embedded-mode .health-grid button:hover,
+html.embedded-mode .report-launch-card button:hover,
+html.embedded-mode .product-gate button:hover,
+html.embedded-mode .search-result:hover,
+html.embedded-mode .source-doc:hover,
+html.embedded-mode .queue-actions button:hover{
+  filter:brightness(1.05);
+  box-shadow:0 10px 18px rgba(14,45,75,.12);
+  transform:translateY(-1px);
+}
+html.embedded-mode .workspace-tab:active,
+html.embedded-mode .report-launch-card:active,
+html.embedded-mode .health-card:active,
+html.embedded-mode .global-command button:active,
+html.embedded-mode .load-primary:active,
+html.embedded-mode .workspace-close:active,
+html.embedded-mode .workspace-card button:active,
+html.embedded-mode .workspace-empty button:active,
+html.embedded-mode .workspace-body button:active,
+html.embedded-mode .health-grid button:active,
+html.embedded-mode .report-launch-card button:active,
+html.embedded-mode .product-gate button:active,
+html.embedded-mode .search-result:active,
+html.embedded-mode .source-doc:active,
+html.embedded-mode .queue-actions button:active{
+  transform:translateY(1px) scale(.992);
+  box-shadow:0 6px 12px rgba(14,45,75,.08);
+}
+html.embedded-mode .workspace-tab:focus-visible,
+html.embedded-mode .report-launch-card:focus-visible,
+html.embedded-mode .health-card:focus-visible,
+html.embedded-mode .global-command button:focus-visible,
+html.embedded-mode .load-primary:focus-visible,
+html.embedded-mode .workspace-close:focus-visible,
+html.embedded-mode .workspace-card button:focus-visible,
+html.embedded-mode .workspace-empty button:focus-visible,
+html.embedded-mode .workspace-body button:focus-visible,
+html.embedded-mode .health-grid button:focus-visible,
+html.embedded-mode .report-launch-card button:focus-visible,
+html.embedded-mode .product-gate button:focus-visible,
+html.embedded-mode .search-result:focus-visible,
+html.embedded-mode .source-doc:focus-visible,
+html.embedded-mode .queue-actions button:focus-visible{
+  outline:2px solid #55b8d9;
+  outline-offset:2px;
+}
+html.embedded-mode .workspace-tab:disabled,
+html.embedded-mode .report-launch-card:disabled,
+html.embedded-mode .health-card:disabled,
+html.embedded-mode .global-command button:disabled,
+html.embedded-mode .load-primary:disabled,
+html.embedded-mode .workspace-close:disabled,
+html.embedded-mode .workspace-card button:disabled,
+html.embedded-mode .workspace-empty button:disabled,
+html.embedded-mode .workspace-body button:disabled,
+html.embedded-mode .health-grid button:disabled,
+html.embedded-mode .report-launch-card button:disabled,
+html.embedded-mode .product-gate button:disabled,
+html.embedded-mode .search-result:disabled,
+html.embedded-mode .source-doc:disabled,
+html.embedded-mode .queue-actions button:disabled{
+  opacity:.58;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:none;
+}

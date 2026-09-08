@@ -1,0 +1,11 @@
+{
+  "files": {
+    "518-22-700.Bedford.EHRM.IFC.BCH.20260316.pdf": {
+      "buildingId": "CRESCENT-HOUSE",
+      "buildingLabel": "Crescent House",
+      "documentType": "drawing-set",
+      "revision": "IFC",
+      "issueDate": "2026-03-16"
+    }
+  }
+}

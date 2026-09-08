@@ -1,0 +1,282 @@
+{
+  "summary": {
+    "totalPages": 2363,
+    "totalSectionsExtracted": 173,
+    "ambiguousSections": 0,
+    "duplicatesRemoved": 16,
+    "extractionDate": "2026-08-09T16:08:55.090Z"
+  },
+  "ambiguousSections": [],
+  "duplicatesRemoved": [
+    {
+      "sectionNumber": "01 35 26",
+      "removed": {
+        "page": 703,
+        "title": "SAFETY REQUIREMENTS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "kept": {
+        "page": 700,
+        "title": "SAFETY REQUIREMENTS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 700, removing occurrence on page 703"
+    },
+    {
+      "sectionNumber": "01 45 35",
+      "removed": {
+        "page": 754,
+        "title": "SECTION 01 45 35",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 752,
+        "title": "SPECIAL INSPECTIONS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 752, removing occurrence on page 754"
+    },
+    {
+      "sectionNumber": "01 91 00",
+      "removed": {
+        "page": 1175,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS for submittal requirements",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 814,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 814, removing occurrence on page 1175"
+    },
+    {
+      "sectionNumber": "01 91 00",
+      "removed": {
+        "page": 1435,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS for submittal requirements",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 814,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 814, removing occurrence on page 1435"
+    },
+    {
+      "sectionNumber": "01 91 00",
+      "removed": {
+        "page": 1525,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS for submittal requirements",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 814,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 814, removing occurrence on page 1525"
+    },
+    {
+      "sectionNumber": "23 08 00",
+      "removed": {
+        "page": 1738,
+        "title": "– COMMISSIONING OF HVAC SYSTEMS.",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 1636,
+        "title": "COMMISSIONING OF HVAC SYSTEMS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 1636, removing occurrence on page 1738"
+    },
+    {
+      "sectionNumber": "01 91 00",
+      "removed": {
+        "page": 1835,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS for submittal requirements",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 814,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 814, removing occurrence on page 1835"
+    },
+    {
+      "sectionNumber": "27 05 53",
+      "removed": {
+        "page": 2038,
+        "title": "IDENTIFICATION FOR COMMUNICATIONS SYSTEMS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "kept": {
+        "page": 364,
+        "title": "- Identification for",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 364, removing occurrence on page 2038"
+    },
+    {
+      "sectionNumber": "27 05 53",
+      "removed": {
+        "page": 2039,
+        "title": "- Identification for Communications Systems",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 364,
+        "title": "- Identification for",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 364, removing occurrence on page 2039"
+    },
+    {
+      "sectionNumber": "27 15 13",
+      "removed": {
+        "page": 2089,
+        "title": "- COMMUNICATIONS COPPER HORIZONTAL CABLING",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 2088,
+        "title": "COMMUNICATIONS COPPER HORIZONTAL CABLING",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 2088, removing occurrence on page 2089"
+    },
+    {
+      "sectionNumber": "27 16 19",
+      "removed": {
+        "page": 2093,
+        "title": "- COMMUNICATIONS PATCH CORDS, STATION CORDS, AND CROSS",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 2092,
+        "title": "COMMUNICATIONS PATCH CORDS, STATION CORDS, AND CROSS CONNECT",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 2092, removing occurrence on page 2093"
+    },
+    {
+      "sectionNumber": "28 08 00",
+      "removed": {
+        "page": 2152,
+        "title": "COMMISSIONING OF ELECTRONIC SAFETY AND SECURITY SYSTEMS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "kept": {
+        "page": 2122,
+        "title": "– COMMISSIONING OF ELECTRONIC SAFETY AND SECURITY",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 2122, removing occurrence on page 2152"
+    },
+    {
+      "sectionNumber": "01 91 00",
+      "removed": {
+        "page": 2153,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS for submittal requirements",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 814,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 814, removing occurrence on page 2153"
+    },
+    {
+      "sectionNumber": "28 08 00",
+      "removed": {
+        "page": 2198,
+        "title": "– COMMISSIONING OF ELECTRONIC SAFETY AND SECURITY",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 2122,
+        "title": "– COMMISSIONING OF ELECTRONIC SAFETY AND SECURITY",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 2122, removing occurrence on page 2198"
+    },
+    {
+      "sectionNumber": "28 08 00",
+      "removed": {
+        "page": 2221,
+        "title": "– “COMMISSIONING OF ELECTRONIC SAFETY AND SECURITY",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 2122,
+        "title": "– COMMISSIONING OF ELECTRONIC SAFETY AND SECURITY",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 2122, removing occurrence on page 2221"
+    },
+    {
+      "sectionNumber": "01 91 00",
+      "removed": {
+        "page": 2293,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS for submittal requirements",
+        "extractionMethod": "SECTION prefix with title",
+        "confidence": 0.9
+      },
+      "kept": {
+        "page": 814,
+        "title": "GENERAL COMMISSIONING REQUIREMENTS",
+        "extractionMethod": "SECTION prefix with title on next line",
+        "confidence": 0.85
+      },
+      "reason": "Duplicate section number. Keeping occurrence on page 814, removing occurrence on page 2293"
+    }
+  ],
+  "extractionMethods": {
+    "SECTION prefix with title on next line": 171,
+    "SECTION prefix with title": 2
+  },
+  "pageCoverage": {
+    "totalPages": 2363,
+    "pagesCovered": 2361,
+    "coveragePercent": "99.9"
+  },
+  "confidenceBreakdown": {
+    "high": 173,
+    "medium": 0,
+    "low": 0
+  }
+}

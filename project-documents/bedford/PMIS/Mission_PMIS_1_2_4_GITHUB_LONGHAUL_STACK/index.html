@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Mission PMIS</title>
+  <link rel="icon" href="assets/mission_pmis.ico"/>
+  <link rel="stylesheet" href="css/app.css"/>
+
+</head>
+<body>
+
+<div id="launchOverlay" class="launch-overlay" aria-label="Mission PMIS startup screen">
+  <div class="launch-card">
+    <img class="launch-logo" src="assets/mission_pmis_icon.png" alt="Mission PMIS icon"/>
+    <h1 class="launch-title">Mission PMIS</h1>
+    <div class="launch-sub">Engineering Operations Platform · Bedford VA Medical Center</div>
+    <div class="launch-bar"><span></span></div>
+    <div class="launch-steps">
+      <div>Reading PMIS_Data...</div>
+      <div>Loading campus map...</div>
+      <div>Synchronizing building status...</div>
+      <div>Preparing command brief...</div>
+    </div>
+    <button class="launch-skip" type="button" onclick="dismissLaunch()">Enter Mission Control</button>
+  </div>
+</div>
+
+
+<nav class="app-rail" aria-label="Mission PMIS primary navigation">
+  <div class="rail-logo" title="Mission PMIS"><img src="assets/mission_pmis_icon.png" alt="Mission PMIS"/></div>
+  <button class="rail-btn active" type="button" data-rail="mission" title="Mission Control">⌂<span class="rail-hint">Mission Control</span></button>
+  <button class="rail-btn" type="button" data-rail="campus" title="Campus Map">🗺️<span class="rail-hint">Campus Map</span></button>
+  <button class="rail-btn" type="button" data-rail="buildings" title="Buildings">▦<span class="rail-hint">Buildings</span></button>
+  <button class="rail-btn" type="button" data-rail="risks" title="Risks">⚠<span class="rail-hint">Risks</span></button>
+  <button class="rail-btn" type="button" data-rail="questions" title="Questions">?<span class="rail-hint">Questions</span></button>
+  <button class="rail-btn" type="button" data-rail="meeting" title="Meeting Mode">▣<span class="rail-hint">Meeting Mode</span></button>
+  <button class="rail-btn" type="button" data-rail="field" title="Field Mode">☑<span class="rail-hint">Field Mode</span></button>
+  <button class="rail-btn" type="button" data-rail="engineering" title="Engineering Mode">⌖<span class="rail-hint">Engineering Mode</span></button>
+  <button class="rail-btn" type="button" data-rail="reports" title="Reports Center">▤<span class="rail-hint">Reports Center</span></button>
+  <div class="rail-spacer"></div>
+  <button class="rail-btn" type="button" data-rail="about" title="About">i<span class="rail-hint">About</span></button>
+</nav>
+
+<div class="shell">
+  <header class="hero">
+    <div class="app-brand"><img src="assets/mission_pmis_icon.png" alt="Mission PMIS icon"/><div>
+      <div class="eyebrow">BEDFORD VA MEDICAL CENTER</div>
+      <h1>Mission PMIS</h1>
+      <p class="hero-statement">Engineering operations workspace powered by the Excel PMIS workbook.</p>
+    </div></div>
+    <div class="selector-card">
+      <label for="buildingSelect">Selected Building</label>
+      <select id="buildingSelect"></select>
+      <div id="selectedStatus" class="status-pill">Loading</div>
+      <label class="file-loader" for="workbookInput">
+        <span>Load Excel Workbook</span>
+        <small>.xlsx from your computer</small>
+      </label>
+      <input id="workbookInput" class="hidden-file" type="file" accept=".xlsx,.xlsm,.xls"/>
+      <div id="sourceStatus" class="source-status">Using packaged workbook snapshot.</div>
+    </div>
+  </header>
+
+  <nav class="mission-ribbon" aria-label="Command center views">
+    <button class="ribbon-chip active" data-nav="mission" type="button">Mission Control</button>
+    <button class="ribbon-chip" data-nav="campus" type="button">Campus</button>
+    <button class="ribbon-chip" data-nav="buildings" type="button">Buildings</button>
+    <button class="ribbon-chip" data-nav="risks" type="button">Risks</button>
+    <button class="ribbon-chip" data-nav="questions" type="button">Questions</button>
+    <span class="ribbon-spacer"></span>
+    <span class="ribbon-chip engine">Excel Engine Active</span>
+    <span class="ribbon-chip engine">Local Browser Mode</span>
+  </nav>
+
+  <section class="kpi-grid" id="missionSection"></section>
+  <section class="command-hud" id="commandHud"></section>
+  <section class="kpi-grid" id="kpis"></section>
+
+  <main class="layout">
+    <section class="panel campus-panel" id="campusSection">
+      <div class="map-toolbar">
+        <div class="map-title">
+          <h2>Bedford VA Campus Map</h2>
+          <p>Click a building marker to load the selected building source detail.</p>
+        </div>
+        <div>
+          <div class="map-legend">
+            <span class="legend-pill"><i class="dot ready"></i>Ready</span>
+            <span class="legend-pill"><i class="dot warn"></i>Watch</span>
+            <span class="legend-pill"><i class="dot critical"></i>Critical</span>
+            <span class="legend-pill"><i class="dot nodata"></i>No Data</span>
+          </div>
+          <div class="map-mode-toggle" aria-label="Map view mode">
+            <button class="map-mode-btn active" type="button" data-map-mode="operations">Operations Map</button>
+            <button class="map-mode-btn" type="button" data-map-mode="engineering">Engineering Site Plan</button>
+          </div>
+          <div class="map-filter-row" aria-label="Map status filter">
+            <button class="map-filter-btn active" type="button" data-map-filter="all">All</button>
+            <button class="map-filter-btn" type="button" data-map-filter="ready">Ready</button>
+            <button class="map-filter-btn" type="button" data-map-filter="warn">Watch</button>
+            <button class="map-filter-btn" type="button" data-map-filter="critical">Critical</button>
+            <button class="map-filter-btn" type="button" data-map-filter="no-data">No Data</button>
+          </div>
+        </div>
+      </div>
+      <div id="mapIntelCard" class="map-intel-card"></div>
+      <div id="campusIntelligence" class="campus-intelligence"></div>
+      <div id="decisionStrip" class="decision-strip"></div>
+      <div class="campus-map-wrap" id="campusMapWrap">
+        <img id="campusMapImage" class="campus-map" src="assets/campus_map-2.png" alt="Bedford VA campus map"/>
+        <div id="campusHotspots"></div>
+        <div id="engineeringNote" class="engineering-note" style="display:none"><strong>Engineering Reference</strong>This view brings the site features / parking plan into the same interface. Keep using the building selector or operations map markers to drive the Excel detail panel.</div>
+      </div>
+      <div class="tile-section-title">
+        <div><h3>Building Rollup Tiles</h3><p>Backup selector view from the Excel rollup.</p></div>
+        <input id="searchBox" placeholder="Search building..."/>
+      </div>
+      <div id="dropZone" class="drop-zone">Drop the Excel workbook here to refresh this web view.</div>
+      <div class="tile-grid" id="tileGrid"></div>
+    </section>
+
+    <aside class="panel detail-panel">
+      <div id="buildingDetail"></div>
+    </aside>
+  </main>
+
+
+
+
+
+<div class="mode-stack" aria-label="Mission PMIS modes">
+  <button id="meetingLaunch" type="button">Meeting</button>
+  <button type="button" onclick="openFieldMode()">Field</button>
+  <button type="button" onclick="openEngineeringMode()">Engineering</button>
+  <button type="button" onclick="openReportsMode()">Reports</button>
+</div>
+<div id="meetingOverlay" class="meeting-overlay" aria-label="Executive meeting mode">
+  <div class="meeting-board">
+    <div class="meeting-top">
+      <div class="meeting-title">
+        <div class="eyebrow">MISSION PMIS</div>
+        <h2>Executive Meeting Mode</h2>
+        <p>One-screen briefing built from the same Excel rollup. No backend changes.</p>
+      </div>
+      <div class="meeting-actions">
+        <button class="meeting-btn" type="button" onclick="copyMeetingBrief()">Copy Meeting Brief</button>
+        <button class="meeting-btn" type="button" onclick="window.print()">Print</button>
+        <button class="meeting-btn meeting-close-x" type="button" onclick="closeMeetingMode()">×</button>
+      </div>
+    </div>
+    <div id="meetingContent"></div>
+  </div>
+</div>
+
+  <div class="field-drawer" id="fieldDrawer" aria-hidden="true">
+    <div class="field-panel" role="dialog" aria-label="Field Mode">
+      <div class="field-head">
+        <div>
+          <div class="mini">Tablet / Site Walk View</div>
+          <h2>Field Mode</h2>
+          <p class="note">Fast inspection view built from the loaded Excel workbook. No backend changes.</p>
+        </div>
+        <button class="field-close" type="button" onclick="closeFieldMode()">Close</button>
+      </div>
+      <div id="fieldModeContent"></div>
+    </div>
+  </div>
+
+  <section class="panel command-brief" id="briefSection">
+    <div class="brief-head">
+      <div>
+        <div class="mini">Executive / Field Talking Points</div>
+        <h2>Command Brief</h2>
+        <p>Auto-built from the loaded workbook. Use this before a status meeting, site walk, or leadership check-in.</p>
+      </div>
+      <div class="brief-actions">
+        <button class="brief-btn" type="button" onclick="copyCommandBrief()">Copy Brief</button>
+        <button class="brief-btn" type="button" onclick="window.print()">Print View</button>
+      </div>
+    </div>
+    <div id="commandBrief"></div>
+    <div id="activityFeed" class="activity-feed"></div>
+    <div id="copyStatus" class="copy-status">Brief copied.</div>
+  </section>
+
+  <section class="bottom-grid" id="focusSection">
+    <div class="panel">
+      <div class="panel-head"><h2>Today's Focus</h2><span class="mini">Priority worklist</span></div>
+      <div id="focusList" class="focus-list"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>How this works</h2><span class="mini">No Python needed</span></div>
+      <p class="note"><b>Important:</b> use the extracted folder, not the file opened inside the zip preview. Open <b>index.html</b>, then use <b>Load Excel Workbook</b> or drag the workbook onto the page.</p>
+      <div class="codebox">1. Right-click zip → Extract All<br/>2. Open the extracted folder<br/>3. Double-click index.html<br/>4. Load Bedford_VA_EHRM_PMIS_MASTER_v8.3.xlsx</div>
+    </div>
+  </section>
+</div>
+
+
+
+<div id="buildingDrawer" class="building-drawer" aria-label="Building browser">
+  <div class="building-drawer-panel">
+    <div class="drawer-head">
+      <div>
+        <h2>Building Browser</h2>
+        <p>Use this as the secondary selector. The campus map remains the primary workspace; this drawer lets you quickly jump to any Excel rollup building.</p>
+      </div>
+      <button class="drawer-close" type="button" onclick="closeBuildingDrawer()">×</button>
+    </div>
+    <div class="drawer-tools">
+      <input id="buildingDrawerSearch" placeholder="Search building..." />
+      <div id="buildingDrawerCount" class="drawer-count"></div>
+    </div>
+    <div id="buildingDrawerGrid" class="drawer-grid"></div>
+  </div>
+</div>
+<div id="aboutOverlay" class="about-overlay" aria-label="About Mission PMIS">
+  <div class="about-card">
+    <div class="eyebrow">MISSION PMIS</div>
+    <h2>Engineering Operations Platform</h2>
+    <p>Mission PMIS is a standalone application-style interface powered by the Excel PMIS workbook. The workbook remains the source of truth; this front end organizes the project through the campus map, building workspace, and briefing modes.</p>
+    <div class="about-grid">
+      <div class="about-item"><span>Version</span><strong>1.2.2 Wow Polish</strong></div>
+      <div class="about-item"><span>Project</span><strong>Bedford VA EHRM</strong></div>
+      <div class="about-item"><span>Backend</span><strong>Excel PMIS_Data / Assessment Sheets</strong></div>
+      <div class="about-item"><span>Interface</span><strong>Standalone Local HTML Application</strong></div>
+    </div>
+    <button class="about-close" type="button" onclick="closeAbout()">Close</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="js/data-snapshot.js"></script>
+<script src="js/app-main.js?v=trade-health-fix-20260807"></script>
+
+
+<div id="reportOverlay" class="report-overlay" aria-label="Reports Center">
+  <div class="report-board"><div class="report-board-scroll">
+    <div class="report-top">
+      <div class="report-title">
+        <div class="mission-mode-badge"><i class="pulse-dot"></i> Reports Center</div>
+        <h2>Mission Reports</h2>
+        <p>Copy-ready briefs generated from the loaded Excel workbook. Presentation only; workbook backend remains untouched.</p>
+      </div>
+      <div class="report-actions">
+        <button class="report-btn" type="button" onclick="copyReportsBrief()">Copy Report</button>
+        <button class="report-btn primary" type="button" onclick="printSelectedReport()">Print Current</button>
+        <button class="report-btn primary" type="button" onclick="printAllBuildingsReport()">Print All Buildings</button>
+        <button class="report-btn meeting-close-x" type="button" onclick="closeReportsMode()">×</button>
+      </div>
+    </div>
+    <div id="reportsContent"></div>
+    <div id="reportsCopyStatus" class="report-copy-status">Report copied.</div>
+  </div></div>
+</div>
+
+
+<div id="engineeringOverlay" class="engineering-overlay" aria-label="Engineering Mode">
+  <div class="engineering-board">
+    <div class="engineering-top">
+      <div class="engineering-title">
+        <div class="mission-mode-badge"><i class="pulse-dot"></i> Engineering Mode</div>
+        <h2>Engineering Site Intelligence</h2>
+        <p>Reference plan, selected building status, and field coordination cues.</p>
+      </div>
+      <div class="eng-actions">
+        <button class="meeting-btn" type="button" onclick="copyEngineeringBrief()">Copy Engineering Brief</button>
+        <button class="meeting-btn" type="button" onclick="window.print()">Print</button>
+        <button class="meeting-btn meeting-close-x" type="button" onclick="closeEngineeringMode()">×</button>
+      </div>
+    </div>
+    <div id="engineeringContent"></div>
+  </div>
+</div>
+
+<script src="js/meeting-mode.js"></script>
+
+
+<script src="js/engineering-mode.js"></script>
+
+
+<script src="js/reports-center.js"></script>
+
+</body>
+</html>

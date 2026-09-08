@@ -1,0 +1,8 @@
+evaluation/
+.DS_Store
+node_modules/
+
+# Local secrets - never commit
+.env
+.env.*
+!.env.example

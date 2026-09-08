@@ -1,0 +1,23 @@
+import { engine } from './engine.js';
+import { createImportBatch, analyzeImportBatch, correctImportFile, acceptImportBatch } from './import-review-service.js';
+
+const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
+const root = () => document.querySelector('#app');
+
+export function openImportReview({ projectId = 'bedford', libraryId = '', onAccepted = () => {} } = {}) {
+  const input = document.createElement('input'); input.type = 'file'; input.multiple = true; input.accept = '.pdf,.docx,.xls,.xlsx,.txt,.md,.csv,.json,.html,.htm,.xml,.log'; input.hidden = true; document.body.append(input);
+  const modal = document.createElement('div'); modal.className = 'next-import-modal'; modal.innerHTML = `<div class="next-import-dialog"><button class="next-close" data-close>Close</button><p class="eyebrow">Project ingestion</p><h1>Import project information</h1><p class="next-muted">Sources remain preserved and will be reviewed before entering project knowledge.</p><button class="next-import" data-choose>Choose files</button><div data-import-content><p class="next-muted">Supported: PDF, DOCX, XLS/XLSX, CSV, TXT, Markdown, JSON, HTML, XML, LOG.</p></div></div>`; root().append(modal);
+  let batch = null;
+  const content = modal.querySelector('[data-import-content]');
+  const close = () => { input.remove(); modal.remove(); };
+  modal.addEventListener('click', async event => {
+    if (event.target.closest('[data-close]')) return close();
+    if (event.target.closest('[data-choose]')) return input.click();
+    const type = event.target.closest('[data-type]'); if (type && batch) { correctImportFile(batch, type.dataset.fileId, { documentType: type.dataset.type }); renderReview(); }
+    if (event.target.closest('[data-destination]')) { const button = event.target.closest('[data-destination]'); if (batch) { correctImportFile(batch, button.dataset.fileId, { destination: button.dataset.destination }); renderReview(); } }
+    if (event.target.closest('[data-accept]') && batch) { const button = event.target.closest('[data-accept]'); button.disabled = true; button.textContent = 'Accepting…'; try { await acceptImportBatch(batch, { engine, onProgress: progress => { content.querySelector('[data-progress]').textContent = `${progress.stage || 'Processing'} ${progress.current || ''}/${progress.total || ''}`; } }); onAccepted(); close(); } catch (error) { content.querySelector('[data-error]').textContent = error.message; button.disabled = false; } }
+  });
+  const renderReview = () => { content.innerHTML = `<p class="eyebrow">Import review · ${batch.files.length} source${batch.files.length === 1 ? '' : 's'}</p><div class="next-import-files">${batch.files.map(item => { const summary = item.structured?.reconciliation?.summary; return `<article><strong>${esc(item.name)}</strong><span>Detected: ${esc(item.classification?.detectedType || 'Unresolved')}</span><span>Destination: ${esc(item.mapping?.destination || 'Needs review')}</span>${summary ? `<b>${summary.new + summary.changed + summary.unchanged} normalized records · ${summary.new} new · ${summary.changed} changed · ${summary.unchanged} unchanged · ${summary.possiblyRemoved} possibly removed</b>` : ''}<small>${item.duplicate ? 'Exact duplicate warning' : `${item.preview?.sectionCount || 0} indexed sections · source preserved`}</small><div><button data-file-id="${item.id}" data-type="submittal">Submittal Register</button><button data-file-id="${item.id}" data-type="RFI">RFI Log</button><button data-file-id="${item.id}" data-type="report">General Report</button></div></article>`; }).join('')}</div><p data-progress class="next-muted">Ready for review</p><p data-error class="next-error"></p><button class="next-import" data-accept ${batch.files.some(item => item.status === 'error') ? 'disabled' : ''}>Accept project update</button>`; };
+  input.addEventListener('change', async () => { if (!input.files.length) return; content.innerHTML = '<p data-progress>Analyzing project information…</p>'; batch = createImportBatch({ projectId, libraryId, files: [...input.files], sourceSystem: 'User import' }); try { const existing = await engine.documents(libraryId); await analyzeImportBatch(batch, { existingDocuments: existing, onProgress: progress => { const target = content.querySelector('[data-progress]'); if (target) target.textContent = `${progress.stage || 'Analyzing'} ${progress.current || ''}/${progress.total || ''}`; } }); renderReview(); } catch (error) { content.innerHTML = `<p class="next-error">${esc(error.message)}</p>`; } });
+  return { batch: () => batch, close };
+}

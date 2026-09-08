@@ -1,0 +1,1040 @@
+[
+  {
+    "sectionNumber": "00 01 10",
+    "title": "SECTIONS      DIVISION AND SECTION TITLES                                          DATE",
+    "startPage": 3,
+    "endPage": 8
+  },
+  {
+    "sectionNumber": "00 41 13",
+    "title": "BID FORM",
+    "startPage": 9,
+    "endPage": 28
+  },
+  {
+    "sectionNumber": "01 00 00",
+    "title": "GENERAL REQUIREMENTS",
+    "startPage": 29,
+    "endPage": 363
+  },
+  {
+    "sectionNumber": "27 05 53",
+    "title": "- Identification for",
+    "startPage": 364,
+    "endPage": 675
+  },
+  {
+    "sectionNumber": "01 32 16.15",
+    "title": "PROJECT SCHEDULES",
+    "startPage": 676,
+    "endPage": 687
+  },
+  {
+    "sectionNumber": "01 33 23",
+    "title": "SHOP DRAWINGS, PRODUCT DATA, AND SAMPLES",
+    "startPage": 688,
+    "endPage": 697
+  },
+  {
+    "sectionNumber": "01 33 24",
+    "title": "ELECTRONIC SUBMITTAL PROCEDURES",
+    "startPage": 698,
+    "endPage": 699
+  },
+  {
+    "sectionNumber": "01 35 26",
+    "title": "SAFETY REQUIREMENTS",
+    "startPage": 700,
+    "endPage": 721
+  },
+  {
+    "sectionNumber": "01 42 19",
+    "title": "REFERENCE STANDARDS",
+    "startPage": 722,
+    "endPage": 727
+  },
+  {
+    "sectionNumber": "01 45 00",
+    "title": "QUALITY CONTROL",
+    "startPage": 728,
+    "endPage": 739
+  },
+  {
+    "sectionNumber": "01 45 29",
+    "title": "TESTING LABORATORY SERVICES",
+    "startPage": 740,
+    "endPage": 751
+  },
+  {
+    "sectionNumber": "01 45 35",
+    "title": "SPECIAL INSPECTIONS",
+    "startPage": 752,
+    "endPage": 791
+  },
+  {
+    "sectionNumber": "01 57 19",
+    "title": "TEMPORARY ENVIRONMENTAL CONTROLS",
+    "startPage": 792,
+    "endPage": 795
+  },
+  {
+    "sectionNumber": "01 58 16",
+    "title": "TEMPORARY INTERIOR SIGNAGE",
+    "startPage": 796,
+    "endPage": 797
+  },
+  {
+    "sectionNumber": "01 74 19",
+    "title": "CONSTRUCTION WASTE MANAGEMENT",
+    "startPage": 798,
+    "endPage": 803
+  },
+  {
+    "sectionNumber": "01 81 13",
+    "title": "SUSTAINABLE CONSTRUCTION REQUIREMENTS",
+    "startPage": 804,
+    "endPage": 813
+  },
+  {
+    "sectionNumber": "01 91 00",
+    "title": "GENERAL COMMISSIONING REQUIREMENTS",
+    "startPage": 814,
+    "endPage": 931
+  },
+  {
+    "sectionNumber": "02 21 13",
+    "title": "SITE SURVEYS",
+    "startPage": 932,
+    "endPage": 937
+  },
+  {
+    "sectionNumber": "02 41 00",
+    "title": "DEMOLITION",
+    "startPage": 938,
+    "endPage": 941
+  },
+  {
+    "sectionNumber": "02 82 11",
+    "title": "CLASS I NEGATIVE PRESSURE ENCLOSURE ASBESTOS ABATEMENT",
+    "startPage": 942,
+    "endPage": 1033
+  },
+  {
+    "sectionNumber": "02 83 33.13",
+    "title": "LEAD-BASED PAINT REMOVAL AND DISPOSAL",
+    "startPage": 1034,
+    "endPage": 1041
+  },
+  {
+    "sectionNumber": "03 30 00",
+    "title": "CAST-IN-PLACE CONCRETE",
+    "startPage": 1042,
+    "endPage": 1061
+  },
+  {
+    "sectionNumber": "04 01 00",
+    "title": "MAINTENANCE OF MASONRY",
+    "startPage": 1062,
+    "endPage": 1065
+  },
+  {
+    "sectionNumber": "04 05 13",
+    "title": "MASONRY MORTARING",
+    "startPage": 1066,
+    "endPage": 1069
+  },
+  {
+    "sectionNumber": "04 05 16",
+    "title": "MASONRY GROUTING",
+    "startPage": 1070,
+    "endPage": 1073
+  },
+  {
+    "sectionNumber": "04 20 00",
+    "title": "UNIT MASONRY",
+    "startPage": 1074,
+    "endPage": 1093
+  },
+  {
+    "sectionNumber": "04 72 00",
+    "title": "CAST STONE MASONRY",
+    "startPage": 1094,
+    "endPage": 1099
+  },
+  {
+    "sectionNumber": "05 12 00",
+    "title": "STRUCTURAL STEEL FRAMING",
+    "startPage": 1100,
+    "endPage": 1107
+  },
+  {
+    "sectionNumber": "05 31 00",
+    "title": "STEEL DECKING",
+    "startPage": 1108,
+    "endPage": 1113
+  },
+  {
+    "sectionNumber": "05 36 00",
+    "title": "COMPOSITE METAL DECKING",
+    "startPage": 1114,
+    "endPage": 1121
+  },
+  {
+    "sectionNumber": "05 40 00",
+    "title": "COLD-FORMED METAL FRAMING",
+    "startPage": 1122,
+    "endPage": 1131
+  },
+  {
+    "sectionNumber": "05 50 00",
+    "title": "METAL FABRICATIONS",
+    "startPage": 1132,
+    "endPage": 1153
+  },
+  {
+    "sectionNumber": "06 10 00",
+    "title": "ROUGH CARPENTRY",
+    "startPage": 1154,
+    "endPage": 1159
+  },
+  {
+    "sectionNumber": "06 20 00",
+    "title": "FINISH CARPENTRY",
+    "startPage": 1160,
+    "endPage": 1167
+  },
+  {
+    "sectionNumber": "07 01 50.19",
+    "title": "PREPARATION FOR RE-ROOFING",
+    "startPage": 1168,
+    "endPage": 1173
+  },
+  {
+    "sectionNumber": "07 08 00",
+    "title": "FACILITY EXTERIOR CLOSURE COMMISSIONING",
+    "startPage": 1174,
+    "endPage": 1177
+  },
+  {
+    "sectionNumber": "07 21 13",
+    "title": "THERMAL INSULATION",
+    "startPage": 1178,
+    "endPage": 1183
+  },
+  {
+    "sectionNumber": "07 22 00",
+    "title": "ROOF AND DECK INSULATION",
+    "startPage": 1184,
+    "endPage": 1189
+  },
+  {
+    "sectionNumber": "07 27 26",
+    "title": "FLUID-APPLIED MEMBRANE AIR BARRIERS, VAPOR PERMEABLE",
+    "startPage": 1190,
+    "endPage": 1195
+  },
+  {
+    "sectionNumber": "07 31 26",
+    "title": "SLATE SHINGLES",
+    "startPage": 1196,
+    "endPage": 1201
+  },
+  {
+    "sectionNumber": "07 32 13",
+    "title": "CLAY ROOF TILES",
+    "startPage": 1202,
+    "endPage": 1209
+  },
+  {
+    "sectionNumber": "07 54 23",
+    "title": "THERMOPLASTIC POLYOLEFIN (TPO) ROOFING",
+    "startPage": 1210,
+    "endPage": 1219
+  },
+  {
+    "sectionNumber": "07 60 00",
+    "title": "FLASHING AND SHEET METAL",
+    "startPage": 1220,
+    "endPage": 1233
+  },
+  {
+    "sectionNumber": "07 71 00",
+    "title": "ROOF SPECIALTIES",
+    "startPage": 1234,
+    "endPage": 1237
+  },
+  {
+    "sectionNumber": "07 72 00",
+    "title": "ROOF ACCESSORIES",
+    "startPage": 1238,
+    "endPage": 1243
+  },
+  {
+    "sectionNumber": "07 81 00",
+    "title": "APPLIED FIREPROOFING",
+    "startPage": 1244,
+    "endPage": 1251
+  },
+  {
+    "sectionNumber": "07 84 00",
+    "title": "FIRESTOPPING",
+    "startPage": 1252,
+    "endPage": 1255
+  },
+  {
+    "sectionNumber": "07 92 00",
+    "title": "JOINT SEALANTS",
+    "startPage": 1256,
+    "endPage": 1263
+  },
+  {
+    "sectionNumber": "08 11 13",
+    "title": "HOLLOW METAL DOORS AND FRAMES",
+    "startPage": 1264,
+    "endPage": 1271
+  },
+  {
+    "sectionNumber": "08 14 00",
+    "title": "INTERIOR WOOD DOORS",
+    "startPage": 1272,
+    "endPage": 1277
+  },
+  {
+    "sectionNumber": "08 31 13",
+    "title": "ACCESS DOORS AND FRAMES",
+    "startPage": 1278,
+    "endPage": 1281
+  },
+  {
+    "sectionNumber": "08 39 54",
+    "title": "BLAST RESISTANT DOOR ASSEMBLIES",
+    "startPage": 1282,
+    "endPage": 1289
+  },
+  {
+    "sectionNumber": "08 71 00",
+    "title": "DOOR HARDWARE",
+    "startPage": 1290,
+    "endPage": 1307
+  },
+  {
+    "sectionNumber": "08 80 00",
+    "title": "GLAZING",
+    "startPage": 1308,
+    "endPage": 1317
+  },
+  {
+    "sectionNumber": "08 87 33",
+    "title": "DECORATIVE FILM",
+    "startPage": 1318,
+    "endPage": 1319
+  },
+  {
+    "sectionNumber": "09 05 16",
+    "title": "SUBSURFACE PREPARATION FOR FLOOR FINISHES",
+    "startPage": 1320,
+    "endPage": 1325
+  },
+  {
+    "sectionNumber": "09 22 16",
+    "title": "NON-STRUCTURAL METAL FRAMING",
+    "startPage": 1326,
+    "endPage": 1331
+  },
+  {
+    "sectionNumber": "09 29 00",
+    "title": "GYPSUM BOARD",
+    "startPage": 1332,
+    "endPage": 1337
+  },
+  {
+    "sectionNumber": "09 30 13",
+    "title": "CERAMIC/PORCELAIN TILING",
+    "startPage": 1338,
+    "endPage": 1353
+  },
+  {
+    "sectionNumber": "09 51 00",
+    "title": "ACOUSTICAL CEILINGS",
+    "startPage": 1354,
+    "endPage": 1361
+  },
+  {
+    "sectionNumber": "09 65 13",
+    "title": "RESILIENT BASE AND ACCESSORIES",
+    "startPage": 1362,
+    "endPage": 1365
+  },
+  {
+    "sectionNumber": "09 65 19",
+    "title": "RESILIENT TILE FLOORING",
+    "startPage": 1366,
+    "endPage": 1371
+  },
+  {
+    "sectionNumber": "09 91 00",
+    "title": "PAINTING",
+    "startPage": 1372,
+    "endPage": 1391
+  },
+  {
+    "sectionNumber": "10 14 00",
+    "title": "SIGNAGE",
+    "startPage": 1392,
+    "endPage": 1399
+  },
+  {
+    "sectionNumber": "10 26 00",
+    "title": "WALL AND DOOR PROTECTION",
+    "startPage": 1400,
+    "endPage": 1405
+  },
+  {
+    "sectionNumber": "10 44 13",
+    "title": "FIRE EXTINGUISHER CABINETS",
+    "startPage": 1406,
+    "endPage": 1409
+  },
+  {
+    "sectionNumber": "12 32 00",
+    "title": "MANUFACTURED WOOD CASEWORK",
+    "startPage": 1410,
+    "endPage": 1417
+  },
+  {
+    "sectionNumber": "12 36 00",
+    "title": "COUNTERTOPS",
+    "startPage": 1418,
+    "endPage": 1427
+  },
+  {
+    "sectionNumber": "13 05 41",
+    "title": "SEISMIC RESTRAINT REQUIREMENTS FOR NON-STRUCTURAL COMPONENTS",
+    "startPage": 1428,
+    "endPage": 1433
+  },
+  {
+    "sectionNumber": "21 08 00",
+    "title": "COMMISSIONING OF FIRE SUPPRESSION SYSTEMS",
+    "startPage": 1434,
+    "endPage": 1437
+  },
+  {
+    "sectionNumber": "21 13 13",
+    "title": "WET-PIPE SPRINKLER SYSTEMS",
+    "startPage": 1438,
+    "endPage": 1445
+  },
+  {
+    "sectionNumber": "21 22 00",
+    "title": "CLEAN AGENT FIRE SUPPRESSION SYSTEMS",
+    "startPage": 1446,
+    "endPage": 1457
+  },
+  {
+    "sectionNumber": "22 05 11",
+    "title": "COMMON WORK RESULTS FOR PLUMBING",
+    "startPage": 1458,
+    "endPage": 1485
+  },
+  {
+    "sectionNumber": "22 05 12",
+    "title": "GENERAL MOTOR REQUIREMENTS FOR PLUMBING EQUIPMENT",
+    "startPage": 1486,
+    "endPage": 1493
+  },
+  {
+    "sectionNumber": "22 05 19",
+    "title": "METERS AND GAUGES FOR PLUMBING PIPING",
+    "startPage": 1494,
+    "endPage": 1499
+  },
+  {
+    "sectionNumber": "22 05 23",
+    "title": "GENERAL-DUTY VALVES FOR PLUMBING PIPING",
+    "startPage": 1500,
+    "endPage": 1509
+  },
+  {
+    "sectionNumber": "22 07 11",
+    "title": "PLUMBING INSULATION",
+    "startPage": 1510,
+    "endPage": 1523
+  },
+  {
+    "sectionNumber": "22 08 00",
+    "title": "COMMISSIONING OF PLUMBING SYSTEMS",
+    "startPage": 1524,
+    "endPage": 1527
+  },
+  {
+    "sectionNumber": "22 11 00",
+    "title": "FACILITY WATER DISTRIBUTION",
+    "startPage": 1528,
+    "endPage": 1537
+  },
+  {
+    "sectionNumber": "22 11 23",
+    "title": "DOMESTIC WATER PUMPS",
+    "startPage": 1538,
+    "endPage": 1543
+  },
+  {
+    "sectionNumber": "22 13 00",
+    "title": "FACILITY SANITARY AND VENT PIPING",
+    "startPage": 1544,
+    "endPage": 1553
+  },
+  {
+    "sectionNumber": "22 14 00",
+    "title": "FACILITY STORM DRAINAGE",
+    "startPage": 1554,
+    "endPage": 1563
+  },
+  {
+    "sectionNumber": "22 35 00",
+    "title": "DOMESTIC WATER HEAT EXCHANGERS",
+    "startPage": 1564,
+    "endPage": 1569
+  },
+  {
+    "sectionNumber": "22 40 00",
+    "title": "PLUMBING FIXTURES",
+    "startPage": 1570,
+    "endPage": 1575
+  },
+  {
+    "sectionNumber": "23 05 11",
+    "title": "COMMON WORK RESULTS FOR HVAC",
+    "startPage": 1576,
+    "endPage": 1599
+  },
+  {
+    "sectionNumber": "23 05 12",
+    "title": "GENERAL MOTOR REQUIREMENTS FOR HVAC AND STEAM GENERATION",
+    "startPage": 1600,
+    "endPage": 1607
+  },
+  {
+    "sectionNumber": "23 05 41",
+    "title": "NOISE AND VIBRATION CONTROL FOR HVAC PIPING AND EQUIPMENT",
+    "startPage": 1608,
+    "endPage": 1613
+  },
+  {
+    "sectionNumber": "23 05 93",
+    "title": "TESTING, ADJUSTING, AND BALANCING FOR HVAC",
+    "startPage": 1614,
+    "endPage": 1621
+  },
+  {
+    "sectionNumber": "23 07 11",
+    "title": "HVAC AND BOILER PLANT INSULATION",
+    "startPage": 1622,
+    "endPage": 1635
+  },
+  {
+    "sectionNumber": "23 08 00",
+    "title": "COMMISSIONING OF HVAC SYSTEMS",
+    "startPage": 1636,
+    "endPage": 1639
+  },
+  {
+    "sectionNumber": "23 09 23",
+    "title": "DIRECT-DIGITAL CONTROL SYSTEM FOR HVAC",
+    "startPage": 1640,
+    "endPage": 1669
+  },
+  {
+    "sectionNumber": "23 22 13",
+    "title": "STEAM AND CONDENSATE HEATING PIPING",
+    "startPage": 1670,
+    "endPage": 1687
+  },
+  {
+    "sectionNumber": "23 23 00",
+    "title": "REFRIGERANT PIPING",
+    "startPage": 1688,
+    "endPage": 1695
+  },
+  {
+    "sectionNumber": "23 31 00",
+    "title": "HVAC DUCTS AND CASINGS",
+    "startPage": 1696,
+    "endPage": 1705
+  },
+  {
+    "sectionNumber": "23 34 00",
+    "title": "HVAC FANS",
+    "startPage": 1706,
+    "endPage": 1711
+  },
+  {
+    "sectionNumber": "23 36 00",
+    "title": "AIR TERMINAL UNITS",
+    "startPage": 1712,
+    "endPage": 1715
+  },
+  {
+    "sectionNumber": "23 37 00",
+    "title": "AIR OUTLETS AND INLETS",
+    "startPage": 1716,
+    "endPage": 1719
+  },
+  {
+    "sectionNumber": "23 40 00",
+    "title": "HVAC AIR CLEANING DEVICES",
+    "startPage": 1720,
+    "endPage": 1729
+  },
+  {
+    "sectionNumber": "23 81 00",
+    "title": "DECENTRALIZED UNITARY HVAC EQUIPMENT",
+    "startPage": 1730,
+    "endPage": 1739
+  },
+  {
+    "sectionNumber": "23 81 23",
+    "title": "COMPUTER-ROOM AIR-CONDITIONERS",
+    "startPage": 1740,
+    "endPage": 1749
+  },
+  {
+    "sectionNumber": "23 82 00",
+    "title": "CONVECTION HEATING AND COOLING UNITS",
+    "startPage": 1750,
+    "endPage": 1753
+  },
+  {
+    "sectionNumber": "23 82 16",
+    "title": "AIR COILS",
+    "startPage": 1754,
+    "endPage": 1757
+  },
+  {
+    "sectionNumber": "25 10 10",
+    "title": "ADVANCED UTILITY METERING SYSTEM",
+    "startPage": 1758,
+    "endPage": 1787
+  },
+  {
+    "sectionNumber": "26 05 11",
+    "title": "REQUIREMENTS FOR ELECTRICAL INSTALLATIONS",
+    "startPage": 1788,
+    "endPage": 1795
+  },
+  {
+    "sectionNumber": "26 05 13",
+    "title": "MEDIUM-VOLTAGE CABLES",
+    "startPage": 1796,
+    "endPage": 1803
+  },
+  {
+    "sectionNumber": "26 05 19",
+    "title": "LOW-VOLTAGE ELECTRICAL POWER CONDUCTORS AND CABLES",
+    "startPage": 1804,
+    "endPage": 1809
+  },
+  {
+    "sectionNumber": "26 05 26",
+    "title": "GROUNDING AND BONDING FOR ELECTRICAL SYSTEMS",
+    "startPage": 1810,
+    "endPage": 1815
+  },
+  {
+    "sectionNumber": "26 05 33",
+    "title": "RACEWAY AND BOXES FOR ELECTRICAL SYSTEMS",
+    "startPage": 1816,
+    "endPage": 1823
+  },
+  {
+    "sectionNumber": "26 05 41",
+    "title": "UNDERGROUND ELECTRICAL CONSTRUCTION",
+    "startPage": 1824,
+    "endPage": 1829
+  },
+  {
+    "sectionNumber": "26 05 73",
+    "title": "OVERCURRENT PROTECTIVE DEVICE COORDINATION STUDY",
+    "startPage": 1830,
+    "endPage": 1833
+  },
+  {
+    "sectionNumber": "26 08 00",
+    "title": "COMMISSIONING OF ELECTRICAL SYSTEMS",
+    "startPage": 1834,
+    "endPage": 1837
+  },
+  {
+    "sectionNumber": "26 09 23",
+    "title": "LIGHTING CONTROLS",
+    "startPage": 1838,
+    "endPage": 1841
+  },
+  {
+    "sectionNumber": "26 11 16",
+    "title": "SECONDARY UNIT SUBSTATIONS",
+    "startPage": 1842,
+    "endPage": 1847
+  },
+  {
+    "sectionNumber": "26 12 19",
+    "title": "PAD-MOUNTED, LIQUID-FILLED, MEDIUM-VOLTAGE TRANSFORMERS",
+    "startPage": 1848,
+    "endPage": 1855
+  },
+  {
+    "sectionNumber": "26 13 13",
+    "title": "MEDIUM-VOLTAGE CIRCUIT BREAKER SWITCHGEAR",
+    "startPage": 1856,
+    "endPage": 1865
+  },
+  {
+    "sectionNumber": "26 13 16",
+    "title": "MEDIUM-VOLTAGE FUSIBLE INTERRUPTER SWITCHES",
+    "startPage": 1866,
+    "endPage": 1871
+  },
+  {
+    "sectionNumber": "26 22 00",
+    "title": "LOW-VOLTAGE TRANSFORMERS",
+    "startPage": 1872,
+    "endPage": 1875
+  },
+  {
+    "sectionNumber": "26 23 00",
+    "title": "LOW-VOLTAGE SWITCHGEAR",
+    "startPage": 1876,
+    "endPage": 1883
+  },
+  {
+    "sectionNumber": "26 24 13",
+    "title": "DISTRIBUTION SWITCHBOARDS",
+    "startPage": 1884,
+    "endPage": 1891
+  },
+  {
+    "sectionNumber": "26 24 16",
+    "title": "PANELBOARDS",
+    "startPage": 1892,
+    "endPage": 1897
+  },
+  {
+    "sectionNumber": "26 25 11",
+    "title": "BUSWAYS",
+    "startPage": 1898,
+    "endPage": 1901
+  },
+  {
+    "sectionNumber": "26 26 00",
+    "title": "POWER DISTRIBUTION UNITS FOR STATIC UNINTERRUPTIBLE POWER",
+    "startPage": 1902,
+    "endPage": 1907
+  },
+  {
+    "sectionNumber": "26 27 26",
+    "title": "WIRING DEVICES",
+    "startPage": 1908,
+    "endPage": 1913
+  },
+  {
+    "sectionNumber": "26 29 11",
+    "title": "MOTOR CONTROLLERS",
+    "startPage": 1914,
+    "endPage": 1921
+  },
+  {
+    "sectionNumber": "26 29 21",
+    "title": "ENCLOSED SWITCHES AND CIRCUIT BREAKERS",
+    "startPage": 1922,
+    "endPage": 1925
+  },
+  {
+    "sectionNumber": "26 33 53",
+    "title": "STATIC UNINTERRUPTIBLE POWER SUPPLY",
+    "startPage": 1926,
+    "endPage": 1933
+  },
+  {
+    "sectionNumber": "26 33 53.10",
+    "title": "STATIC UPS FOR TELECOMMUNICATIONS SPACES",
+    "startPage": 1934,
+    "endPage": 1943
+  },
+  {
+    "sectionNumber": "26 35 26",
+    "title": "HARMONIC FILTERS",
+    "startPage": 1944,
+    "endPage": 1947
+  },
+  {
+    "sectionNumber": "26 36 23",
+    "title": "AUTOMATIC TRANSFER SWITCHES",
+    "startPage": 1948,
+    "endPage": 1957
+  },
+  {
+    "sectionNumber": "26 41 00",
+    "title": "FACILITY LIGHTNING PROTECTION",
+    "startPage": 1958,
+    "endPage": 1961
+  },
+  {
+    "sectionNumber": "26 42 00",
+    "title": "CATHODIC PROTECTION",
+    "startPage": 1962,
+    "endPage": 1969
+  },
+  {
+    "sectionNumber": "26 43 13",
+    "title": "SURGE PROTECTIVE DEVICES",
+    "startPage": 1970,
+    "endPage": 1973
+  },
+  {
+    "sectionNumber": "26 51 00",
+    "title": "INTERIOR LIGHTING",
+    "startPage": 1974,
+    "endPage": 1977
+  },
+  {
+    "sectionNumber": "26 56 00",
+    "title": "EXTERIOR LIGHTING",
+    "startPage": 1978,
+    "endPage": 1983
+  },
+  {
+    "sectionNumber": "27 05 00",
+    "title": "COMMON WORK RESULTS FOR COMMUNICATIONS",
+    "startPage": 1984,
+    "endPage": 1993
+  },
+  {
+    "sectionNumber": "27 05 11",
+    "title": "REQUIREMENTS FOR COMMUNICATIONS INSTALLATIONS",
+    "startPage": 1994,
+    "endPage": 2023
+  },
+  {
+    "sectionNumber": "27 05 26",
+    "title": "GROUNDING AND BONDING FOR COMMUNICATIONS SYSTEMS",
+    "startPage": 2024,
+    "endPage": 2027
+  },
+  {
+    "sectionNumber": "27 05 33",
+    "title": "CONDUITS AND BACKBOXES FOR COMMUNICATIONS SYSTEMS",
+    "startPage": 2028,
+    "endPage": 2035
+  },
+  {
+    "sectionNumber": "27 05 36",
+    "title": "CABLE TRAYS FOR COMMUNICATIONS SYSTEMS",
+    "startPage": 2036,
+    "endPage": 2039
+  },
+  {
+    "sectionNumber": "27 08 00",
+    "title": "COMMISSIONING OF COMMUNICATIONS SYSTEMS",
+    "startPage": 2040,
+    "endPage": 2043
+  },
+  {
+    "sectionNumber": "27 10 00",
+    "title": "STRUCTURED CABLING",
+    "startPage": 2044,
+    "endPage": 2047
+  },
+  {
+    "sectionNumber": "27 11 16",
+    "title": "COMMUNICATIONS CABINETS, RACKS, FRAMES, AND ENCLOSURES",
+    "startPage": 2048,
+    "endPage": 2053
+  },
+  {
+    "sectionNumber": "27 11 19",
+    "title": "COMMUNICATIONS TERMINATION BLOCKS AND PATCH PANELS",
+    "startPage": 2054,
+    "endPage": 2057
+  },
+  {
+    "sectionNumber": "27 11 26",
+    "title": "COMMUNICATIONS RACK MOUNTED POWER PROTECTION AND POWER",
+    "startPage": 2058,
+    "endPage": 2061
+  },
+  {
+    "sectionNumber": "27 13 13",
+    "title": "COMMUNICATIONS COPPER BACKBONE CABLING",
+    "startPage": 2062,
+    "endPage": 2065
+  },
+  {
+    "sectionNumber": "27 13 13.13",
+    "title": "COMMUNICATIONS COPPER CABLE SPLICING AND TERMINATIONS",
+    "startPage": 2066,
+    "endPage": 2067
+  },
+  {
+    "sectionNumber": "27 13 23",
+    "title": "COMMUNICATIONS OPTICAL FIBER BACKBONE CABLING",
+    "startPage": 2068,
+    "endPage": 2071
+  },
+  {
+    "sectionNumber": "27 15 00",
+    "title": "COMMUNICATIONS STRUCTURED CABLING",
+    "startPage": 2072,
+    "endPage": 2087
+  },
+  {
+    "sectionNumber": "27 15 13",
+    "title": "COMMUNICATIONS COPPER HORIZONTAL CABLING",
+    "startPage": 2088,
+    "endPage": 2089
+  },
+  {
+    "sectionNumber": "27 15 13.13",
+    "title": "COMMUNICATIONS OPTICAL FIBER SPLICING AND TERMINATIONS",
+    "startPage": 2090,
+    "endPage": 2091
+  },
+  {
+    "sectionNumber": "27 16 19",
+    "title": "COMMUNICATIONS PATCH CORDS, STATION CORDS, AND CROSS CONNECT",
+    "startPage": 2092,
+    "endPage": 2093
+  },
+  {
+    "sectionNumber": "28 05 00",
+    "title": "COMMON WORK RESULTS FOR ELECTRONIC SAFETY AND SECURITY",
+    "startPage": 2094,
+    "endPage": 2121
+  },
+  {
+    "sectionNumber": "28 08 00",
+    "title": "– COMMISSIONING OF ELECTRONIC SAFETY AND SECURITY",
+    "startPage": 2122,
+    "endPage": 2125
+  },
+  {
+    "sectionNumber": "28 05 13",
+    "title": "CONDUCTORS AND CABLES FOR ELECTRONIC SAFETY AND SECURITY",
+    "startPage": 2126,
+    "endPage": 2137
+  },
+  {
+    "sectionNumber": "28 05 26",
+    "title": "GROUNDING AND BONDING FOR ELECTRONIC SAFETY AND SECURITY",
+    "startPage": 2138,
+    "endPage": 2141
+  },
+  {
+    "sectionNumber": "28 05 28.33",
+    "title": "CONDUITS AND BACKBOXES FOR ELECTRONIC SAFETY AND SECURITY",
+    "startPage": 2142,
+    "endPage": 2155
+  },
+  {
+    "sectionNumber": "28 13 00",
+    "title": "PHYSICAL ACCESS CONTROL SYSTEM",
+    "startPage": 2156,
+    "endPage": 2199
+  },
+  {
+    "sectionNumber": "28 23 00",
+    "title": "VIDEO SURVEILLANCE",
+    "startPage": 2200,
+    "endPage": 2221
+  },
+  {
+    "sectionNumber": "28 31 00",
+    "title": "FIRE DETECTION AND ALARM",
+    "startPage": 2222,
+    "endPage": 2231
+  },
+  {
+    "sectionNumber": "31 20 00",
+    "title": "EARTHWORK",
+    "startPage": 2232,
+    "endPage": 2241
+  },
+  {
+    "sectionNumber": "31 23 19",
+    "title": "DEWATERING",
+    "startPage": 2242,
+    "endPage": 2245
+  },
+  {
+    "sectionNumber": "31 23 23.33",
+    "title": "FLOWABLE FILL",
+    "startPage": 2246,
+    "endPage": 2251
+  },
+  {
+    "sectionNumber": "32 05 23",
+    "title": "CEMENT AND CONCRETE FOR EXTERIOR IMPROVEMENTS",
+    "startPage": 2252,
+    "endPage": 2263
+  },
+  {
+    "sectionNumber": "32 12 16",
+    "title": "ASPHALT PAVING",
+    "startPage": 2264,
+    "endPage": 2269
+  },
+  {
+    "sectionNumber": "32 17 23",
+    "title": "PAVEMENT MARKINGS",
+    "startPage": 2270,
+    "endPage": 2273
+  },
+  {
+    "sectionNumber": "32 84 00",
+    "title": "PLANTING IRRIGATION",
+    "startPage": 2274,
+    "endPage": 2281
+  },
+  {
+    "sectionNumber": "32 90 00",
+    "title": "PLANTING",
+    "startPage": 2282,
+    "endPage": 2291
+  },
+  {
+    "sectionNumber": "33 08 00",
+    "title": "COMMISSIONING OF SITE UTILITY SYSTEMS",
+    "startPage": 2292,
+    "endPage": 2295
+  },
+  {
+    "sectionNumber": "33 10 00",
+    "title": "WATER UTILITIES",
+    "startPage": 2296,
+    "endPage": 2309
+  },
+  {
+    "sectionNumber": "33 30 00",
+    "title": "SANITARY SEWER UTILITIES",
+    "startPage": 2310,
+    "endPage": 2319
+  },
+  {
+    "sectionNumber": "33 40 00",
+    "title": "STORM SEWER UTILITIES",
+    "startPage": 2320,
+    "endPage": 2329
+  },
+  {
+    "sectionNumber": "33 63 00",
+    "title": "STEAM ENERGY DISTRIBUTION",
+    "startPage": 2330,
+    "endPage": 2361
+  },
+  {
+    "sectionNumber": "34 71 13",
+    "title": "PASSIVE VEHICLE BARRIERS",
+    "startPage": 2362,
+    "endPage": 2363
+  }
+]

@@ -1,0 +1,358 @@
+===== IMPORTS =====
+import { engine } from './engine.js';
+import { conversationPreview } from './conversations.js';
+import { logger, setLifecycle, registerModule, captureError, verifyButtons, runHealthChecks, diagnosticSnapshot, installGlobalHandlers } from './diagnostics.js';
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import {
+import { openPdfBlob, readPdfPageGraphics, renderPdfPage } from './pdf-source.js';
+import { createSpecificationSourceViewer } from './specification-source-viewer.js';
+import { extractLegendCandidates, matchLegendOccurrences } from './drawing-legends.js';
+import { applyObservationVerification, drawingAnalysisRequiresUpgrade, drawingWarningPresentation, DRAWING_ANALYSIS_VERSION, groupDrawingObservations, observationKindLabel, reanalyzeDrawingAnalysis, upgradeDrawingAnalysis } from './drawing-intelligence.js';
+import { assertDrawingPageConsistency, calculateDrawingFit, createDrawingRenderIdentity, createDrawingTarget, createPdfPageViewerAnalysis, defaultDrawingViewport, drawingAnnouncementText, drawingFocusTarget, drawingMatchingSetTarget, drawingRenderDecision, drawingResultKeyTarget, drawingReturnAction, drawingWheelZoom, drawingWorkspaceLayout, reconcileDrawingMatchingSheetIds, reconcileDrawingSelection, resolveDrawingTarget } from './drawing-navigation.js';
+import { buildPlanQuery, buildPlanQueryScope, createChiefConstructionContext, drawingSearchSummary, planQuerySectionScope, searchDrawingSheets, validateChiefConstructionContext } from './plan-query.js';
+import { buildConstructionWorkPackage, currentWorkActivationTarget, inspectionPrefillFromWorkPackage } from './work-package.js';
+import { drawingUpgradeKey, loadAuthoritativeDrawingRegistry, reduceStaleDrawingTarget } from './drawing-lifecycle.js';
+import { buildChiefDrawingEvidence } from './chief-drawing-evidence.js';
+import { buildChiefLocationPresentation, classifyEngineeringNavigationIntent, navigateExactDrawingCommand } from './engineering-locator.js';
+import { inspectDrawingRegistryRuntime } from './drawing-registry-diagnostics.js';
+import { createDrawingRenderCache, createDrawingViewerEngine, drawingResizeRenderIsCurrent } from './drawing-viewer-engine.js';
+import { createDrawingContextService } from './drawing-context.js';
+import { createDrawingWorkspace } from './drawing-workspace.js';
+import { createDrawingCatalog } from './drawing-catalog.js';
+import { createDrawingObject, createDrawingObjectDecisionStore, createRoomObject, screenToNormalizedPoint, selectDrawingObject, validNormalizedRegion } from './drawing-object-model.js';
+import { hitTestDrawingObjects, nextDrawingObject, objectTypeForObservation, searchDrawingObjects, sharedDrawingObjectContext, updateDrawingObjectSelection } from './drawing-object-interaction.js';
+import { applyPageObjectEnrichment, enrichPageConstructionObjects, relatedObjectIdsForSelection } from './drawing-object-enrichment.js';
+import { applyDrawingCoverageCorrection, buildDrawingCoverageReview, drawingCoverageCategory, DRAWING_COVERAGE_CATEGORIES } from './drawing-coverage-review.js';
+import { createDrawingOverlay, overlayStyle, visibleDrawingOverlays } from './drawing-overlays.js';
+import { createSpecificationIndex } from './specification-index.js';
+import { createDrawingSpecificationLinkService } from './drawing-spec-links.js';
+import { adaptDrawingSpecificationLinks, createProjectRelationshipEngine, relationshipContextGroups } from './project-relationship-engine.js';
+import { createDrawingViewportContextService, normalizedViewportBounds } from './drawing-viewport-context.js';
+import { createDrawingTradeContext, DRAWING_TRADE_CHANNELS } from './drawing-trade-context.js';
+import { createDrawingRequirementsResolver } from './drawing-requirements-resolver.js';
+import { createProjectObjectRegistry } from './project-object-registry.js';
+import { buildConstructionIntelligencePanelModel, loadConstructionIntelligencePanelState, saveConstructionIntelligencePanelState } from './construction-intelligence-panel.js';
+import { BEDFORD_PROJECT_SPECIFICATION_VOCABULARY, createProjectSpecificationVocabulary } from './project-specification-vocabulary.js';
+import { preserveProjectObjectMerge, registerProjectObjectRelationships } from './project-object-operations.js';
+import { loadDrawingWorkspaceProviders } from './drawing-workspace-providers.js';
+import { documentIndexCounts, isDrawingDocument as isDrawingDocumentRole, isSpecificationDocument } from './document-routing.js';
+import { createConstructionGraph } from './construction-graph.js';
+
+===== FUNCTIONS =====
+148:const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({
+155:const fmt = n => new Intl.NumberFormat().format(n || 0);
+220:const drawingViewerEngine = createDrawingViewerEngine({ viewportStore: drawingViewportBySet, onMetric: metric => logger.debug('Drawing viewer performance', metric) });
+221:const drawingRenderCache = createDrawingRenderCache({ maxEntries: 6, onMetric: metric => logger.debug('Drawing viewer performance', metric) });
+222:const specificationSourceViewer = createSpecificationSourceViewer({ openPdf: openPdfBlob, renderPage: renderPdfPage, onDiagnostic: metric => logger.debug('Specification source viewer lifecycle', metric) });
+223:const drawingCatalog = createDrawingCatalog({ onDifference: difference => logger.warning('Drawing catalog parser difference', difference), onDiagnostics: diagnostics => logger.debug('Drawing catalog diagnostics', diagnostics) });
+228:const drawingSpecificationLinks = createDrawingSpecificationLinkService({ index: specificationIndex, persistence: engine.drawingSpecificationLinkPersistence(), onDiagnostic: metric => logger.debug('Drawing specification link persistence', metric) });
+230:const projectObjectRegistry = createProjectObjectRegistry({ persistence: engine.projectObjectPersistence(), onDiagnostic: metric => logger.debug('Project object registry performance', metric) });
+231:const constructionGraph = createConstructionGraph({ persistence: engine.constructionGraphPersistence(), relationshipEngine: projectRelationshipEngine, objectRegistry: projectObjectRegistry, onDiagnostic: metric => logger.debug('Construction graph performance', metric) });
+232:const projectSpecificationVocabulary = createProjectSpecificationVocabulary({ specificationIndex, onDiagnostic: metric => logger.debug('Drawing requirement vocabulary', metric) });
+234:const drawingViewportContextService = createDrawingViewportContextService({ onChange: context => logger.debug('Drawing viewport context updated', { pageId: context.pageId, source: context.source }) });
+236:const drawingRequirementsResolver = createDrawingRequirementsResolver({ specificationIndex, relationshipEngine: projectRelationshipEngine, onMetric: metric => logger.debug('Drawing requirements performance', metric) });
+1109:const $ = selector => document.querySelector(selector);
+1110:const $$ = selector => [...document.querySelectorAll(selector)];
+1112:function setChiefState(name = 'idle') {
+1194:function show(name) {
+1309:function state() {
+1313:async function switchExperience(nextExperience, { destination = '', focus = true, force = false } = {}) {
+1345:async function applyActionTargetState(target = {}, navigationTarget = null) {
+1419:async function openProfessionalDestination(target = {}) {
+1440:function missionControlActionLabel(priority) {
+1447:function resolveSharedActionTarget(rawTarget = {}) {
+1451:function missionControlEmpty(title, detail, action = '') {
+1455:function renderMyProjects() {
+1467:function missionControlProject() {
+1473:function chiefDrawingEvidenceMarkup(message, projectDocuments = [], analyses = []) {
+1498:function chiefLocationPresentationMarkup(presentation = null) {
+1516:function missionControlMessageActions(message, drawingSourceIds = new Set()) {
+1530:function renderChiefEvidence() {
+1553:async function renderChiefWorkspace({ historyVisible = false } = {}) {
+1650:async function renderMissionControlChat() {
+1654:function renderConversationHistory() {
+1660:async function renderMissionControlLibrary() {
+1666:async function renderMissionControlInspections() {
+1672:function isPdfDocument(document) {
+1676:function drawingStatusCopy(document, source, analysis) {
+1682:async function currentDrawingAnalyses() {
+1709:async function currentGlobalDrawingRegistryAnalyses(query = '') {
+1745:async function buildActiveConstructionPackage(query, evidence = []) {
+1762:function workPackageGroup(title, items, formatter) {
+1767:function constructionWorkPackageMarkup(message) {
+1798:function groupedRoomEvidenceMarkup(roomObservations, sheet) {
+1807:function releaseDrawingSource() {
+1824:async function createRetainedPdfViewerAnalysis(documentRecord, source, requestedPage = 1, metadataAnalysis = null) {
+1846:function captureDrawingViewport(overrides = {}) {
+1863:function updateDrawingOverlays(stage, sheet, observation, overlayRecords = []) {
+1898:async function paintDrawingPage(source, sheet, observation, overlayRecords = []) {
+2069:function drawingSearchResultMarkup(result, selectedSheetId, index) {
+2075:async function updateDrawingSearchResults() {
+2094:function observationButtons(items, sheet) {
+2098:function sheetAnalysisMarkup({ shell, analysis, sheet, observation, groups, warnings }) {
+2114:function drawingContextMarkup(context, selectedObject = null, choices = [], specificationLinks = []) {
+2136:function projectObjectPresentation(item) {
+2140:function constructionIntelligencePanelMarkup(model) {
+2182:function relationshipGroupsMarkup(groups, sourceEntityId = '') {
+2204:function drawingRequirementsMarkup({ sheet, viewportContext, trade, visibleRooms = [], selectedObject, result } = {}) {
+2222:function synchronizeActiveDrawingRelationships({ projectId, document, analysis, sheet, objects = [], specificationLinks = [] } = {}) {
+2259:function drawingRecoveryMarkup(record = {}) {
+2275:async function renderDrawingWorkspace(shell = 'professional') {
+2280:function containedConstructionIntelligence(provider, fallback, operation, context = {}) {
+2285:async function renderDrawingWorkspaceWithProviders(shell = 'professional', { documents: providerDocuments, warnings: providerWarnings = [] } = {}) {
+2549:async function renderMissionControlDashboard() {
+2594:async function renderMissionControlPlans() {
+2599:async function renderMissionControl(prefetchedDocuments = null, prefetchedSections = null) {
+2621:function showMissionControlView(name = 'home') {
+2901:async function ingestMissionControlFiles(files) {
+3331:const activationTimestamp = () => new Date().toISOString();
+3333:function activationOrigin(source) {
+3346:async function contextActivationRecords() {
+3381:async function activateSelectedWorkspaceDocument(source, documentId = selectedDoc, sectionId = '', relationshipId = '') {
+3396:async function activateEngineeringContext(request) {
+3431:function clearActiveContext(source, projectId = state().activeProject) {
+3441:function publishContextSynchronization(context, documents, sections) {
+3475:async function renderContextBusBanner(workspace) {
+3498:function reducedMotionPreferred() {
+3502:function revealNavigationTarget(element) {
+3511:function showTransientNavigationNotice(message) {
+3525:function returnToEvidenceExplorer() {
+3545:function openRelationshipExplorerFromEvidence(evidence) {
+3562:function openRelationshipSource(destination) {
+3579:function returnToRelationshipExplorer() {
+3588:function openVersionExplorer(documentId, originatingMessageId = '') {
+3600:function openRevisionReview(earlierDocumentId, laterDocumentId) {
+3624:async function openEngineeringWorkspace({ documentId, sectionId = '', evidenceId = '', libraryId = '', origin = view, source = '' } = {}) {
+3644:function clearEngineeringWorkspace() {
+3650:function clearWorkflowWorkspace() {
+3655:async function openWorkflowWorkspace(workflowType = 'Inspection Preparation', origin = view) {
+3671:async function seedWorkflowFromDocument(documentId, sectionId = '', origin = view) {
+3693:function returnToRevisionReview() {
+3698:function returnToOriginatingAnswer() {
+3718:async function openEvidenceSource(evidence, destination) {
+3795:function modeLabel(mode) {
+3804:async function refresh() {
+3843:function renderDemonstrationControls() {
+3848:async function selectProjectThroughProductionPath(projectId) {
+3879:function clearDemonstrationTransientState() {
+3907:async function returnFromDemonstrationProject() {
+3920:async function openDemonstrationProject({ reset = false } = {}) {
+3982:function promptSuggestions(documents = [], sections = []) {
+4012:function renderPromptSuggestions(documents, sections) {
+4038:function formatInlineMessage(value) {
+4053:function formatMessageContent(content) {
+4173:function renderAssistantCitations(message, messageIndex) {
+4198:function renderAssistantToolbar(message, messageIndex) {
+4253:function renderEvidenceVersionNotice(message, lineageModel) {
+4281:function isMessagesNearBottom() {
+4286:function revealLatestMessage(smooth = false) {
+4298:function renderMessages(
+4388:function renderPreparingAnswer(revealLatest) {
+4585:async function ask() {
+4711:function resizeComposer() {
+4721:function renderEvidence(
+4784:function renderEvidenceExplorer() {
+5058:async function renderRelationshipExplorer() {
+5275:async function renderVersionExplorer() {
+5460:async function renderRevisionReview() {
+5639:async function renderEngineeringWorkspace() {
+5749:async function renderWorkflowWorkspace() {
+5833:function inspectionLocation(record) {
+5837:function inspectionPrefill() {
+5857:async function openInspectionForm(record = null, requestedPrefill = null) {
+5931:async function activateInspectionRecord(record) {
+5939:async function renderInspectionRecords() {
+6017:function importFailureMessage(stage) {
+6027:function updateQueueProgress(progress) {
+6054:async function refreshAfterImport() {
+6202:function duplicateDetail(skipped) {
+6212:async function retryImport(queueId, duplicateAction) {
+6320:function renderImportQueue() {
+6393:function knowledgeTypeGroup(document) {
+6444:function fallbackCatalogSection(document) {
+6456:function documentCatalogSection(document) {
+6488:function knowledgeCatalogData(documents, sections, libraries) {
+6595:async function renderKnowledgeWorkspace(prefetched = null, prefetchedSections = null) {
+6924:function documentStatus(document) {
+6956:function documentType(document) {
+6965:function documentPageCount(document) {
+6977:function documentModifiedAt(document) {
+6990:function projectKnowledgeSnapshot(
+7061:function projectKnowledgeUpdatedAt(project, libraries, documents) {
+7080:function projectAttentionItems(snapshot, libraries, documents) {
+7147:function projectNextActions(snapshot, libraries, documents) {
+7218:async function renderProjectWorkspace(
+7536:function renderDocuments(
+7713:function renderCatalogCoverage() {
+7861:function renderDocumentMetadata(document, allSections = []) {
+8523:function formatBytes(bytes = 0) {
+8535:async function renderSpecificationSourceEvidence() {
+8569:async function renderSources() {
+9376:function renderAdvancedEvaluations() {
+9472:async function renderEvals() {
+10266:function loadSettings() {
+10328:function download(name, data, type) {
+10345:async function copyText(value) {
+10360:function openModal(html, ready) {
+10367:function closeModal(force = false) {
+10482:async function renderDiagnostics() {
+10561:function renderDiagnosticLog() {
+10592:function verifyStartup() {
+
+===== EVENTS =====
+1281:  button.onclick = () => {
+1296:$('[data-workspace-tools-toggle]')?.addEventListener('click', () => {
+2016:    stage.onclick = event => {
+2586:  frame.addEventListener('load', () => markReady(), { once: true });
+2587:  frame.addEventListener('error', () => markUnavailable(), { once: true });
+2615:$('#openProfessionalWorkspace').onclick = () => switchExperience('professional-workspace', { destination: view });
+2616:$('[data-control-experience]')?.addEventListener('click', () => {
+2619:$('#returnMissionControl').onclick = () => switchExperience('mission-control');
+2632:$('[data-control-home]').onclick = () => showMissionControlView('home');
+2633:$$('[data-control-view]').forEach(button => button.onclick = () => showMissionControlView(button.dataset.controlView));
+2634:$('#missionControlContent').onclick = async event => {
+2822:$('#missionControlContent').addEventListener('submit', async event => {
+2916:$('#missionControlContent').addEventListener('change', event => {
+2921:app.addEventListener('input', event => {
+2930:app.addEventListener('toggle', event => {
+2938:app.addEventListener('keydown', event => {
+2960:app.addEventListener('change', async event => {
+3000:app.addEventListener('click', async event => {
+3958:$('#newProject').onclick = () => openModal(
+3968:    $('#createProject').onclick = () => {
+4419:$('#messages').onclick = event => {
+4549:$('#messages').addEventListener('toggle', event => {
+4568:$('#clearChat').onclick = () => {
+4702:$('#send').onclick = ask;
+5014:    button.onclick = async () => {
+5030:    button.onclick = () => void openEvidenceSource(
+5037:    button.onclick = () => {
+5046:  $('[data-evidence-back-answer]')?.addEventListener(
+5050:  $('[data-evidence-relationships]')?.addEventListener('click', () =>
+5053:  $('[data-evidence-engineering]')?.addEventListener('click', () =>
+5253:    button.onclick = () => {
+5266:  $('[data-relationship-return-evidence]')?.addEventListener('click', returnToEvidenceExplorer);
+5267:  $('[data-relationship-return-revisions]')?.addEventListener('click', returnToRevisionReview);
+5268:  $('[data-relationship-knowledge]')?.addEventListener('click', () => openRelationshipSource('knowledge'));
+5269:  $('[data-relationship-source]')?.addEventListener('click', () => openRelationshipSource('sources'));
+5270:  $('[data-relationship-engineering]')?.addEventListener('click', () =>
+5432:    button.onclick = async () => {
+5442:  $('[data-lineage-knowledge]')?.addEventListener('click', () => {
+5447:  $('[data-lineage-source]')?.addEventListener('click', () => {
+5451:  $('[data-lineage-answer]')?.addEventListener('click', returnToOriginatingAnswer);
+5452:  $('[data-lineage-engineering]')?.addEventListener('click', () =>
+5455:  $('[data-lineage-compare]')?.addEventListener('click', () =>
+5504:    $('[data-revision-version]')?.addEventListener('click', () => {
+5579:  $$('[data-revision-filter]').forEach(button => button.onclick = () => {
+5583:  $$('[data-revision-match]').forEach(button => button.onclick = () => {
+5602:  $$('[data-revision-object]').forEach(button => button.onclick = () => openObject(button.dataset.revisionObject));
+5603:  $$('[data-revision-source]').forEach(button => button.onclick = () => {
+5619:  $('[data-revision-relationships]')?.addEventListener('click', () => {
+5629:  $('[data-revision-engineering]')?.addEventListener('click', () =>
+5632:  $('[data-revision-version]')?.addEventListener('click', () => {
+5736:  $('#engineeringNotes')?.addEventListener('input', event => updateInspectionNotes(event.target.value));
+5737:  $('[data-engineering-return]')?.addEventListener('click', () => show(targetOrigin === 'knowledge' ? 'knowledge' : targetOrigin));
+5738:  $('[data-engineering-object]')?.addEventListener('click', () => { selectedDoc = context.documentId; selectedKnowledgeSection = 'all'; show('knowledge'); });
+5739:  $('[data-engineering-source]')?.addEventListener('click', () => { selectedDoc = context.documentId; show('sources'); });
+5740:  $('[data-engineering-relationships]')?.addEventListener('click', () => { relationshipTarget = { ...relationshipNavigationTarget({ documentId: context.documentId, sectionId: context.sectionId }), projectId: context.projectId, libraryId: context.libraryId, originatingWorkspace: 'engineering' }; show('relationships'); });
+5741:  $('[data-engineering-versions]')?.addEventListener('click', () => openVersionExplorer(context.documentId));
+5742:  $('[data-engineering-workflow]')?.addEventListener('click', () => {
+5746:  $('[data-engineering-inspection]')?.addEventListener('click', () => openInspectionForm());
+5760:    $('#selectSynchronizedWorkflow')?.addEventListener('click', () => {
+5822:  $('#workflowType')?.addEventListener('change', event => {
+5827:  $('#workflowNotes')?.addEventListener('input', event => updateWorkflowNotes(event.target.value));
+5828:  $('[data-workflow-return]')?.addEventListener('click', () => show(workflowTarget.origin === 'knowledge' ? 'knowledge' : workflowTarget.origin));
+5829:  $('[data-workflow-engineering]')?.addEventListener('click', () => show('engineering'));
+5830:  $('[data-workflow-inspection]')?.addEventListener('click', () => openInspectionForm());
+5891:      $('#inspectionRecordForm').addEventListener('input', () => { dirty = true; });
+5892:      $('[data-inspection-cancel]').onclick = () => closeModal();
+5962:  $$('[data-inspection-id]').forEach(button => button.onclick = async () => {
+5989:  $('[data-inspection-edit]').onclick = () => openInspectionForm(record);
+5990:  $('[data-inspection-archive]')?.addEventListener('click', async () => { if (confirm(`Archive ${record.inspectionNumber}? Its number will not be reused.`)) { await engine.archiveInspectionRecord(record.inspectionId); selectedInspectionId = null; await renderInspectionRecords(); } });
+5991:  $('[data-inspection-reopen]')?.addEventListener('click', async () => { if (confirm(`Explicitly reopen ${record.inspectionNumber} as In Progress?`)) { await engine.updateInspectionRecord(record.inspectionId, { status: 'In Progress' }, { reopen: true }); await renderInspectionRecords(); } });
+5992:  $('[data-inspection-engineering]').onclick = async () => { if (await activateInspectionRecord(record)) show('engineering'); else alert('No exact source reference is available to establish Engineering Context.'); };
+5993:  $('[data-inspection-source]').onclick = async () => { if (!(await activateInspectionRecord(record))) return alert('No exact source reference is available.'); selectedDoc = activeContextActivation.documentId; sourceNavigationTarget = createSourceTarget({ ...activeContextActivation, originatingWorkspace: 'inspections', destination: 'sources' }); show('sources'); };
+5994:  $('[data-inspection-evidence]').onclick = () => show('evidence');
+5995:  $('[data-inspection-relationships]').onclick = async () => { if (!(await activateInspectionRecord(record))) return; relationshipTarget = { ...relationshipNavigationTarget({ documentId: activeContextActivation.documentId, sectionId: activeContextActivation.sectionId }), originatingWorkspace: 'inspections' }; show('relationships'); };
+5996:  $('[data-inspection-workflow]').onclick = async () => { if (await activateInspectionRecord(record)) openWorkflowWorkspace(record.workflowTemplateId || 'Inspection Preparation', 'inspections'); };
+5999:$('#createInspectionRecord').onclick = () => openInspectionForm();
+6001:  $(`#${id}`).addEventListener(id.includes('Search') || id.includes('Location') ? 'input' : 'change', renderInspectionRecords);
+6004:$('#upload').onclick = () => $('#fileInput').click();
+6164:$('#clearKnowledgeFilters').onclick = () => {
+6170:$('#newLibrary').onclick = () => openModal(
+6184:    $('#createLibrary').onclick = async () => {
+6378:    button.onclick = () => {
+6834:    button.onclick = () => {
+6842:    button.onclick = async () => {
+6850:    button.onclick = async () => {
+6864:    button.onclick = () => {
+6886:          $('#saveLibrary').onclick = async () => {
+6904:    button.onclick = async () => {
+7482:    button.onclick = () => {
+7490:    button.onclick = () => {
+7516:    button.onclick = () => {
+7529:    button.onclick = () => {
+7649:    button.onclick = async () => {
+7679:    button.onclick = async () => {
+7699:    button.onclick = () => {
+8427:  $('#backToCatalogCoverage').onclick = () => {
+8435:  $('#openObjectSourceInspector').onclick = () => {
+8446:  $('[data-source-return-evidence]')?.addEventListener(
+8450:  $('[data-source-return-answer]')?.addEventListener(
+8454:  $('[data-source-return-relationships]')?.addEventListener(
+8458:  $('[data-source-return-revisions]')?.addEventListener(
+8462:  $('[data-source-open-inspector]')?.addEventListener('click', () => {
+8469:  $('[data-object-relationships]')?.addEventListener('click', () => {
+8482:  $('[data-object-lineage]')?.addEventListener('click', () =>
+8485:  $('[data-object-engineering]')?.addEventListener('click', () =>
+8488:  $('[data-object-workflow]')?.addEventListener('click', () =>
+8491:  $('[data-specification-view-source-page]')?.addEventListener('click', event => {
+8515:    button.onclick = () => {
+8557:  $('[data-specification-source-return]')?.addEventListener('click', async () => {
+8631:      button.onclick = async () => {
+9043:  $('#openSourceKnowledgeObject').onclick = () => {
+9049:  $('#reviewSourceValidation').onclick = () => {
+9052:  $('[data-source-open-drawing]')?.addEventListener('click', () => {
+9056:  $('#sourcePdfReattach')?.addEventListener('change', async event => {
+9062:  $('[data-source-return-evidence]')?.addEventListener(
+9066:  $('[data-source-return-answer]')?.addEventListener(
+9070:  $('[data-source-return-relationships]')?.addEventListener(
+9074:  $('[data-source-return-revisions]')?.addEventListener(
+9078:  $('[data-source-open-object]')?.addEventListener('click', () => {
+9086:  $('[data-source-relationships]')?.addEventListener('click', () => {
+9284:    tree.addEventListener('toggle', treeToggleHandler, true);
+9286:    tree.onclick = event => {
+9333:  $('#expandSections').onclick = () => {
+9342:  $('#collapseSections').onclick = () => {
+9348:  $('#exportExtraction').onclick = () => {
+9403:    button.onclick = () => {
+9413:    button.onclick = async () => {
+10213:    button.onclick = () => show(button.dataset.validationAction);
+10219:$('#addEval').onclick = () => openModal(
+10246:    $('#saveEval').onclick = () => {
+10280:$('#saveSettings').onclick = () => {
+10294:$('#exportProject').onclick = async () => {
+10373:$('#closeModal').onclick = () => closeModal();
+10375:$('#modal').onclick = event => {
+10382:  button.onclick = () => {
+10401:$('#testConnection').onclick = async () => {
+10434:$('#openDiagnostics').onclick = () => show('diagnostics');
+10436:$('#resetApplication').onclick = async () => {
+10449:$('#runDiagnostics').onclick = () => renderDiagnostics();
+10451:$('#clearLogs').onclick = () => {
+10456:$('#exportDiagnostics').onclick = () => {
+10468:window.addEventListener(
+10473:window.addEventListener(

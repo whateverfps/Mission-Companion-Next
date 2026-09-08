@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08131b" />
+  <link rel="icon" href="./icon.ico" />
+  <link rel="stylesheet" href="./src/app.css" />
+  <link rel="stylesheet" href="./src/project-shell.css" />
+  <title>Mission Companion</title>
+</head>
+<body>
+  <div id="app"><div class="boot">Loading Mission Companion…</div></div>
+  <noscript><div class="fatal-boot">Mission Companion requires JavaScript.</div></noscript>
+  <script>
+    window.__MC_BOOT_TIME__=Date.now();
+    window.setTimeout(()=>{
+      const boot=document.querySelector('#app .boot');
+      if(boot){boot.innerHTML='<strong>Mission Companion did not finish starting.</strong><br><small>Open the browser console or reload the page. Build 1 diagnostics may have captured the startup error.</small>';}
+    },12000);
+  </script>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+873	const drawingRequirementsResolver = createDrawingRequirementsResolver({ specificationIndex, relationshipEngine: projectRelationshipEngine, onMetric: metric => logger.debug('Drawing requirements performance', metric) });
+807	async function renderSources() {
+794	async function renderEvals() {
+662	function renderDocumentMetadata(document, allSections = []) {
+430	async function ingestMissionControlFiles(files) {
+329	async function renderKnowledgeWorkspace(prefetched = null, prefetchedSections = null) {
+318	async function renderProjectWorkspace(
+280	function showMissionControlView(name = 'home') {
+274	function renderEvidenceExplorer() {
+264	async function renderDrawingWorkspaceWithProviders(shell = 'professional', { documents: providerDocuments, warnings: providerWarnings = [] } = {}) {
+217	async function renderRelationshipExplorer() {
+197	function renderPreparingAnswer(revealLatest) {
+185	async function renderVersionExplorer() {
+179	async function renderRevisionReview() {
+177	function renderDocuments(
+171	async function paintDrawingPage(source, sheet, observation, overlayRecords = []) {
+148	function renderCatalogCoverage() {
+148	async function refreshAfterImport() {
+126	async function ask() {
+120	function formatMessageContent(content) {
+115	function show(name) {
+115	function closeModal(force = false) {
+110	async function renderEngineeringWorkspace() {
+108	async function retryImport(queueId, duplicateAction) {
+107	function knowledgeCatalogData(documents, sections, libraries) {
+97	async function renderChiefWorkspace({ historyVisible = false } = {}) {
+96	function renderAdvancedEvaluations() {
+90	function renderMessages(
+84	async function renderWorkflowWorkspace() {
+82	function setChiefState(name = 'idle') {
+79	function verifyStartup() {
+79	async function renderDiagnostics() {
+78	async function renderInspectionRecords() {
+77	async function openEvidenceSource(evidence, destination) {
+74	async function openInspectionForm(record = null, requestedPrefill = null) {
+74	async function applyActionTargetState(target = {}, navigationTarget = null) {
+73	function renderImportQueue() {
+71	function projectNextActions(snapshot, libraries, documents) {
+71	function projectKnowledgeSnapshot(
+67	function projectAttentionItems(snapshot, libraries, documents) {
+65	const fmt = n => new Intl.NumberFormat().format(n || 0);
+63	function renderEvidence(
+62	function loadSettings() {
+62	async function openDemonstrationProject({ reset = false } = {}) {
+55	function renderAssistantToolbar(message, messageIndex) {
+51	function knowledgeTypeGroup(document) {
+45	async function renderMissionControlDashboard() {
+42	function constructionIntelligencePanelMarkup(model) {
+39	async function refresh() {
+37	function synchronizeActiveDrawingRelationships({ projectId, document, analysis, sheet, objects = [], specificationLinks = [] } = {}) {
+36	async function currentGlobalDrawingRegistryAnalyses(query = '') {
+35	function updateDrawingOverlays(stage, sheet, observation, overlayRecords = []) {
+35	async function contextActivationRecords() {
+35	async function activateEngineeringContext(request) {
+34	function publishContextSynchronization(context, documents, sections) {
+34	async function renderSpecificationSourceEvidence() {
+32	function documentStatus(document) {
+32	function documentCatalogSection(document) {
+32	async function switchExperience(nextExperience, { destination = '', focus = true, force = false } = {}) {
+31	function renderDiagnosticLog() {
+31	function constructionWorkPackageMarkup(message) {
+31	async function selectProjectThroughProductionPath(projectId) {
+30	function promptSuggestions(documents = [], sections = []) {
+28	function renderEvidenceVersionNotice(message, lineageModel) {
+28	function clearDemonstrationTransientState() {
+27	function updateQueueProgress(progress) {
+27	async function currentDrawingAnalyses() {
+26	function renderPromptSuggestions(documents, sections) {
+25	function renderAssistantCitations(message, messageIndex) {
+25	function chiefDrawingEvidenceMarkup(message, projectDocuments = [], analyses = []) {
+24	function openRevisionReview(earlierDocumentId, laterDocumentId) {
+23	function renderChiefEvidence() {
+23	async function renderContextBusBanner(workspace) {
+22	function relationshipGroupsMarkup(groups, sourceEntityId = '') {
+22	function drawingContextMarkup(context, selectedObject = null, choices = [], specificationLinks = []) {
+22	async function seedWorkflowFromDocument(documentId, sectionId = '', origin = view) {
+22	async function renderMissionControl(prefetchedDocuments = null, prefetchedSections = null) {
+22	async function createRetainedPdfViewerAnalysis(documentRecord, source, requestedPage = 1, metadataAnalysis = null) {
+21	async function openProfessionalDestination(target = {}) {
+20	function returnToOriginatingAnswer() {
+20	function returnToEvidenceExplorer() {
+20	function inspectionPrefill() {
+20	async function openEngineeringWorkspace({ documentId, sectionId = '', evidenceId = '', libraryId = '', origin = view, source = '' } = {}) {
+19	function projectKnowledgeUpdatedAt(project, libraries, documents) {
+19	async function updateDrawingSearchResults() {
+18	function drawingRequirementsMarkup({ sheet, viewportContext, trade, visibleRooms = [], selectedObject, result } = {}) {
+18	function chiefLocationPresentationMarkup(presentation = null) {
+17	function releaseDrawingSource() {
+17	function openRelationshipSource(destination) {
+17	function openRelationshipExplorerFromEvidence(evidence) {
+17	function download(name, data, type) {
+17	function captureDrawingViewport(overrides = {}) {
+17	async function buildActiveConstructionPackage(query, evidence = []) {
+16	function sheetAnalysisMarkup({ shell, analysis, sheet, observation, groups, warnings }) {
+16	function drawingRecoveryMarkup(record = {}) {
+16	async function openWorkflowWorkspace(workflowType = 'Inspection Preparation', origin = view) {
+15	function formatInlineMessage(value) {
+15	async function copyText(value) {
+15	async function activateSelectedWorkspaceDocument(source, documentId = selectedDoc, sectionId = '', relationshipId = '') {
+14	function showTransientNavigationNotice(message) {
+14	function missionControlMessageActions(message, drawingSourceIds = new Set()) {
+13	function documentModifiedAt(document) {
+13	function activationOrigin(source) {
+13	async function returnFromDemonstrationProject() {
+12	function revealLatestMessage(smooth = false) {
+12	function renderMyProjects() {
+12	function openVersionExplorer(documentId, originatingMessageId = '') {
+12	function formatBytes(bytes = 0) {
+12	function fallbackCatalogSection(document) {
+12	function documentPageCount(document) {
+10	function resizeComposer() {
+10	function importFailureMessage(stage) {
+10	function duplicateDetail(skipped) {
+10	function clearActiveContext(source, projectId = state().activeProject) {
+9	function revealNavigationTarget(element) {
+9	function returnToRelationshipExplorer() {
+9	function modeLabel(mode) {
+9	function groupedRoomEvidenceMarkup(roomObservations, sheet) {
+9	function documentType(document) {
+8	async function activateInspectionRecord(record) {
+7	function openModal(html, ready) {
+7	function missionControlActionLabel(priority) {
+7	const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({
+6	function renderConversationHistory() {
+6	function missionControlProject() {
+6	function drawingStatusCopy(document, source, analysis) {
+6	function drawingSearchResultMarkup(result, selectedSheetId, index) {
+6	function clearEngineeringWorkspace() {
+6	async function renderMissionControlLibrary() {
+6	async function renderMissionControlInspections() {
+5	function workPackageGroup(title, items, formatter) {
+5	function returnToRevisionReview() {
+5	function renderDemonstrationControls() {
+5	function isMessagesNearBottom() {
+5	function containedConstructionIntelligence(provider, fallback, operation, context = {}) {
+5	function clearWorkflowWorkspace() {
+5	const drawingCatalog = createDrawingCatalog({ onDifference: difference => logger.warning('Drawing catalog parser difference', difference), onDiagnostics: diagnostics => logger.debug('Drawing catalog diagnostics', diagnostics) });
+5	async function renderMissionControlPlans() {
+5	async function renderDrawingWorkspace(shell = 'professional') {
+4	function state() {
+4	function resolveSharedActionTarget(rawTarget = {}) {
+4	function reducedMotionPreferred() {
+4	function projectObjectPresentation(item) {
+4	function observationButtons(items, sheet) {
+4	function missionControlEmpty(title, detail, action = '') {
+4	function isPdfDocument(document) {
+4	function inspectionLocation(record) {
+4	async function renderMissionControlChat() {
+2	const projectSpecificationVocabulary = createProjectSpecificationVocabulary({ specificationIndex, onDiagnostic: metric => logger.debug('Drawing requirement vocabulary', metric) });
+2	const drawingViewportContextService = createDrawingViewportContextService({ onChange: context => logger.debug('Drawing viewport context updated', { pageId: context.pageId, source: context.source }) });
+2	const drawingSpecificationLinks = createDrawingSpecificationLinkService({ index: specificationIndex, persistence: engine.drawingSpecificationLinkPersistence(), onDiagnostic: metric => logger.debug('Drawing specification link persistence', metric) });
+2	const activationTimestamp = () => new Date().toISOString();
+2	const $$ = selector => [...document.querySelectorAll(selector)];
+1	const specificationSourceViewer = createSpecificationSourceViewer({ openPdf: openPdfBlob, renderPage: renderPdfPage, onDiagnostic: metric => logger.debug('Specification source viewer lifecycle', metric) });
+1	const projectObjectRegistry = createProjectObjectRegistry({ persistence: engine.projectObjectPersistence(), onDiagnostic: metric => logger.debug('Project object registry performance', metric) });
+1	const drawingViewerEngine = createDrawingViewerEngine({ viewportStore: drawingViewportBySet, onMetric: metric => logger.debug('Drawing viewer performance', metric) });
+1	const drawingRenderCache = createDrawingRenderCache({ maxEntries: 6, onMetric: metric => logger.debug('Drawing viewer performance', metric) });
+1	const constructionGraph = createConstructionGraph({ persistence: engine.constructionGraphPersistence(), relationshipEngine: projectRelationshipEngine, objectRegistry: projectObjectRegistry, onDiagnostic: metric => logger.debug('Construction graph performance', metric) });
+1	const $ = selector => document.querySelector(selector);

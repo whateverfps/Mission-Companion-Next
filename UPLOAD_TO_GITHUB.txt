@@ -1,0 +1,11 @@
+UPLOAD THE CONTENTS OF THIS FOLDER TO THE REPOSITORY ROOT.
+
+The root of GitHub should show:
+.github/
+src/
+index.html
+icon.ico
+package.json
+README.md
+
+Then set Settings > Pages > Source to GitHub Actions.

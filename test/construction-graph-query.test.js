@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import { createConstructionGraphQuery } from '../src/construction-graph-query.js';import { graphFixture } from './construction-graph.test.js';
+test('bounded queries return deterministic owned paths',()=>{const{graph}=graphFixture();const result=createConstructionGraphQuery(graph).execute({projectId:'p',startNodeId:'page',maxDepth:4,limit:3});assert.deepEqual(result.nodes.map(x=>x.nodeId),['page','finish','paint']);assert.equal(result.truncated,false);assert.ok(result.sourceOwnership.every(x=>x.sourceSystem));});
+test('query requires project and start node',()=>{const{graph}=graphFixture();assert.equal(createConstructionGraphQuery(graph).execute({}).nodes.length,0);});

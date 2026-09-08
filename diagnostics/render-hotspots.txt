@@ -1,0 +1,371 @@
+===== RENDER HOTSPOTS =====
+
+## DOM WRITES
+src/app.js:285:app.innerHTML = `
+src/app.js:1458:  $('#missionControlContent').innerHTML = `
+src/app.js:1582:  $('#missionControlContent').innerHTML = `
+src/app.js:1657:  $('#missionControlContent').innerHTML = `<section class="mc-control-history" aria-labelledby="missionControlTitle"><header><div><span>CONVERSATION HISTORY</span><h1 id="missionControlTitle" tabindex="-1">Your conversations</h1><p>Open a previous thread or begin a new one. History remains in this browser.</p></div><button data-control-action="new-conversation">New Conversation</button></header>${conversations.length ? `<ol>${conversations.map(conversation => `<li><article><button class="mc-control-history-open" data-conversation-id="${esc(conversation.conversationId)}"><strong>${esc(conversation.title)}</strong><span>${esc(projects.get(conversation.projectId) || 'No project associated')}</span><small>${esc(conversationPreview(conversation))}</small><time datetime="${esc(conversation.updatedAt)}">${conversation.updatedAt ? esc(new Date(conversation.updatedAt).toLocaleString()) : 'Not yet updated'}</time></button><button class="subtle" data-rename-conversation="${esc(conversation.conversationId)}">Rename</button></article></li>`).join('')}</ol>` : missionControlEmpty('No conversation history', 'Start a conversation and it will appear here.')}</section>`;
+src/app.js:1663:  $('#missionControlContent').innerHTML = `<section class="mc-control-library" aria-labelledby="missionControlTitle"><header><div><span>PROJECT LIBRARY</span><h1 id="missionControlTitle" tabindex="-1">Project Library</h1><p>${project ? `Recent source documents for ${esc(project.name)}.` : 'Select a project to browse source documents.'}</p></div><label class="mc-control-attach"><input id="missionControlLibraryFiles" type="file" multiple accept=".pdf,.docx,.xls,.xlsx,.txt,.md,.csv,.json,.html,.htm,.xml,.log">Import documents</label></header>${documents.length ? `<ol>${documents.slice().sort((a,b) => String(b.importedAt || '').localeCompare(String(a.importedAt || ''))).map(document => { const counts = documentIndexCounts(document, []); return `<li><button data-control-source-document="${esc(document.id)}"><strong>${esc(document.title || document.name || document.id)}</strong><span>${esc(documentType(document))} · ${isSpecificationDocument(document) ? `${fmt(counts.sourcePageCount)} pages · ${fmt(counts.specificationSectionCount)} CSI sections · ${fmt(counts.retrievalChunkCount)} retrieval chunks` : `${fmt(document.sectionCount)} indexed records`}</span></button></li>`; }).join('')}</ol>` : missionControlEmpty(project ? 'No documents yet' : 'No project open', project ? 'Import a supported document to populate this project.' : 'Open a project from My Projects first.')}</section>`;
+src/app.js:1669:  $('#missionControlContent').innerHTML = `<section class="mc-control-library mc-control-inspections" aria-labelledby="missionControlTitle"><header><div><span>INSPECTIONS</span><h1 id="missionControlTitle" tabindex="-1">Inspection Records</h1><p>${project ? `Recorded field work for ${esc(project.name)}.` : 'Select a project to create or review inspections.'}</p></div>${project ? '<button data-control-action="create-inspection">Create Inspection Record</button>' : '<button data-control-view="projects">Open My Projects</button>'}</header>${records.length ? `<ol>${records.map(record => `<li><button data-control-inspection-id="${esc(record.inspectionId)}"><strong>${esc(record.inspectionNumber)} · ${esc(record.title)}</strong><span>${esc(record.status)} · ${esc(record.result)}${record.followUpRequired ? ' · Follow-up required' : ''}</span></button></li>`).join('')}</ol>` : missionControlEmpty(project ? 'No inspections yet' : 'No project open', project ? 'Create the first Inspection Record for this project.' : 'Open a project from My Projects first.')}</section>`;
+src/app.js:1867:  layer.replaceChildren();
+src/app.js:1870:    const overlay = document.createElement('div');
+src/app.js:1875:    layer.append(overlay);
+src/app.js:1880:    const overlay = document.createElement('button');
+src/app.js:1894:    layer.append(overlay);
+src/app.js:1940:        renderCanvas = document.createElement('canvas');
+src/app.js:2007:      if(reviewRegionStart){const bounds=canvas.getBoundingClientRect(),point=screenToNormalizedPoint({clientX:event.clientX,clientY:event.clientY,bounds,contentWidth:bounds.width,contentHeight:bounds.height,rotation:nextIdentity.rotation}),region={x:Math.min(reviewRegionStart.x,point.x),y:Math.min(reviewRegionStart.y,point.y),width:Math.abs(point.x-reviewRegionStart.x),height:Math.abs(point.y-reviewRegionStart.y)};let preview=stage.querySelector('.mc-coverage-region-preview');if(!preview){preview=document.createElement('div');preview.className='mc-coverage-region-preview';stage.querySelector('.mc-drawing-overlay-layer')?.append(preview);}Object.assign(preview.style,{left:`${region.x*100}%`,top:`${region.y*100}%`,width:`${region.width*100}%`,height:`${region.height*100}%`});return;}
+src/app.js:2065:    canvas.insertAdjacentHTML('afterend', `<div class="mc-drawing-render-error" role="status"><strong>Drawing page could not be updated.</strong><p>${esc(error.message)}</p><small>The previously rendered sheet remains available when possible.</small></div>`);
+src/app.js:2088:  resultsHost.innerHTML = results.length ? results.map((result, index) => drawingSearchResultMarkup(result, drawingTarget?.sheetId, index)).join('') : '<li class="mc-drawing-no-results"><strong>No drawing evidence found.</strong><span>Try a sheet number, room, trade, equipment tag, or clear the active filters.</span></li>';
+src/app.js:2326:    host.innerHTML = drawingLifecycleUnavailable.length ? `<section class="mc-drawing-recovery-list"><h2>Drawing Sets</h2>${drawingLifecycleUnavailable.map(drawingRecoveryMarkup).join('')}</section>` : `<div class="mc-drawing-empty"><strong>No drawing set is available for this project.</strong><p>Import a drawing package or return to Chief to continue the project review.</p><div class="mc-drawing-empty-actions"><button type="button" data-drawing-empty-action="import">Import Drawing</button><button type="button" class="subtle" data-drawing-empty-action="chief">Return to Chief</button></div></div>`;
+src/app.js:2499:  host.innerHTML = `
+src/app.js:2511:    const tools = document.createElement('nav');
+src/app.js:2514:    tools.innerHTML = `<button data-drawing-object-nav="previous">Previous Object</button><button data-drawing-object-nav="next">Next Object</button><button data-drawing-object-nav="room">Next Room</button><button data-drawing-object-nav="equipment">Next Equipment</button><button data-drawing-object-nav="finish">Next Finish</button>${validNormalizedRegion(selectedDrawingObject?.region) ? '<button data-drawing-object-center>Center on Object</button><button data-drawing-object-location>Zoom to Object</button>' : ''}`;
+src/app.js:2518:  if (preserveCanvas) placeholderCanvas.replaceWith(preservedCanvas);
+src/app.js:2536:    panel.innerHTML = constructionIntelligencePanelMarkup(buildIntelligencePanel(activeRequirements)); panel.scrollTop = scrollTop;
+src/app.js:2550:  $('#missionControlContent').innerHTML = `
+src/app.js:2595:  $('#missionControlContent').innerHTML = '<section class="mc-drawing-control" aria-labelledby="missionControlTitle"><h1 id="missionControlTitle" tabindex="-1">Plans</h1><div id="missionDrawingViewer" class="mc-drawing-workspace"></div></section>';
+src/app.js:2844:      engine.appendConversationMessage({ role: 'user', content: promptValue });
+src/app.js:2845:      engine.appendConversationMessage({ role: 'assistant', content: locationPresentation.status === 'resolved' ? `Located ${locationPresentation.summary.replace(/^Located\s+/i, '')}` : locationPresentation.status === 'ambiguous' ? locationPresentation.summary : `No exact registered ${navigationIntent.kind === 'exact-drawing-navigation' ? 'drawing' : 'specification'} matched that command.`, navigationTarget: locationPresentation.target || null });
+src/app.js:3174:      const picker = document.createElement('input'); picker.type = 'file'; picker.accept = 'application/pdf,.pdf';
+src/app.js:3483:    container.insertAdjacentHTML('afterbegin', '<div class="mc-context-bus-banner unavailable" data-context-bus-banner role="status"><strong>No construction context selected</strong><span>Ask Chief a construction question or open an exact drawing, specification, or project record to synchronize this workspace.</span></div>');
+src/app.js:3495:  container.insertAdjacentHTML('afterbegin', `<div class="mc-context-bus-banner synchronized" data-context-bus-banner role="status" aria-label="Synchronized Engineering Context"><dl><div><dt>Project</dt><dd>${esc(project?.name || reference.projectId)}</dd></div><div><dt>Library</dt><dd>${esc(library?.name || reference.libraryId || 'Unavailable')}</dd></div><div><dt>Document</dt><dd>${esc(documentRecord?.title || documentRecord?.name || reference.documentId)}</dd></div><div><dt>Section</dt><dd>${esc(section ? sectionHeadingValue(section) || reference.sectionId : reference.sectionId || 'Unavailable')}</dd></div><div><dt>Activation Source</dt><dd>${esc(reference.activationSource)}</dd></div><div><dt>Current Workflow</dt><dd>${esc(workflow)}</dd></div></dl></div>`);
+src/app.js:3518:  messages.insertAdjacentHTML('afterbegin', `
+src/app.js:3826:  $('#projectSelect').innerHTML = `
+src/app.js:4307:  $('#messages').innerHTML = chat.length
+src/app.js:4389:  $('#messages').insertAdjacentHTML('beforeend', `
+src/app.js:4754:  $('#evidenceList').innerHTML = summary + (
+src/app.js:4788:    $('#evidenceSessionHeader').innerHTML = `
+src/app.js:4798:    $('#evidencePipeline').innerHTML = '';
+src/app.js:4799:    $('#evidenceExplorerList').innerHTML = `
+src/app.js:4802:    $('#evidenceExplorerDetail').innerHTML = `
+src/app.js:4815:  $('#evidenceSessionHeader').innerHTML = `
+src/app.js:4891:  $('#evidencePipeline').innerHTML = pipeline.map(([label, count, note], index) => `
+src/app.js:4911:  $('#evidenceExplorerList').innerHTML = session.evidence.length
+src/app.js:4959:  $('#evidenceExplorerDetail').innerHTML = selected
+src/app.js:5072:    $('#relationshipHeader').innerHTML = `
+src/app.js:5076:    $('#relationshipContext').innerHTML = `<div class="mc-relationship-empty">${requestedDocumentId ? 'The exact selected document could not be resolved.' : 'No documents are available.'}</div>`;
+src/app.js:5077:    $('#relationshipGraph').innerHTML = '<div class="mc-relationship-empty">A graph appears after an exact document or section establishes Engineering Context.</div>';
+src/app.js:5078:    $('#relationshipDetail').innerHTML = '<div class="mc-relationship-empty">Open a Knowledge Object or select evidence to inspect its explicit relationships.</div>';
+src/app.js:5142:  $('#relationshipHeader').innerHTML = `
+src/app.js:5161:  $('#relationshipContext').innerHTML = `
+src/app.js:5193:  $('#relationshipGraph').innerHTML = graph.nodes.length
+src/app.js:5216:  $('#relationshipDetail').innerHTML = [
+src/app.js:5285:    $('#lineageHeader').innerHTML = `
+src/app.js:5289:    $('#lineageCurrent').innerHTML = '<div class="mc-lineage-empty">Select a Knowledge Object to inspect its current-version status.</div>';
+src/app.js:5290:    $('#lineageHistory').innerHTML = '<div class="mc-lineage-empty">An explicit version chain appears when the selected document contains lineage records.</div>';
+src/app.js:5291:    $('#lineageChanges').innerHTML = '<div class="mc-lineage-empty">Select a document with an explicit previous version to compare revisions.</div>';
+src/app.js:5345:  $('#lineageHeader').innerHTML = `
+src/app.js:5364:  $('#lineageCurrent').innerHTML = currentRecord
+src/app.js:5390:  $('#lineageHistory').innerHTML = `
+src/app.js:5406:  $('#lineageChanges').innerHTML = `
+src/app.js:5479:  $('#revisionHeader').innerHTML = `
+src/app.js:5499:    $('#revisionSummary').innerHTML = '';
+src/app.js:5500:    $('#revisionFilters').innerHTML = '';
+src/app.js:5501:    $('#revisionList').innerHTML = '<div class="mc-revision-empty">Mission Companion compares only exact adjacent records in one explicit lineage.</div>';
+src/app.js:5502:    $('#revisionDetail').innerHTML = '<div class="mc-revision-empty">No section comparison is available.</div>';
+src/app.js:5503:    $('#revisionWarnings').innerHTML = `<ul class="mc-revision-warning-list">${comparison.reasons.map(reason => `<li>${esc(reason)}</li>`).join('')}</ul>`;
+src/app.js:5518:  $('#revisionSummary').innerHTML = summaryItems.map(([label, count]) => `
+src/app.js:5521:  $('#revisionFilters').innerHTML = filterOptions.map(([key, label]) => `
+src/app.js:5538:  $('#revisionList').innerHTML = `
+src/app.js:5558:    $('#revisionDetail').innerHTML = '<div class="mc-revision-empty">No deterministically matched section is available for side-by-side review.</div>';
+src/app.js:5564:    $('#revisionDetail').innerHTML = `
+src/app.js:5575:  $('#revisionWarnings').innerHTML = comparison.integrityWarnings.length
+src/app.js:5667:    $('#engineeringHeader').innerHTML = '<div><span>ENGINEERING CONTEXT</span><h2>Engineering Context unavailable</h2><p>Open a Knowledge Object or ask an evidence-backed question to synchronize this workbench.</p></div>';
+src/app.js:5668:    $('#engineeringContext').innerHTML = `<div class="mc-context-activation-unavailable" role="status"><strong>No construction context selected.</strong><span>${contextClearedEvent ? `Current transition: cleared from ${esc(contextClearedEvent.source)}.` : 'Ask Chief a construction question or open an exact drawing, specification, or project record to synchronize this workspace.'}</span></div>`;
+src/app.js:5669:    $('#engineeringKnowledge').innerHTML = '<div class="mc-engineering-empty">Related project knowledge appears after an exact document establishes Engineering Context.</div>';
+src/app.js:5670:    $('#engineeringSession').innerHTML = '<div class="mc-engineering-empty">The temporary Inspection Session becomes available with an active Engineering Context.</div>';
+src/app.js:5684:  $('#engineeringHeader').innerHTML = `
+src/app.js:5696:  $('#engineeringContext').innerHTML = `
+src/app.js:5709:  $('#engineeringKnowledge').innerHTML = `
+src/app.js:5731:  $('#engineeringSession').innerHTML = `
+src/app.js:5756:    $('#workflowHeader').innerHTML = '<div><span>SYNCHRONIZED ORCHESTRATION</span><h2>Select Workflow</h2><p>Multiple deterministic workflow templates qualify. Mission Companion will not guess.</p></div>';
+src/app.js:5757:    $('#workflowOverview').innerHTML = `<div class="mc-context-bus-workflow-choice" role="status"><strong>Select Workflow</strong><span>${esc(contextBusSnapshot.workflow.candidates.join(' · '))}</span><label>Workflow Type<select id="workflowType">${contextBusSnapshot.workflow.candidates.map(type => `<option>${esc(type)}</option>`).join('')}</select></label><button type="button" id="selectSynchronizedWorkflow">Load selected workflow</button></div>`;
+src/app.js:5758:    $('#workflowResources').innerHTML = '<div class="mc-workflow-empty">Workflow resources will appear after an explicit selection.</div>';
+src/app.js:5759:    $('#workflowSession').innerHTML = '<div class="mc-workflow-empty">Temporary notes begin after a workflow is selected.</div>';
+src/app.js:5782:  $('#workflowHeader').innerHTML = `
+src/app.js:5792:    $('#workflowOverview').innerHTML = '<div class="mc-workflow-empty"><strong>Workflow unavailable.</strong><span>Open a Knowledge Object or ask an evidence-backed question to establish Engineering Context.</span></div>';
+src/app.js:5793:    $('#workflowResources').innerHTML = '<div class="mc-workflow-empty">Workflow resources appear after a valid Engineering Context and Workflow are selected.</div>';
+src/app.js:5794:    $('#workflowSession').innerHTML = '<div class="mc-workflow-empty">Temporary Workflow Session notes become available when a Workflow loads.</div>';
+src/app.js:5802:  $('#workflowOverview').innerHTML = `
+src/app.js:5808:  $('#workflowResources').innerHTML = `
+src/app.js:5818:  $('#workflowSession').innerHTML = `
+src/app.js:5956:  $('#inspectionList').innerHTML = visible.length ? `<div class="mc-inspection-list">${visible.map(record => `
+src/app.js:5970:    $('#inspectionDetail').innerHTML = '<div class="mc-inspection-empty"><strong>No Inspection Record selected.</strong><span>Select a record to review its user-authored observations and exact source links.</span></div>';
+src/app.js:5976:  $('#inspectionDetail').innerHTML = `
+src/app.js:6046:  $('#ingestStatus').innerHTML = `
+src/app.js:6075:  $('#ingestStatus').innerHTML = '<div class="progress">Preparing files…</div>';
+src/app.js:6123:    $('#ingestStatus').innerHTML = `
+src/app.js:6152:    $('#ingestStatus').innerHTML = `
+src/app.js:6286:    $('#ingestStatus').innerHTML = `
+src/app.js:6309:    $('#ingestStatus').innerHTML = `
+src/app.js:6321:  $('#importQueue').innerHTML = importQueue.length
+src/app.js:6649:  $('#knowledgeCatalogSummary').innerHTML = summaryItems.map(item => `
+src/app.js:6658:  $('#knowledgeCatalog').innerHTML = catalogEntries.length
+src/app.js:6706:  $('#knowledgeTypeCoverage').innerHTML = catalog.types.length
+src/app.js:6729:  $('#libraries').innerHTML = libraries.length
+src/app.js:7244:  $('#projectWorkspaceHeader').innerHTML = project
+src/app.js:7306:  $('#projectHealth').innerHTML = healthCards.map(card => `
+src/app.js:7314:  $('#projectLibraries').innerHTML = libraries.length
+src/app.js:7359:  $('#projectReadinessFilters').innerHTML = [
+src/app.js:7375:  $('#projectReadinessTable').innerHTML = documents.length
+src/app.js:7432:  $('#projectAttention').innerHTML = attentionItems.length
+src/app.js:7468:  $('#projectActions').innerHTML = nextActions.length
+src/app.js:7544:  $('#documents').innerHTML = documents.length
+src/app.js:7720:    $('#documentMetadata').innerHTML = `
+src/app.js:7787:  $('#documentMetadata').innerHTML = `
+src/app.js:8085:  $('#documentMetadata').innerHTML = `
+src/app.js:8540:    host.innerHTML = '<div class="empty">No exact specification source page was requested.</div>';
+src/app.js:8546:    host.innerHTML = '<div class="empty">The requested source is not an authoritative specification document.</div>';
+src/app.js:8551:    host.innerHTML = '<div class="empty">The retained specification source PDF is unavailable. Indexed section content remains available.</div>';
+src/app.js:8554:  host.innerHTML = `<header class="source-title"><span>SPECIFICATION SOURCE EVIDENCE</span><h2>${esc(target.sectionNumber)} — ${esc(target.sectionTitle)}</h2><p>Exact source page ${fmt(target.pageNumber)} · one-page evidence view</p></header><div><button type="button" data-specification-source-return>${target.returnTarget === 'drawings' ? 'Return to Drawing' : 'Return to Specification'}</button></div><div class="mc-specification-source-stage"><canvas id="specificationSourceCanvas" aria-label="Specification ${esc(target.sectionNumber)} source page ${fmt(target.pageNumber)}"></canvas></div>`;
+src/app.js:8556:  if (!result.ok) host.insertAdjacentHTML('beforeend', `<p role="status">Source page unavailable: ${esc(result.status)}</p>`);
+src/app.js:8573:  $('#sourceDocs').innerHTML = `
+src/app.js:8601:    $('#sourceDocumentList').innerHTML = shown.length
+src/app.js:8660:    $('#sourceDetail').innerHTML = selectedDoc
+src/app.js:8784:  $('#sourceDetail').innerHTML = `
+src/app.js:9257:    $('#sectionResults').innerHTML = roots.length
+src/app.js:9266:      container.innerHTML = shownChildren.map(renderNode).join('');
+src/app.js:9379:  $('#evalList').innerHTML = evaluations.length
+src/app.js:9426:        $('#evalResult').innerHTML = `
+src/app.js:9638:  $('#validationHealth').innerHTML = healthCards.map(([label, value, note]) => `
+src/app.js:9892:  $('#validationChecks').innerHTML = `
+src/app.js:10027:  $('#validationAttention').innerHTML = attention.length
+src/app.js:10129:  $('#validationCoverage').innerHTML = coverageGroups.map(group => `
+src/app.js:10200:  $('#validationActions').innerHTML = actions.length
+src/app.js:10329:  const anchor = document.createElement('a');
+src/app.js:10362:  $('#modalBody').innerHTML = html;
+src/app.js:10499:  $('#healthSummary').innerHTML = `
+src/app.js:10539:  $('#healthChecks').innerHTML = data.checks
+src/app.js:10564:  $('#diagnosticLog').innerHTML = rows.length
+src/retrieval.js:163:  /\b(?:section|article|chapter|appendix|specification|paragraph|part)\s+[a-z0-9][a-z0-9 ._-]*/gi,
+src/diagnostics.js:41:  if(!banner){banner=document.createElement('div');banner.id='mcRecovery';banner.className='recovery-banner';document.body.appendChild(banner)}
+src/diagnostics.js:42:  banner.innerHTML=`<strong>Mission Companion recovered from an error.</strong><span>${escapeHtml(err.message)}</span><button type="button" data-recovery-details>Show details</button><button type="button" data-recovery-close>×</button>`;
+src/parsers.js:247:    const script = document.createElement('script');
+src/parsers.js:251:    document.head.appendChild(script);
+src/engine.js:601:  appendConversationMessage(message, conversationId = state.activeConversationId) {
+src/engine.js:1747:    this.appendConversationMessage({
+src/engine.js:1753:    this.appendConversationMessage(message);
+src/core/conflicts/ConflictReasoner.js:422:function appendTraceabilityValue(values, value) {
+src/core/conflicts/ConflictReasoner.js:460:        appendTraceabilityValue(normalized, value);
+src/core/conflicts/ConflictReasoner.js:470:        appendTraceabilityValue(normalized, value);
+
+## REQUEST ANIMATION FRAME
+src/app.js:1923:        await new Promise(resolve => requestAnimationFrame(resolve));
+src/app.js:1969:    stage.onscroll = () => { if (scrollFrame) return; scrollFrame = requestAnimationFrame(() => { scrollFrame = 0; captureDrawingViewport({ contextSource: 'viewport-inference' }); }); };
+src/app.js:3505:  requestAnimationFrame(() => {
+src/app.js:9337:      if (closed.length) requestAnimationFrame(expand);
+
+## TIMEOUTS / INTERVALS
+src/app.js:2588:  window.setTimeout(() => {
+src/app.js:4452:        setTimeout(() => {
+src/app.js:9328:    clearTimeout(filterTimer);
+src/app.js:9329:    filterTimer = setTimeout(drawSections, 120);
+src/app.js:10340:  setTimeout(() => {
+src/engine.js:649:    const timer = setTimeout(
+src/engine.js:680:      clearTimeout(timer);
+src/engine.js:3236:  const timer = setTimeout(
+src/engine.js:3287:    clearTimeout(timer);
+src/drawing-viewport-context.js:38:      clearTimeout(timer); timer = setTimeout(() => { if (currentGeneration === generation) commit(context); }, throttleMs);
+src/drawing-viewport-context.js:47:    dispose() { clearTimeout(timer); }
+
+## ASYNC RENDER FUNCTIONS
+108:import { openPdfBlob, readPdfPageGraphics, renderPdfPage } from './pdf-source.js';
+222:const specificationSourceViewer = createSpecificationSourceViewer({ openPdf: openPdfBlob, renderPage: renderPdfPage, onDiagnostic: metric => logger.debug('Specification source viewer lifecycle', metric) });
+1215:  void renderContextBusBanner(name);
+1219:    renderKnowledgeWorkspace();
+1223:    renderProjectWorkspace();
+1234:    renderSources();
+1236:  if (name === 'specification-source') void renderSpecificationSourceEvidence();
+1237:  if (name === 'drawings') void renderDrawingWorkspace('professional');
+1240:    renderEvidenceExplorer();
+1250:    renderRelationshipExplorer();
+1255:    renderVersionExplorer();
+1259:    renderRevisionReview();
+1262:    renderEngineeringWorkspace();
+1265:    renderWorkflowWorkspace();
+1268:    renderInspectionRecords();
+1272:    renderEvals();
+1276:    renderDiagnostics();
+1335:    await renderMissionControl();
+1455:function renderMyProjects() {
+1530:function renderChiefEvidence() {
+1553:async function renderChiefWorkspace({ historyVisible = false } = {}) {
+1641:          ${renderChiefEvidence()}
+1647:  if ($('#missionInlineDrawingViewer') && activeWorkPackage?.presentation?.primaryDrawing) await renderDrawingWorkspace('mission-control');
+1650:async function renderMissionControlChat() {
+1651:  return renderChiefWorkspace({ historyVisible: chiefHistoryVisible });
+1654:function renderConversationHistory() {
+1660:async function renderMissionControlLibrary() {
+1666:async function renderMissionControlInspections() {
+1905:  const clearCurrentLoading = () => { if (loadingKey && stage.dataset.renderLoadingKey === loadingKey) { stage.classList.remove('is-loading'); delete stage.dataset.renderLoadingKey; } };
+1938:      let renderCanvas = drawingRenderCache.get(cacheKey);
+1939:      if (!renderCanvas) {
+1940:        renderCanvas = document.createElement('canvas');
+1942:        stage.dataset.renderLoadingKey = loadingKey;
+1944:        const renderOutcome = await drawingViewerEngine.renderSelectedPage(pageNumber => renderPdfPage(activeDrawingPdf, pageNumber, renderCanvas, { scale: boundedScale, rotation: nextIdentity.rotation }));
+1945:        if (!renderOutcome.committed || !canvas.isConnected || drawingTarget?.pageNumber !== sheet.pageNumber) {
+1946:          renderOutcome.task?.release?.();
+1950:        drawingRenderCache.set(cacheKey, renderCanvas);
+1952:      canvas.width = renderCanvas.width;
+1953:      canvas.height = renderCanvas.height;
+1956:      context.drawImage(renderCanvas, 0, 0);
+1960:      canvas.dataset.renderReason = decision.reason;
+2014:    stage.onpointerup = event => {if(reviewRegionStart&&drawingCoverageRegionItemId){const bounds=canvas.getBoundingClientRect(),point=screenToNormalizedPoint({clientX:event.clientX,clientY:event.clientY,bounds,contentWidth:bounds.width,contentHeight:bounds.height,rotation:nextIdentity.rotation}),region={x:Math.max(0,Math.min(reviewRegionStart.x,point.x)),y:Math.max(0,Math.min(reviewRegionStart.y,point.y)),width:Math.min(1,Math.abs(point.x-reviewRegionStart.x)),height:Math.min(1,Math.abs(point.y-reviewRegionStart.y))},itemId=drawingCoverageRegionItemId;reviewRegionStart=null;drawingCoverageRegionItemId='';stage.querySelector('.mc-coverage-region-preview')?.remove();if(validNormalizedRegion(region)&&region.width>.001&&region.height>.001){const result=applyDrawingCoverageCorrection({registry:projectObjectRegistry,review:activeDrawingCoverageReview,itemId,action:'draw-region',region});logger.debug('Drawing coverage correction',{operation:'region-save',durationMs:result.durationMs,pageId:sheet.pageId,contained:true});void renderDrawingWorkspace(experience==='mission-control'?'mission-control':'professional');}return;}stopPan(event);};
+2030:        void renderDrawingWorkspace(experience === 'mission-control' ? 'mission-control' : 'professional'); return;
+2038:      void renderDrawingWorkspace(experience === 'mission-control' ? 'mission-control' : 'professional');
+2275:async function renderDrawingWorkspace(shell = 'professional') {
+2277:  return renderDrawingWorkspaceWithProviders(shell, providers);
+2285:async function renderDrawingWorkspaceWithProviders(shell = 'professional', { documents: providerDocuments, warnings: providerWarnings = [] } = {}) {
+2383:        if (activeProjectObjectId === (activeDrawingViewerAnalysis?.projectId || state().activeProject)) void renderDrawingWorkspace(shell);
+2549:async function renderMissionControlDashboard() {
+2594:async function renderMissionControlPlans() {
+2596:  await renderDrawingWorkspace('mission-control');
+2599:async function renderMissionControl(prefetchedDocuments = null, prefetchedSections = null) {
+2601:    renderMyProjects();
+2605:    await renderChiefWorkspace({ historyVisible: missionControlView === 'history' });
+2608:  if (missionControlView === 'library') { await renderMissionControlLibrary(); return; }
+2609:  if (missionControlView === 'inspections') { await renderMissionControlInspections(); return; }
+2610:  if (missionControlView === 'plans') { await renderMissionControlPlans(); return; }
+2611:  if (missionControlView === 'dashboard') { await renderMissionControlDashboard(); return; }
+2612:  await renderChiefWorkspace();
+2630:  return renderMissionControl().then(() => $('#missionControlTitle')?.focus());
+2672:    if (target) { drawingTarget = createDrawingTarget(target); selectedWorkPackageItem = target.observationId || target.sheetId; if (missionControlView === 'chat') { await renderMissionControlChat(); $('#missionInlineDrawingViewer .mc-drawing-sheet-title')?.focus(); } else await showMissionControlView('plans'); }
+2704:    await renderChiefWorkspace({ historyVisible: chiefHistoryVisible });
+2755:    if (title !== null) { engine.renameConversation(button.dataset.renameConversation, title); renderConversationHistory(); }
+2760:    await renderMissionControlChat();
+2801:    renderDemonstrationControls();
+2818:    renderKnowledgeWorkspace();
+2861:        await renderChiefWorkspace({ historyVisible: chiefHistoryVisible });
+2895:    await renderChiefWorkspace({ historyVisible: chiefHistoryVisible });
+2907:  await renderMissionControlChat();
+2913:  await renderMissionControlChat();
+2918:  if (event.target.id === 'missionControlLibraryFiles') void ingestMissionControlFiles([...event.target.files]).then(() => renderMissionControlLibrary());
+2945:    void renderDrawingWorkspace(experience === 'mission-control' ? 'mission-control' : 'professional'); return;
+2962:  if(event.target.matches('[data-coverage-review-filter]')){const started=globalThis.performance?.now?.()??Date.now();drawingCoverageReviewFilter=event.target.value;await renderDrawingWorkspace(shell);logger.debug('Drawing coverage review performance',{operation:'filter',durationMs:Math.max(0,(globalThis.performance?.now?.()??Date.now())-started)});return;}
+2966:    await renderDrawingWorkspace(shell);
+2986:    await renderDrawingWorkspace(shell);
+2992:      if (!result.ok) { drawingLifecycleUnavailable = [result]; await renderDrawingWorkspace(shell); return; }
+2995:      await renderDrawingWorkspace(shell);
+3009:  if(button.hasAttribute('data-coverage-review-open')){drawingCoverageReviewMode=true;await renderDrawingWorkspace(shell);return;}
+3010:  if(button.hasAttribute('data-coverage-review-close')){drawingCoverageReviewMode=false;drawingCoverageRegionItemId='';await renderDrawingWorkspace(shell);return;}
+3012:  if(reviewItem&&button.hasAttribute('data-coverage-confirm')){const result=applyDrawingCoverageCorrection({registry:projectObjectRegistry,review:activeDrawingCoverageReview,itemId:reviewItemId,action:'confirm-object'});logger.debug('Drawing coverage correction',{operation:'confirm',durationMs:result.durationMs});await renderDrawingWorkspace(shell);return;}
+3013:  if(reviewItem&&button.hasAttribute('data-coverage-reject')){applyDrawingCoverageCorrection({registry:projectObjectRegistry,review:activeDrawingCoverageReview,itemId:reviewItemId,action:'reject-evidence'});await renderDrawingWorkspace(shell);return;}
+3014:  if(reviewItem&&button.hasAttribute('data-coverage-ignore')){applyDrawingCoverageCorrection({registry:projectObjectRegistry,review:activeDrawingCoverageReview,itemId:reviewItemId,action:'ignore-revision'});await renderDrawingWorkspace(shell);return;}
+3015:  if(reviewItem&&button.hasAttribute('data-coverage-create')){const objectType=prompt('Object type',reviewItem.proposedObjectType)?.trim();if(!objectType)return;const tag=prompt('Tag',reviewItem.proposedTag||'')?.trim()||'';const label=prompt('Label',reviewItem.proposedLabel)?.trim();if(!label)return;const trade=prompt('Trade','Unknown')?.trim()||'Unknown';const result=applyDrawingCoverageCorrection({registry:projectObjectRegistry,review:activeDrawingCoverageReview,itemId:reviewItemId,action:'create-object',patch:{objectType,tag,label,trade}});if(result.object){selectedDrawingObject=projectObjectPresentation(result.object);registerProjectObjectRelationships(result.object,projectRelationshipEngine,{pageEntityId:`drawing-page:${reviewItem.pageId}`});}await renderDrawingWorkspace(shell);return;}
+3016:  if(reviewItem&&button.hasAttribute('data-coverage-edit')){const current=reviewItem.currentRegistryMatch;const objectType=prompt('Object type',current.objectType)?.trim();if(!objectType)return;const tag=prompt('Tag',current.tag||'')?.trim();if(tag===undefined)return;const label=prompt('Label',current.label)?.trim();if(!label)return;const roomId=prompt('Room ID',current.roomId||'')?.trim();if(roomId===undefined)return;projectObjectRegistry.updateObject(current.objectId,{objectType,tag,label,roomId},{source:'manual',note:'Identity corrected in drawing coverage review.'});await renderDrawingWorkspace(shell);return;}
+3017:  if(reviewItem&&button.hasAttribute('data-coverage-assign')){const query=prompt('Assign to existing object by tag, label, alias, or permanent ID',reviewItem.proposedTag||'')?.trim();if(!query)return;const candidates=projectObjectRegistry.getObjectsForPage(reviewItem.pageId,{projectId:reviewItem.projectId,limit:500}).filter(item=>item.objectId===query||item.tag?.toLowerCase()===query.toLowerCase()||item.label?.toLowerCase().includes(query.toLowerCase())||item.aliases?.some(alias=>alias.toLowerCase()===query.toLowerCase()));if(candidates.length!==1){alert(candidates.length?'More than one object matches. Use the exact permanent ID.':'No page-owned object matched.');return;}const result=applyDrawingCoverageCorrection({registry:projectObjectRegistry,review:activeDrawingCoverageReview,itemId:reviewItemId,action:reviewItem.issueType==='schedule-unlinked'?'link-schedule-occurrence':'assign-existing',objectId:candidates[0].objectId});logger.debug('Drawing coverage correction',{operation:'assignment',durationMs:result.durationMs});await renderDrawingWorkspace(shell);return;}
+3019:  if(reviewItem&&button.hasAttribute('data-coverage-link-spec')){const query=prompt('Indexed specification section number', '')?.trim();if(!query)return;const result=applyDrawingCoverageCorrection({registry:projectObjectRegistry,specificationLinks:drawingSpecificationLinks,index:specificationIndex,review:activeDrawingCoverageReview,itemId:reviewItemId,action:'link-specification',patch:{sectionNumber:query}});if(result.status!=='complete')alert('No exact indexed project specification section matched.');else drawingRequirementsResolver.invalidate();await renderDrawingWorkspace(shell);return;}
+3020:  if(reviewItem&&button.hasAttribute('data-coverage-merge')){if(reviewItem.currentRegistryMatch&&reviewItem.duplicateObject&&confirm(`Merge ${reviewItem.duplicateObject.label} into ${reviewItem.currentRegistryMatch.label}?`)){applyDrawingCoverageCorrection({registry:projectObjectRegistry,review:activeDrawingCoverageReview,itemId:reviewItemId,action:'merge-duplicate',patch:{secondaryObjectId:reviewItem.duplicateObject.objectId}});preserveProjectObjectMerge({primary:projectObjectRegistry.getObject(reviewItem.currentRegistryMatch.objectId),secondary:reviewItem.duplicateObject,relationshipEngine:projectRelationshipEngine,specificationLinks:drawingSpecificationLinks});await renderDrawingWorkspace(shell);}return;}
+3021:  if(reviewItem&&button.hasAttribute('data-coverage-keep')){applyDrawingCoverageCorrection({registry:projectObjectRegistry,review:activeDrawingCoverageReview,itemId:reviewItemId,action:'keep-separate'});await renderDrawingWorkspace(shell);return;}
+3032:    if (created) { selectedDrawingObject = projectObjectPresentation(created); registerProjectObjectRelationships(created, projectRelationshipEngine, { pageEntityId: `drawing-page:${sheet?.pageId || ''}`, roomEntityId: roomId ? `drawing-object:${roomId}` : '' }); await renderDrawingWorkspace(shell); }
+3035:  if (selectedDrawingObject && button.hasAttribute('data-project-object-confirm')) { selectedDrawingObject = projectObjectPresentation(projectObjectRegistry.confirmObject(selectedDrawingObject.objectId, { source: 'manual' })); await renderDrawingWorkspace(shell); return; }
+3036:  if (selectedDrawingObject && button.hasAttribute('data-project-object-reject')) { projectObjectRegistry.rejectObject(selectedDrawingObject.objectId, { source: 'manual' }); selectedDrawingObject = null; await renderDrawingWorkspace(shell); return; }
+3044:    selectedDrawingObject = projectObjectPresentation(projectObjectRegistry.updateObject(selectedDrawingObject.objectId, { objectType, tag, label, trade, system, roomId }, { source: 'manual' })); await renderDrawingWorkspace(shell); return;
+3046:  if (selectedDrawingObject && button.hasAttribute('data-project-object-alias')) { const alias = prompt('Alias')?.trim(); if (alias) selectedDrawingObject = projectObjectPresentation(projectObjectRegistry.linkAlias(selectedDrawingObject.objectId, alias, { source: 'manual' })); await renderDrawingWorkspace(shell); return; }
+3049:  if (selectedDrawingObject && button.hasAttribute('data-project-object-merge')) { const primary = projectObjectRegistry.getObject(selectedDrawingObject.objectId); const duplicate = projectObjectRegistry.possibleDuplicates(selectedDrawingObject.objectId)[0]; if (primary && duplicate && confirm(`Merge ${duplicate.label} into ${selectedDrawingObject.label}?`)) { selectedDrawingObject = projectObjectPresentation(projectObjectRegistry.mergeObjects(primary.objectId, duplicate.objectId, { source: 'manual' })); preserveProjectObjectMerge({ primary: projectObjectRegistry.getObject(primary.objectId), secondary: duplicate, relationshipEngine: projectRelationshipEngine, specificationLinks: drawingSpecificationLinks }); } await renderDrawingWorkspace(shell); return; }
+3050:  if (selectedDrawingObject && button.hasAttribute('data-project-object-keep-separate')) { projectObjectRegistry.updateObject(selectedDrawingObject.objectId, {}, { source: 'manual', note: 'Possible duplicate reviewed and kept separate.' }); await renderDrawingWorkspace(shell); return; }
+3051:  if (selectedDrawingObject && button.hasAttribute('data-project-object-split')) { const secondaryId = selectedDrawingObject.mergedObjectIds?.[0]; if (secondaryId) projectObjectRegistry.splitObject(selectedDrawingObject.objectId, secondaryId, { source: 'manual' }); selectedDrawingObject = projectObjectPresentation(projectObjectRegistry.getObject(selectedDrawingObject.objectId)); await renderDrawingWorkspace(shell); return; }
+3056:    drawingRequirementsResolver.invalidate(); await renderDrawingWorkspace(shell); return;
+3065:    else if (entity?.entityType === 'drawing-page' && target) { drawingWorkspace.open(target); drawingTarget = createDrawingTarget(target); await renderDrawingWorkspace(shell); }
+3084:    drawingRequirementsResolver.invalidate(); await renderDrawingWorkspace(shell); return;
+3091:    await renderDrawingWorkspace(shell); return;
+3096:    if (room && sheet && drawingViewportContextService.useRoom({ projectId: drawingTarget?.projectId || activeDrawingViewerAnalysis?.projectId, documentId: drawingTarget?.documentId, pageId: sheet.pageId, pdfPageNumber: sheet.pageNumber, zoom: drawingZoom, rotation: drawingRotation, activeTradeChannel: drawingTradeContext.current().key }, room)) { selectedDrawingObject = room; drawingTarget = createDrawingTarget({ ...drawingTarget, region: room.region, observationId: room.sourceObservationIds?.[0] || '' }); await renderDrawingWorkspace(shell); }
+3119:    if (target) { drawingWorkspace.open(target); drawingTarget = createDrawingTarget(target); await renderDrawingWorkspace(shell); }
+3122:  if (button.dataset.drawingObjectNav) { const type={room:'room',equipment:'equipment',finish:'finish'}[button.dataset.drawingObjectNav]||''; const next=nextDrawingObject(activeDrawingObjects,selectedDrawingObject?.objectId||'',{direction:button.dataset.drawingObjectNav==='previous'?-1:1,type}); if(next){selectedDrawingObject=next;selectedDrawingObjectIds=[next.objectId];drawingObjectChoices=[];captureDrawingViewport({selectedObjectId:next.objectId,selectedObjectIds:[next.objectId],highlightedRegion:next.region,contextSource:'object-selection'});await renderDrawingWorkspace(shell);} return; }
+3124:  if (button.dataset.overlayId) { const object=activeDrawingObjects.find(item => item.objectId === button.dataset.overlayId) || null; selectedDrawingObjectIds=object?updateDrawingObjectSelection(selectedDrawingObjectIds,object.objectId,{additive:event.shiftKey}):[];selectedDrawingObject=activeDrawingObjects.find(item=>item.objectId===selectedDrawingObjectIds.at(-1))||null; drawingObjectChoices = []; captureDrawingViewport({selectedObjectId:selectedDrawingObject?.objectId||null,selectedObjectIds:[...selectedDrawingObjectIds],highlightedRegion:selectedDrawingObject?.region||null,contextSource:selectedDrawingObject?'object-selection':'page-context'});await renderDrawingWorkspace(shell); return; }
+3125:  if (button.dataset.drawingSelectObject) { selectedDrawingObject = activeDrawingObjects.find(item => item.objectId === button.dataset.drawingSelectObject) || null; selectedDrawingObjectIds=selectedDrawingObject?[selectedDrawingObject.objectId]:[];drawingObjectChoices = []; captureDrawingViewport({selectedObjectId:selectedDrawingObject?.objectId||null,selectedObjectIds:[...selectedDrawingObjectIds],highlightedRegion:selectedDrawingObject?.region||null,contextSource:selectedDrawingObject?'object-selection':'page-context'});await renderDrawingWorkspace(shell); return; }
+3126:  if (button.hasAttribute('data-drawing-clear-object')) { selectedDrawingObject = null; selectedDrawingObjectIds=[]; drawingObjectChoices = []; const sheet = activeDrawingViewerAnalysis?.sheets?.find(item => Number(item.pageNumber) === Number(drawingTarget?.pageNumber)); if (sheet) drawingViewportContextService.update({ projectId: drawingTarget?.projectId || activeDrawingViewerAnalysis?.projectId, documentId: drawingTarget?.documentId, pageId: sheet.pageId, pdfPageNumber: sheet.pageNumber, selectedObjectId: null, selectedObjectIds:[], selectedRoomId: null, activeTradeChannel: drawingTradeContext.current().key, source: drawingTarget?.region ? 'manual-selection' : 'page-context' }, { immediate: true }); captureDrawingViewport({selectedObjectId:null,selectedObjectIds:[]});await renderDrawingWorkspace(shell); return; }
+3135:    await renderDrawingWorkspace(shell); return;
+3137:  if (button.hasAttribute('data-drawing-return-location') && drawingLocationReturnViewport) { drawingZoom = drawingLocationReturnViewport.zoom; drawingRotation = drawingLocationReturnViewport.rotation; drawingViewerEngine.restoreViewport(drawingTarget?.pageNumber, drawingLocationReturnViewport); drawingLocationReturnViewport = null; await renderDrawingWorkspace(shell); return; }
+3138:  if (button.dataset.drawingConfirmSpec || button.dataset.drawingRejectSpec) { const linkId = button.dataset.drawingConfirmSpec || button.dataset.drawingRejectSpec; if (button.dataset.drawingConfirmSpec) drawingSpecificationLinks.confirm(linkId); else drawingSpecificationLinks.reject(linkId); drawingRequirementsResolver.invalidate(); await renderDrawingWorkspace(shell); return; }
+3147:    drawingRequirementsResolver.invalidate(); await renderDrawingWorkspace(shell); return;
+3162:      await renderDrawingWorkspace(shell); return;
+3164:    if (recoveryAction === 'return-to-drawing-sets') { drawingTarget = null; drawingFilter = ''; drawingDiscipline = 'all'; drawingType = 'all'; await renderDrawingWorkspace(shell); return; }
+3167:      await renderDrawingWorkspace(shell); return;
+3171:      await engine.removeDrawingAnalysis(button.dataset.drawingSetId); drawingTarget = null; await renderDrawingWorkspace(shell); return;
+3175:      picker.onchange = async () => { const result = await engine.reattachPdfSource(button.dataset.drawingDocumentId, picker.files?.[0]); if (!result.ok) alert(result.warning); else { drawingUpgradeFailures.clear(); drawingTarget = createDrawingTarget({ projectId: result.projectId, documentId: result.documentId, drawingSetId: result.drawingSetId, pageNumber: 1 }); await renderDrawingWorkspace(shell); } };
+3195:    if (action.startsWith('reset')) { drawingCatalog.resetToParser(analysis.documentId, sheet.pageNumber); await renderDrawingWorkspace(shell); return; }
+3196:    if (action.startsWith('restore')) { drawingCatalog.restoreDefaults(analysis.documentId, sheet.pageNumber); await renderDrawingWorkspace(shell); return; }
+3207:    await renderDrawingWorkspace(shell); return;
+3216:    await renderDrawingWorkspace(shell);
+3224:    if (!saved.ok) { drawingLifecycleUnavailable = [saved]; await renderDrawingWorkspace(shell); return; }
+3226:    await renderDrawingWorkspace(shell); return;
+3233:    await renderDrawingWorkspace(shell);
+3246:    if (!saved.ok) { drawingLifecycleUnavailable = [saved]; await renderDrawingWorkspace(shell); return; }
+3247:    await renderDrawingWorkspace(shell); return;
+3254:      await renderDrawingWorkspace(shell);
+3263:    await renderDrawingWorkspace(shell); return;
+3283:    if (!saved.ok) { drawingLifecycleUnavailable = [saved]; await renderDrawingWorkspace(shell); return; }
+3284:    await renderDrawingWorkspace(shell); return;
+3294:    await renderDrawingWorkspace(shell);
+3301:    await renderDrawingWorkspace(shell); return;
+3306:    await renderDrawingWorkspace(shell); return;
+3308:  if (button.hasAttribute('data-drawing-rotate')) { drawingRotation = (drawingRotation + 90) % 360; captureDrawingViewport({ rotation: drawingRotation, mode: 'custom' }); await renderDrawingWorkspace(shell); return; }
+3309:  if (button.hasAttribute('data-drawing-reset-view')) { drawingZoom = null; drawingRotation = 0; captureDrawingViewport({ ...defaultDrawingViewport() }); await renderDrawingWorkspace(shell); return; }
+3438:  void renderContextBusBanner(view);
+3472:  void renderContextBusBanner(view);
+3475:async function renderContextBusBanner(workspace) {
+3746:    renderEvidenceExplorer();
+3769:    renderEvidenceExplorer();
+3836:  renderMessages(documents, sections);
+3837:  renderProjectWorkspace(documents, sections);
+3838:  await renderKnowledgeWorkspace(documents, sections);
+3839:  renderDemonstrationControls();
+3840:  if (experience === 'mission-control') await renderMissionControl(documents, sections);
+3843:function renderDemonstrationControls() {
+3943:  renderDemonstrationControls();
+4012:function renderPromptSuggestions(documents, sections) {
+4173:function renderAssistantCitations(message, messageIndex) {
+4198:function renderAssistantToolbar(message, messageIndex) {
+4253:function renderEvidenceVersionNotice(message, lineageModel) {
+4298:function renderMessages(
+4339:                  ${renderAssistantCitations(message, messageIndex)}
+4340:                  ${renderEvidenceVersionNotice(message, lineageModel)}
+4341:                  ${renderAssistantToolbar(message, messageIndex)}
+4376:        ${renderPromptSuggestions(documents, sections)}
+4388:function renderPreparingAnswer(revealLatest) {
+4598:  renderPreparingAnswer(revealResponse);
+4672:    renderMessages(documents, sections, {
+4677:    renderEvidence(
+4721:function renderEvidence(
+4784:function renderEvidenceExplorer() {
+5025:      renderEvidenceExplorer();
+5058:async function renderRelationshipExplorer() {
+5263:      renderRelationshipExplorer();
+5275:async function renderVersionExplorer() {
+5439:      renderVersionExplorer();
+5460:async function renderRevisionReview() {
+5581:    renderRevisionReview();
+5585:    renderRevisionReview();
+5639:async function renderEngineeringWorkspace() {
+5679:  const renderDocuments = (items, empty) => items.length
+5711:      <section><h3>Explicit Specifications <span>${context.classification.specifications.length}</span></h3>${renderDocuments(context.classification.specifications, 'No exactly classified specifications.')}</section>
+5712:      <section><h3>Exact Drawings <span>${context.classification.drawings.length}</span></h3>${renderDocuments(context.classification.drawings, 'No exactly classified drawings.')}</section>
+5713:      <section><h3>Exact Procedures <span>${context.classification.procedures.length}</span></h3>${renderDocuments(context.classification.procedures, 'No exactly classified procedures.')}</section>
+5714:      <section><h3>Unclassified <span>${context.classification.unclassified.length}</span></h3>${renderDocuments(context.classification.unclassified, 'No unclassified context documents.')}</section>
+5715:      <section><h3>Referenced Documents <span>${referenced.length}</span></h3>${renderDocuments(referenced, 'No resolved cross-document references.')}</section>
+5749:async function renderWorkflowWorkspace() {
+5762:      renderWorkflowWorkspace();
+5799:  const renderIds = (ids, label, empty) => ids.length
+5810:      <section><h3>Required Documents <span>${workflow.requiredDocumentIds.length}</span></h3>${renderIds(workflow.requiredDocumentIds, documentLabel, 'No required document identifiers.')}</section>
+5811:      <section><h3>Required Sections <span>${workflow.requiredSectionIds.length}</span></h3>${renderIds(workflow.requiredSectionIds, sectionLabel, 'No required section identifiers.')}</section>
+5812:      <section><h3>Evidence <span>${workflow.evidenceIds.length}</span></h3>${renderIds(workflow.evidenceIds, evidenceLabel, 'No exact active-session evidence identifiers.')}</section>
+5813:      <section><h3>Relationships <span>${workflow.relationshipIds.length}</span></h3>${renderIds(workflow.relationshipIds, id => id, 'No explicit relationship identifiers.')}</section>
+5814:      <section><h3>Version Status <span>${workflow.lineageIds.length}</span></h3>${renderIds(workflow.lineageIds, id => id, 'No explicit lineage identifiers.')}</section>
+5815:      <section><h3>Revision Status <span>${workflow.revisionIds.length}</span></h3>${renderIds(workflow.revisionIds, id => id, 'No comparable revision-pair identifiers.')}</section>
+5825:    renderWorkflowWorkspace();
+5925:          await renderInspectionRecords();
+5939:async function renderInspectionRecords() {
+5966:    renderInspectionRecords();
+5990:  $('[data-inspection-archive]')?.addEventListener('click', async () => { if (confirm(`Archive ${record.inspectionNumber}? Its number will not be reused.`)) { await engine.archiveInspectionRecord(record.inspectionId); selectedInspectionId = null; await renderInspectionRecords(); } });
+5991:  $('[data-inspection-reopen]')?.addEventListener('click', async () => { if (confirm(`Explicitly reopen ${record.inspectionNumber} as In Progress?`)) { await engine.updateInspectionRecord(record.inspectionId, { status: 'In Progress' }, { reopen: true }); await renderInspectionRecords(); } });
+6001:  $(`#${id}`).addEventListener(id.includes('Search') || id.includes('Location') ? 'input' : 'change', renderInspectionRecords);
+6044:  renderImportQueue();
+6056:  await renderSources();
+6057:  await renderEvals();
+6073:  renderImportQueue();
+6121:    renderImportQueue();
+6150:    renderImportQueue();
+6163:$('#documentFilter').oninput = () => renderKnowledgeWorkspace();
+6167:  renderKnowledgeWorkspace();
+6230:    renderImportQueue();

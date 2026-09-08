@@ -1,0 +1,77 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Install git-lfs
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git-lfs
+          git lfs install
+
+      - name: Fetch LFS objects
+        run: git lfs fetch --all
+
+      - name: Pull LFS objects
+        run: git lfs pull
+
+      - name: Verify MCR PDF is hydrated
+        run: |
+          MCR_FILE="project-documents/bedford/drawings/518-22-700.Bedford.EHRM.IFC.MCR.20260316.pdf"
+          if [ ! -f "$MCR_FILE" ]; then
+            echo "ERROR: MCR file not found"
+            exit 1
+          fi
+          SIZE=$(wc -c < "$MCR_FILE")
+          HEAD=$(head -c 5 "$MCR_FILE")
+          echo "MCR file size: $SIZE bytes"
+          echo "MCR file header: $HEAD"
+          if [ "$SIZE" -lt 1000000 ]; then
+            echo "ERROR: MCR file is too small, likely an LFS pointer"
+            exit 1
+          fi
+          if ! head -c 5 "$MCR_FILE" | grep -aFq '%PDF-'; then
+            echo "ERROR: MCR file does not begin with PDF signature"
+            exit 1
+          fi
+          echo "MCR PDF verified: $SIZE bytes"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
